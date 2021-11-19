@@ -37,7 +37,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 -d >> ~/gcp_key.json
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          echo export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_key.json >> ~/.profile
       - terraform/init:
           path: ./terraform
       - terraform/plan:
