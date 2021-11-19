@@ -14,7 +14,7 @@ resource "google_project_iam_binding" "circleci-cloudfunctions" {
 
 resource "google_project_iam_binding" "circleci-storage" {
   project = var.project
-  role    = "roles/storage.objectAdmin"
+  role    = "roles/storage.admin"
 
   members = [
     "serviceAccount:${google_service_account.circleci.email}",
