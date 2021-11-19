@@ -36,9 +36,6 @@ jobs:
     executor: terraform/default
     steps:
       - checkout
-      - run: |
-          GOOGLE_APPLICATION_CREDENTIALS=$(echo $GCLOUD_SERVICE_KEY | base64 -d)
-          echo export GOOGLE_APPLICATION_CREDENTIALS=$(echo $GOOGLE_APPLICATION_CREDENTIALS) >> ~/.profile
       - terraform/init:
           path: ./terraform
       - terraform/plan:
