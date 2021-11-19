@@ -35,11 +35,11 @@ jobs:
   terraform_plan:
     executor: terraform/default
     environment:
-      GOOGLE_APPLICATION_CREDENTIALS: project/gcp_key.json
+      GOOGLE_APPLICATION_CREDENTIALS: ../gcp_key.json
     steps:
       - checkout
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 -d >> ~/gcp_key.json
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
          #echo export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_key.json >> ~/.profile
       - terraform/init:
           path: ./terraform

@@ -3,9 +3,18 @@ resource "google_service_account" "circleci" {
   project    = var.project
 }
 
-resource "google_project_iam_binding" "circleci" {
+resource "google_project_iam_binding" "circleci-cloudfunctions" {
   project = var.project
   role    = "roles/cloudfunctions.developer"
+
+  members = [
+    "serviceAccount:${google_service_account.circleci.email}",
+  ]
+}
+
+resource "google_project_iam_binding" "circleci-storage" {
+  project = var.project
+  role    = "roles/storage.objectAdmin"
 
   members = [
     "serviceAccount:${google_service_account.circleci.email}",
