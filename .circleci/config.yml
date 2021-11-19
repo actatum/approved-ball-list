@@ -45,6 +45,7 @@ jobs:
           path: ./terraform
       - terraform/plan:
           path: ./terraform
+          var: project=$GCP_PROJECT,region=us-central1
   
   terraform_apply:
     executor: terraform/default
@@ -52,8 +53,9 @@ jobs:
       - checkout
       - terraform/init:
           path: ./terraform
-      - terraform/plan:
+      - terraform/apply:
           path: ./terraform
+          var: project=$GCP_PROJECT,region=us-central1
   
   deploy_function:
     docker:
@@ -78,20 +80,20 @@ jobs:
 workflows:
   deploy:
     jobs:
-      # - lint
-      # - test
+      - lint
+      - test
       - terraform_plan
-          # requires:
-          #   - lint
-          #   - test
+          requires:
+            - lint
+            - test
       - approve_terraform_plan:
           name: approve_terraform_plan
           type: approval
           requires:
             - terraform_plan
-      # - terraform_apply:
-      #     requires:
-      #       - approve_terraform_plan
-      # - deploy_function:
-      #     requires:
-      #       - terraform_apply
+      - terraform_apply:
+          requires:
+            - approve_terraform_plan
+      - deploy_function:
+          requires:
+            - terraform_apply
