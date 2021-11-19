@@ -31,23 +31,32 @@ resource "google_project_service" "cb" {
   disable_on_destroy         = false
 }
 
-resource "google_cloudfunctions_function" "function" {
-  name    = var.function_name
-  runtime = "go113"
-
-  available_memory_mb   = 128
-  source_archive_bucket = var.bucket_name
-  source_archive_object = google_storage_bucket_object.zip.name
-
-  event_trigger {
-    event_type = "google.pubsub.topic.publish"
-    resource   = var.pubsub_topic
-    failure_policy {
-      retry = true
-    }
+resource "google_cloudbuild_trigger" "build_trigger" {
+  project = var.project
+  trigger_template {
+    branch_name = "main"
+    repo_name   = "github.com/actatum/approved-ball-list"
   }
-  entry_point = var.function_entry_point
+  filename = "cloudbuild.yaml"
 }
+
+# resource "google_cloudfunctions_function" "function" {
+#   name    = var.function_name
+#   runtime = "go113"
+
+#   available_memory_mb   = 128
+#   source_archive_bucket = var.bucket_name
+#   source_archive_object = google_storage_bucket_object.zip.name
+
+#   event_trigger {
+#     event_type = "google.pubsub.topic.publish"
+#     resource   = var.pubsub_topic
+#     failure_policy {
+#       retry = true
+#     }
+#   }
+#   entry_point = var.function_entry_point
+# }
 
 # resource "google_cloudfunctions_function_iam_member" "invoker" {
 #   project        = google_cloudfunctions_function.function.project
