@@ -12,6 +12,8 @@ import (
 
 const ballListURL = "https://www.bowl.com/approvedballlist/netballs.xml"
 
+// GetBalls makes an http get request to bowl.com's approvedballlist xml endpoint
+// and returns all the approved balls
 func GetBalls(ctx context.Context) ([]models.Ball, error) {
 	client := &http.Client{}
 	req, err := http.NewRequestWithContext(ctx, "GET", ballListURL, nil)

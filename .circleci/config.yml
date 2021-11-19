@@ -1,0 +1,90 @@
+version: 2.1
+
+orbs:
+  go: circleci/go@1.7
+  terraform: circleci/terraform@3.0.0
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/go:1.16.10
+    resource_class: medium
+    steps:
+      - checkout
+      - run: |
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.43.0
+          golangci-lint --version
+          make lint
+      - terraform/validate:
+          path: ./terraform
+      - terraform/fmt:
+          path: ./terraform
+  test:
+    machine:
+      image: ubuntu-2004:202107-02
+    resource_class: medium
+    steps:
+      - checkout
+      - go/install:
+          version: '1.16.10'
+      - go/mod-download-cached
+      - run: make test
+  
+  terraform_plan:
+    executor: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform
+      - terraform/plan:
+          path: ./terraform
+  
+  terraform_apply:
+    executor: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform
+      - terraform/plan:
+          path: ./terraform
+  
+  deploy_function:
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - checkout
+      - run:
+          name: Authorize GCloud Command Line Tool
+          command: |
+            echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
+      - run:
+          name: Deploy To Google Cloud Functions
+          command: |
+            # Deploy command
+            gcloud functions deploy $FUNCTION_NAME \
+              --entry-point ApprovedBallList \
+              --runtime go116 \
+              --trigger-topic projects/$GCP_PROJECT/topics/cron \
+              --project $GCP_PROJECT
+
+
+# workflows:
+#   deploy:
+#     jobs:
+#       - lint
+#       - test
+#       - terraform_plan:
+#           requires:
+#             - lint
+#             - test
+#       - approve_terraform_plan:
+#           name: approve_terraform_plan
+#           type: approval
+#           requires:
+#             - terraform_plan
+#       - terraform_apply:
+#           requires:
+#             - approve_terraform_plan
+#       - deploy_function:
+#           requires:
+#             - terraform_apply

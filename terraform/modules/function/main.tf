@@ -3,17 +3,17 @@ locals {
   root_dir  = abspath("../")
 }
 
-data "archive_file" "source" {
-  type        = "zip"
-  source_dir  = local.root_dir
-  output_path = "/tmp/function-${local.timestamp}.zip"
-}
+# data "archive_file" "source" {
+#   type        = "zip"
+#   source_dir  = local.root_dir
+#   output_path = "/tmp/function-${local.timestamp}.zip"
+# }
 
-resource "google_storage_bucket_object" "zip" {
-  name   = "source.zip#${data.archive_file.source.output_md5}"
-  bucket = var.bucket_name
-  source = data.archive_file.source.output_path
-}
+# resource "google_storage_bucket_object" "zip" {
+#   name   = "source.zip#${data.archive_file.source.output_md5}"
+#   bucket = var.bucket_name
+#   source = data.archive_file.source.output_path
+# }
 
 resource "google_project_service" "cf" {
   project = var.project
@@ -31,14 +31,14 @@ resource "google_project_service" "cb" {
   disable_on_destroy         = false
 }
 
-resource "google_cloudbuild_trigger" "build_trigger" {
-  project = var.project
-  trigger_template {
-    branch_name = "main"
-    repo_name   = "github.com/actatum/approved-ball-list"
-  }
-  filename = "cloudbuild.yaml"
-}
+# resource "google_cloudbuild_trigger" "build_trigger" {
+#   project = var.project
+#   trigger_template {
+#     branch_name = "main"
+#     repo_name   = "github.com/actatum/approved-ball-list"
+#   }
+#   filename = "cloudbuild.yaml"
+# }
 
 # resource "google_cloudfunctions_function" "function" {
 #   name    = var.function_name

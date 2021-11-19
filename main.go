@@ -93,6 +93,8 @@ func init() {
 // 	fmt.Println(end.Sub(start))
 // }
 
+// ApprovedBallList is the entry point for the cloud function
+// and handles orchestrating the smaller pieces to complete the workflow
 func ApprovedBallList(ctx context.Context, _ interface{}) error {
 	// Get balls from db
 	ballsFromDB, err := db.GetAllBalls(ctx, client)

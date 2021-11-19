@@ -9,9 +9,10 @@ import (
 	"github.com/gomarkdown/markdown"
 )
 
-var Token = "OTExMDgwODE0ODgyNzI1OTM5.YZcMIQ.kbp-gqqkGdmyNuGbS4vSaKuz6SA"
-var ChannelID = "77164508690264064"
+var token = "OTExMDgwODE0ODgyNzI1OTM5.YZcMIQ.kbp-gqqkGdmyNuGbS4vSaKuz6SA"
+var channelID = "77164508690264064"
 
+// SendNewBalls sends the most recently added balls to discord
 func SendNewBalls(balls []models.Ball) error {
 	ballMap := make(map[string][]models.Ball)
 	for _, b := range balls {
@@ -41,7 +42,7 @@ func SendNewBalls(balls []models.Ball) error {
 	fmt.Println(string(output))
 
 	// Create a new Discord session using the provided bot token.
-	dg, err := discordgo.New("Bot " + Token)
+	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
 		return fmt.Errorf("discordgo.New: %w", err)
 	}
@@ -60,7 +61,7 @@ func SendNewBalls(balls []models.Ball) error {
 	// 	return fmt.Errorf("dg.ChannelMessageSendEmbed: %w", err)
 	// }
 
-	msg, err := dg.ChannelMessageSend(ChannelID, content)
+	msg, err := dg.ChannelMessageSend(channelID, content)
 	if err != nil {
 		return fmt.Errorf("dg.ChannelMessageSend: %w", err)
 	}

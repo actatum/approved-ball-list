@@ -8,6 +8,11 @@ module "storage" {
   project = var.project
 }
 
+module "service_account" {
+  source  = "./modules/service_account"
+  project = var.project
+}
+
 module "pubsub" {
   source     = "./modules/pubsub"
   project    = var.project

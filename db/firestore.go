@@ -11,6 +11,7 @@ import (
 
 const ballCollection = "balls"
 
+// GetAllBalls retreives all the balls from the firestore database
 func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, error) {
 	list := make([]models.Ball, 0)
 	iter := client.Collection(ballCollection).Documents(ctx)
@@ -32,6 +33,7 @@ func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, 
 	return list, nil
 }
 
+// AddBalls adds the new balls to the database
 func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball) error {
 
 	for i := 0; i < len(balls); i++ {
@@ -41,48 +43,10 @@ func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball
 		}
 	}
 
-	// for i := 0; i < len(balls); i++ {
-	// 	batch := client.Batch()
-	// 	ref := client.Collection(ballCollection).Doc(uuid.New().String())
-	// 	batch.Set(ref, models.Ball{
-	// 		Brand:        balls[i].Brand,
-	// 		Name:         balls[i].Name,
-	// 		DateApproved: balls[i].DateApproved,
-	// 		ImageURL:     balls[i].ImageURL,
-	// 	})
-
-	// 	// fmt.Println(i+1%500 == 0, "commiting batch")
-	// 	if (i+1)%500 == 0 {
-	// 		fmt.Println("commiting batch")
-	// 		_, err := batch.Commit(ctx)
-	// 		if err != nil {
-	// 			return fmt.Errorf("batch.Commit: %w", err)
-	// 		}
-	// 	} else if i == len(balls)-1 {
-	// 		batch.Commit(ctx)
-	// 	}
-	// }
-
-	// batch := client.Batch()
-
-	// for _, b := range balls {
-	// 	ref := client.Collection(ballCollection).Doc(uuid.New().String())
-	// 	batch.Set(ref, models.Ball{
-	// 		Brand:        b.Brand,
-	// 		Name:         b.Name,
-	// 		DateApproved: b.DateApproved,
-	// 		ImageURL:     b.ImageURL,
-	// 	})
-	// }
-
-	// _, err := batch.Commit(ctx)
-	// if err != nil {
-	// 	return fmt.Errorf("batch.Commit: %w", err)
-	// }
-
 	return nil
 }
 
+// ClearCollection drops the entire collection of bowling balls
 func ClearCollection(ctx context.Context, client *firestore.Client) error {
 	ref := client.Collection(ballCollection)
 	batchSize := 500
