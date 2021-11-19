@@ -82,7 +82,7 @@ workflows:
     jobs:
       - lint
       - test
-      - terraform_plan
+      - terraform_plan:
           requires:
             - lint
             - test
