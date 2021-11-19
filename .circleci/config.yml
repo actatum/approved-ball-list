@@ -36,7 +36,7 @@ jobs:
     executor: terraform/default
     steps:
       - checkout
-      - run: GOOGLE_APPLICATION_CREDENTIALS=$(echo $GCLOUD_SERVICE_KEY | base64 --decode)
+      - run: GOOGLE_APPLICATION_CREDENTIALS=$(echo $GCLOUD_SERVICE_KEY | base64 --d)
       - terraform/init:
           path: ./terraform
       - terraform/plan:
@@ -74,12 +74,12 @@ jobs:
 workflows:
   deploy:
     jobs:
-      - lint
-      - test
-      - terraform_plan:
-          requires:
-            - lint
-            - test
+      # - lint
+      # - test
+      - terraform_plan
+          # requires:
+          #   - lint
+          #   - test
       - approve_terraform_plan:
           name: approve_terraform_plan
           type: approval
