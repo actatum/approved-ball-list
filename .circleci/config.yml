@@ -68,23 +68,23 @@ jobs:
               --project $GCP_PROJECT
 
 
-# workflows:
-#   deploy:
-#     jobs:
-#       - lint
-#       - test
-#       - terraform_plan:
-#           requires:
-#             - lint
-#             - test
-#       - approve_terraform_plan:
-#           name: approve_terraform_plan
-#           type: approval
-#           requires:
-#             - terraform_plan
-#       - terraform_apply:
-#           requires:
-#             - approve_terraform_plan
-#       - deploy_function:
-#           requires:
-#             - terraform_apply
+workflows:
+  deploy:
+    jobs:
+      - lint
+      - test
+      - terraform_plan:
+          requires:
+            - lint
+            - test
+      - approve_terraform_plan:
+          name: approve_terraform_plan
+          type: approval
+          requires:
+            - terraform_plan
+      # - terraform_apply:
+      #     requires:
+      #       - approve_terraform_plan
+      # - deploy_function:
+      #     requires:
+      #       - terraform_apply
