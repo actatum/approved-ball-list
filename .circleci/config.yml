@@ -37,7 +37,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> ~/gcp_key.json
       - terraform/init:
           path: ./terraform
       - terraform/plan:
