@@ -35,7 +35,7 @@ jobs:
   terraform_plan:
     executor: terraform/default
     environment:
-      GOOGLE_APPLICATION_CREDENTIALS: ~/gcp_key.json
+      GOOGLE_APPLICATION_CREDENTIALS: project/gcp_key.json
     steps:
       - checkout
       - run: |
