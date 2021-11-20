@@ -45,7 +45,7 @@ jobs:
           path: ./terraform
       - terraform/plan:
           path: ./terraform
-          var: "project=${GCP_PROJECT},region=us-central1"
+          var: 'project=${GCP_PROJECT},region=us-central1'
   
   terraform_apply:
     executor: terraform/default
