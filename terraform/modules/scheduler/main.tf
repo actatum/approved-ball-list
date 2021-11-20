@@ -11,11 +11,3 @@ resource "google_cloud_scheduler_job" "job" {
     data       = base64encode("test")
   }
 }
-
-resource "google_project_service" "cs" {
-  project = var.project
-  service = "cloudscheduler.googleapis.com"
-
-  disable_dependent_services = true
-  disable_on_destroy         = false
-}

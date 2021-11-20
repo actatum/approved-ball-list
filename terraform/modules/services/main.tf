@@ -30,3 +30,10 @@ resource "google_project_service" "iam" {
   disable_on_destroy         = false
 }
 
+resource "google_project_service" "cs" {
+  project = var.project
+  service = "cloudscheduler.googleapis.com"
+
+  disable_dependent_services = true
+  disable_on_destroy         = false
+}

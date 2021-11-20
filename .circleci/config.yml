@@ -60,7 +60,7 @@ jobs:
           path: ./terraform
       - terraform/apply:
           path: ./terraform
-          var: project=${GCP_PROJECT},region=us-central1
+          var_file: terraform.tfvars
   
   deploy_function:
     docker:
