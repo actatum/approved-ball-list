@@ -1,6 +1,7 @@
 resource "google_service_account" "circleci" {
-  account_id = "circleci"
-  project    = var.project
+  account_id   = "circleci"
+  display_name = "CircleCI service account"
+  project      = var.project
 }
 
 resource "google_project_iam_binding" "circleci-cloudfunctions" {
