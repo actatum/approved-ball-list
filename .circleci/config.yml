@@ -40,7 +40,7 @@ jobs:
       - checkout
       - run: |
           echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
-          cd terraform && echo 'project = "'$GCP_PROJECT'"\nregion="us-central1"'>> terraform.tfvars
+          cd terraform && echo 'project = "'$GCP_PROJECT'" && echo 'region="us-central1"'>> terraform.tfvars
          #echo export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_key.json >> ~/.profile
       - terraform/init:
           path: ./terraform
