@@ -51,6 +51,9 @@ jobs:
     executor: terraform/default
     steps:
       - checkout
+      - run: |
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          cd terraform && echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && echo 'region = "us-central1"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/apply:
@@ -80,20 +83,20 @@ jobs:
 workflows:
   deploy:
     jobs:
-      # - lint
-      # - test
-      - terraform_plan
-          # requires:
-          #   - lint
-          #   - test
+      - lint
+      - test
+      - terraform_plan:
+          requires:
+            - lint
+            - test
       - approve_terraform_plan:
           name: approve_terraform_plan
           type: approval
           requires:
             - terraform_plan
-      # - terraform_apply:
-      #     requires:
-      #       - approve_terraform_plan
-      # - deploy_function:
-      #     requires:
-      #       - terraform_apply
+      - terraform_apply:
+          requires:
+            - approve_terraform_plan
+      - deploy_function:
+          requires:
+            - terraform_apply
