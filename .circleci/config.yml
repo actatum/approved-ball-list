@@ -40,12 +40,13 @@ jobs:
       - checkout
       - run: |
           echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          echo 'project = "${GCP_REGION}"\nregion  = "us-central1"' >> terraform.tfvars
          #echo export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_key.json >> ~/.profile
       - terraform/init:
           path: ./terraform
       - terraform/plan:
           path: ./terraform
-          var: 'project=${GCP_PROJECT},region=us-central1'
+          # var_file: terraform.tfvars
   
   terraform_apply:
     executor: terraform/default
