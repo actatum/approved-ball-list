@@ -13,7 +13,6 @@ module "services" {
   project = var.project
 }
 
-
 module "service_account" {
   source  = "./modules/service_account"
   project = var.project
