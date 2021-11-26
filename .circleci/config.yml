@@ -99,6 +99,14 @@ workflows:
       - terraform_apply:
           requires:
             - approve_terraform_plan
+          filters:
+            branches:
+              only:
+                - main
       - deploy_function:
           requires:
             - terraform_apply
+          filters:
+            branches:
+              only:
+                - main
