@@ -3,6 +3,7 @@ package p
 import (
 	"context"
 	"log"
+	"os"
 
 	"cloud.google.com/go/firestore"
 	"github.com/actatum/approved-ball-list/db"
@@ -15,7 +16,7 @@ var client *firestore.Client
 
 func init() {
 	var err error
-	client, err = firestore.NewClient(context.Background(), "project-id")
+	client, err = firestore.NewClient(context.Background(), os.Getenv("GCP_PROJECT"))
 	if err != nil {
 		log.Fatalf("firestore.NewClient: %v", err)
 	}
