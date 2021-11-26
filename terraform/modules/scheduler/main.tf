@@ -9,7 +9,7 @@ resource "google_cloud_scheduler_job" "job" {
   description = "Run once weekly to check for new approved balls"
   schedule    = "0 12 * * TUE"
   time_zone   = "UTC"
-  region      = "us-central1"
+  region      = var.region
 
   pubsub_target {
     # topic.id is the topic's full resource name.
