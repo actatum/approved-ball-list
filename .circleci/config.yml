@@ -15,6 +15,8 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.43.0
           golangci-lint --version
           make lint
+      - terraform/install:
+          terraform_version: 1.0.11
       - terraform/validate:
           path: ./terraform
       - terraform/fmt:
@@ -32,21 +34,33 @@ jobs:
   
   terraform_plan:
     executor: terraform/default
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: ../gcp_key.json
     steps:
       - checkout
+      - run: |
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          cd terraform && echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && echo 'region = "us-central1"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/plan:
           path: ./terraform
+          var_file: terraform.tfvars
   
   terraform_apply:
     executor: terraform/default
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: ../gcp_key.json
     steps:
       - checkout
+      - run: |
+          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          cd terraform && echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && echo 'region = "us-central1"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
-      - terraform/plan:
+      - terraform/apply:
           path: ./terraform
+          var_file: terraform.tfvars
   
   deploy_function:
     docker:
@@ -64,27 +78,35 @@ jobs:
             gcloud functions deploy $FUNCTION_NAME \
               --entry-point ApprovedBallList \
               --runtime go116 \
-              --trigger-topic projects/$GCP_PROJECT/topics/cron \
+              --trigger-topic cron \
               --project $GCP_PROJECT
 
 
-# workflows:
-#   deploy:
-#     jobs:
-#       - lint
-#       - test
-#       - terraform_plan:
-#           requires:
-#             - lint
-#             - test
-#       - approve_terraform_plan:
-#           name: approve_terraform_plan
-#           type: approval
-#           requires:
-#             - terraform_plan
-#       - terraform_apply:
-#           requires:
-#             - approve_terraform_plan
-#       - deploy_function:
-#           requires:
-#             - terraform_apply
+workflows:
+  deploy:
+    jobs:
+      - lint
+      - test
+      - terraform_plan:
+          requires:
+            - lint
+            - test
+      - approve_terraform_plan:
+          name: approve_terraform_plan
+          type: approval
+          requires:
+            - terraform_plan
+      - terraform_apply:
+          requires:
+            - approve_terraform_plan
+          filters:
+            branches:
+              only:
+                - main
+      - deploy_function:
+          requires:
+            - terraform_apply
+          filters:
+            branches:
+              only:
+                - main

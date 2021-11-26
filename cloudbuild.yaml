@@ -1,7 +1,0 @@
-steps:
-- name: 'gcr.io/cloud-builders/go:latest'
-  args: ['test', 'p']
-  env: 'GOPATH=.'
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'approvedBallList', '--trigger-topic', 'projects/approved-ball-list-4543/topics/cron', '--runtime', 'go113', '--entry-point', 'ApprovedBallList']
-  dir: 'functions/autodeploy'
