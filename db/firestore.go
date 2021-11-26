@@ -6,10 +6,12 @@ import (
 
 	"cloud.google.com/go/firestore"
 	"github.com/actatum/approved-ball-list/models"
+	"github.com/google/uuid"
 	"google.golang.org/api/iterator"
 )
 
 const ballCollection = "balls"
+const batchSize = 500
 
 // GetAllBalls retreives all the balls from the firestore database
 func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, error) {
@@ -35,12 +37,24 @@ func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, 
 
 // AddBalls adds the new balls to the database
 func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball) error {
-
+	batch := client.Batch()
+	currentBatch := 0
 	for i := 0; i < len(balls); i++ {
-		_, _, err := client.Collection(ballCollection).Add(ctx, balls[i])
-		if err != nil {
-			return fmt.Errorf("client.Collection.Add: %w", err)
+		currentBatch++
+		ref := client.Collection(ballCollection).Doc(uuid.NewString())
+		batch.Set(ref, balls[i])
+		if currentBatch == batchSize {
+			_, err := batch.Commit(ctx)
+			if err != nil {
+				return fmt.Errorf("batch.Commit: %w", err)
+			}
+			currentBatch = 0
+			batch = client.Batch()
 		}
+	}
+	_, err := batch.Commit(ctx)
+	if err != nil {
+		return fmt.Errorf("batch.Commit: %w", err)
 	}
 
 	return nil
@@ -49,7 +63,6 @@ func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball
 // ClearCollection drops the entire collection of bowling balls
 func ClearCollection(ctx context.Context, client *firestore.Client) error {
 	ref := client.Collection(ballCollection)
-	batchSize := 500
 	for {
 		// Get a batch of documents
 		iter := ref.Limit(batchSize).Documents(ctx)

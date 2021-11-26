@@ -1,8 +1,12 @@
-package p
+package main
 
 import (
 	"context"
+	"encoding/json"
+	"flag"
+	"fmt"
 	"log"
+	"time"
 
 	"cloud.google.com/go/firestore"
 	"github.com/actatum/approved-ball-list/db"
@@ -15,28 +19,37 @@ var client *firestore.Client
 
 func init() {
 	var err error
-	client, err = firestore.NewClient(context.Background(), "project-id")
+	client, err = firestore.NewClient(context.Background(), "approved-ball-list-4")
 	if err != nil {
 		log.Fatalf("firestore.NewClient: %v", err)
 	}
 }
 
-// ApprovedBallList is the entry point for the cloud function
-// and handles orchestrating the smaller pieces to complete the workflow
-func ApprovedBallList(ctx context.Context, _ interface{}) error {
+func main() {
+	start := time.Now()
+	clear := flag.Bool("clearDB", false, "set to true to clear database")
+	flag.Parse()
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
+	defer cancel()
+
+	if *clear {
+		err := db.ClearCollection(ctx, client)
+		if err != nil {
+			log.Fatal(err)
+		}
+		return
+	}
 	// Get balls from db
 	ballsFromDB, err := db.GetAllBalls(ctx, client)
 	if err != nil {
-		log.Println(err)
-		return err
+		log.Fatal(err)
 	}
 	log.Printf("Number of balls in database: %d\n", len(ballsFromDB))
 
 	// Get balls from usbc
 	ballsFromUSBC, err := usbc.GetBalls(ctx)
 	if err != nil {
-		log.Println(err)
-		return err
+		log.Fatal(err)
 	}
 	log.Printf("Number of approved balls from USBC: %d\n", len(ballsFromUSBC))
 
@@ -44,20 +57,42 @@ func ApprovedBallList(ctx context.Context, _ interface{}) error {
 	result := filter(ballsFromDB, ballsFromUSBC)
 	log.Printf("Number of newly approved balls: %d\n", len(result))
 
+	/* UNCOMMENT THIS TO REMOVE ONE BALL FROM DB FOR TESTING PURPOSES */
+	// iter := client.Collection("balls").Limit(1).Documents(ctx)
+	// for {
+	// 	doc, err := iter.Next()
+	// 	if err == iterator.Done {
+	// 		break
+	// 	}
+	// 	if err != nil {
+	// 		log.Fatal(err)
+	// 	}
+	// 	fmt.Println(doc.Data())
+	// 	_, err = client.Collection("balls").Doc(doc.Ref.ID).Delete(ctx)
+	// 	if err != nil {
+	// 		log.Fatal(err)
+	// 	}
+	// }
+
+	// Respond/Send To Discord
+	data, err := json.MarshalIndent(result, "", "  ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("New ball data: %v\n", string(data))
+
 	err = discord.SendNewBalls(result)
 	if err != nil {
-		log.Println(err)
-		return err
+		log.Fatal(err)
 	}
 
 	// Add new balls to db
 	err = db.AddBalls(ctx, client, result)
 	if err != nil {
-		log.Println(err)
-		return err
+		log.Fatal(err)
 	}
-
-	return nil
+	end := time.Now()
+	fmt.Println(end.Sub(start))
 }
 
 func filter(fromDB []models.Ball, fromUSBC []models.Ball) []models.Ball {
@@ -66,7 +101,7 @@ func filter(fromDB []models.Ball, fromUSBC []models.Ball) []models.Ball {
 	for _, b := range fromUSBC { // each ball from the usbc
 		found := false
 		for i := 0; i < len(fromDB); i++ {
-			if b.Name == fromDB[i].Name {
+			if b.Name == fromDB[i].Name && b.Brand == fromDB[i].Brand {
 				found = true
 				break
 			}
