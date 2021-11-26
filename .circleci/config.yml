@@ -78,7 +78,7 @@ jobs:
             gcloud functions deploy $FUNCTION_NAME \
               --entry-point ApprovedBallList \
               --runtime go116 \
-              --trigger-topic projects/$GCP_PROJECT/topics/cron \
+              --trigger-topic cron \
               --project $GCP_PROJECT
 
 

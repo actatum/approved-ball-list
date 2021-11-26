@@ -6,7 +6,7 @@ import (
 
 	"cloud.google.com/go/firestore"
 	// Imported for side effects
-	_ "github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
+	// _ "github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
 	"github.com/actatum/approved-ball-list/db"
 	"github.com/actatum/approved-ball-list/discord"
 	"github.com/actatum/approved-ball-list/models"
