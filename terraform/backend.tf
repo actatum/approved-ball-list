@@ -6,7 +6,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "approved-ball-list-13-tfstate"
+    bucket = "approved-ball-list-4-tfstate"
     prefix = "terraform/state"
   }
 }
