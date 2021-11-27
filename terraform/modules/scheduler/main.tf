@@ -8,7 +8,7 @@ resource "google_cloud_scheduler_job" "job" {
   name        = "approvedBallListJob"
   description = "Run once weekly to check for new approved balls"
   schedule    = "0 12 * * *"
-  time_zone   = "UTC"
+  time_zone   = "EST"
   region      = var.region
 
   pubsub_target {
