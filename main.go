@@ -45,6 +45,10 @@ func ApprovedBallList(ctx context.Context, _ interface{}) error {
 	result := filter(ballsFromDB, ballsFromUSBC)
 	log.Printf("Number of newly approved balls: %d\n", len(result))
 
+	if len(result) == 0 {
+		return nil
+	}
+
 	err = discord.SendNewBalls(result)
 	if err != nil {
 		log.Println(err)

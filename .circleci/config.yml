@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   go: circleci/go@1.7
   terraform: circleci/terraform@3.0.0
+  gcp-cli: circleci/gcp-cli@2.4.0
 
 jobs:
   lint:
@@ -30,6 +31,8 @@ jobs:
       - go/install:
           version: '1.16.10'
       - go/mod-download-cached
+      - gcp-cli/install
+      - run: gcloud components install beta cloud-firestore-emulator --quiet
       - run: make test
   
   terraform_plan:
