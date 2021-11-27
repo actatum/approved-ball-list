@@ -32,7 +32,7 @@ jobs:
           version: '1.16.10'
       - go/mod-download-cached
       - gcp-cli/install
-      - run: gcloud components install beta --quiet
+      - run: gcloud components install beta cloud-firestore-emulator --quiet
       - run: make test
   
   terraform_plan:
