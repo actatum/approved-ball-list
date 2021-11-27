@@ -32,7 +32,8 @@ jobs:
           version: '1.16.10'
       - go/mod-download-cached
       - gcp-cli/install
-      - gcp-cli/initialize
+      - gcp-cli/initialize:
+          google-project-id: GCP_PROJECT
       - run: make test
   
   terraform_plan:
