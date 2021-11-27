@@ -58,7 +58,8 @@ func TestMain(m *testing.M) {
 		// reading it's output
 		buf := make([]byte, 256, 256)
 		for {
-			n, err := stderr.Read(buf[:])
+			var n int
+			n, err = stderr.Read(buf[:])
 			if err != nil {
 				// until it ends
 				if err == io.EOF {
@@ -82,7 +83,9 @@ func TestMain(m *testing.M) {
 				pos := strings.Index(d, firestoreEmulatorHost+"=")
 				if pos > 0 {
 					host := d[pos+len(firestoreEmulatorHost)+1 : len(d)-1]
-					os.Setenv(firestoreEmulatorHost, host)
+					if err = os.Setenv(firestoreEmulatorHost, host); err != nil {
+						log.Fatal(err)
+					}
 				}
 			}
 		}
