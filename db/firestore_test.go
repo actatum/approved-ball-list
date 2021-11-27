@@ -23,7 +23,7 @@ import (
 const testProjectID = "test-project-id"
 const firestoreEmulatorHost = "FIRESTORE_EMULATOR_HOST"
 
-func startFirestoreEmulator() int {
+func TestMain(m *testing.M) {
 	// command to start firestore emulator
 	cmd := exec.Command("gcloud", "beta", "emulators", "firestore", "start", "--host-port=localhost")
 
@@ -38,17 +38,16 @@ func startFirestoreEmulator() int {
 	defer stderr.Close()
 
 	// start her up!
-	if err := cmd.Start(); err != nil {
+	if err = cmd.Start(); err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println("firestore emulator pid", -cmd.Process.Pid)
 
-	// ensure the process is killed when we're finished, even if an error occurs
-	// (thanks to Brian Moran for suggestion)
-	//var result int
-	//defer func() {
-	//	syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
-	//	os.Exit(result)
-	//}()
+	var result int
+	defer func() {
+		syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
+		os.Exit(result)
+	}()
 
 	// we're going to wait until it's running to start
 	var wg sync.WaitGroup
@@ -91,13 +90,10 @@ func startFirestoreEmulator() int {
 
 	// wait until the running message has been received
 	wg.Wait()
-	return -cmd.Process.Pid
+	result = m.Run()
 }
 
 func TestAddGetAndClearBalls(t *testing.T) {
-	pid := startFirestoreEmulator()
-	fmt.Println("firestore process pid", pid)
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	client, err := firestore.NewClient(ctx, testProjectID)
 	if err != nil {
@@ -108,8 +104,6 @@ func TestAddGetAndClearBalls(t *testing.T) {
 		if cerr != nil {
 			fmt.Println(cerr)
 		}
-		syscall.Kill(pid, syscall.SIGKILL)
-
 		cancel()
 	})
 
