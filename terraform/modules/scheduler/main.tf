@@ -7,7 +7,7 @@ resource "google_cloud_scheduler_job" "job" {
   project     = var.project
   name        = "approvedBallListJob"
   description = "Run once weekly to check for new approved balls"
-  schedule    = "0 12 * * TUE"
+  schedule    = "0 12 * * *"
   time_zone   = "UTC"
   region      = var.region
 

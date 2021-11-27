@@ -19,14 +19,14 @@ func SendNewBalls(balls []models.Ball) error {
 	}
 
 	// Create a new Discord session using the provided bot token.
-	dg, err := discordgo.New("Bot " + os.Getenv("DISCORD_TOKEN"))
+	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
 		return fmt.Errorf("discordgo.New: %w", err)
 	}
 
 	for _, v := range ballMap {
 		for _, b := range v {
-			_, err := dg.ChannelMessageSendEmbed(channelID, &discordgo.MessageEmbed{
+			_, err = dg.ChannelMessageSendEmbed(channelID, &discordgo.MessageEmbed{
 				Title: fmt.Sprintf("%s %s", b.Brand, b.Name),
 				Type:  discordgo.EmbedTypeImage,
 				Image: &discordgo.MessageEmbedImage{

@@ -57,6 +57,10 @@ func main() {
 	result := filter(ballsFromDB, ballsFromUSBC)
 	log.Printf("Number of newly approved balls: %d\n", len(result))
 
+	if len(result) == 0 {
+		return
+	}
+
 	/* UNCOMMENT THIS TO REMOVE ONE BALL FROM DB FOR TESTING PURPOSES */
 	// iter := client.Collection("balls").Limit(1).Documents(ctx)
 	// for {

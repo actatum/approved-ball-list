@@ -22,8 +22,8 @@ jobs:
       - terraform/fmt:
           path: ./terraform
   test:
-    machine:
-      image: ubuntu-2004:202107-02
+    docker:
+      - image: google/cloud-sdk
     resource_class: medium
     steps:
       - checkout
