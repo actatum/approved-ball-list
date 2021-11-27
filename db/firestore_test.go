@@ -25,7 +25,7 @@ const firestoreEmulatorHost = "FIRESTORE_EMULATOR_HOST"
 
 func TestMain(m *testing.M) {
 	// command to start firestore emulator
-	cmd := exec.Command("gcloud", "beta", "emulators", "firestore", "start", "--host-port=localhost")
+	cmd := exec.Command("gcloud", "beta", "emulators", "firestore", "start", "--host-port=localhost", "--quiet")
 
 	// this makes it killable
 	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}

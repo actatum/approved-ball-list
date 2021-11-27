@@ -32,8 +32,7 @@ jobs:
           version: '1.16.10'
       - go/mod-download-cached
       - gcp-cli/install
-#      - gcp-cli/initialize:
-#          google-project-id: GCP_PROJECT
+      - run: gcloud components install beta --quiet
       - run: make test
   
   terraform_plan:
