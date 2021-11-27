@@ -27,9 +27,9 @@ jobs:
     resource_class: medium
     steps:
       - checkout
-      - go/install:
-          version: '1.16.10'
-      - go/mod-download-cached
+#      - go/install:
+#          version: '1.16.10'
+#      - go/mod-download-cached
       - run: make test
   
   terraform_plan:
