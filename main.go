@@ -71,7 +71,7 @@ func filter(fromDB []models.Ball, fromUSBC []models.Ball) []models.Ball {
 	for _, b := range fromUSBC { // each ball from the usbc
 		found := false
 		for i := 0; i < len(fromDB); i++ {
-			if b.Name == fromDB[i].Name {
+			if b.Name == fromDB[i].Name && b.Brand == fromDB[i].Brand {
 				found = true
 				break
 			}
