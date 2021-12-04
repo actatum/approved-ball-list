@@ -97,7 +97,7 @@ func TestMain(m *testing.M) {
 }
 
 func TestAddGetAndClearBalls(t *testing.T) {
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 	client, err := firestore.NewClient(ctx, testProjectID)
 	if err != nil {
 		t.Fatalf("error creating firestore client: %v", err)
