@@ -56,7 +56,7 @@ func TestMain(m *testing.M) {
 	// by starting a separate go routine
 	go func() {
 		// reading it's output
-		buf := make([]byte, 256, 256)
+		buf := make([]byte, 256)
 		for {
 			var n int
 			n, err = stderr.Read(buf[:])
