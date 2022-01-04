@@ -39,7 +39,7 @@ func init() {
 		HTTPClient: nil,
 	})
 
-	repo, err := repository.NewRepository(context.Background(), cfg.GCPProjectID)
+	repo, err := repository.NewRepository(context.Background(), cfg.GCPProject)
 	if err != nil {
 		logger.Fatal("failed to initialize repository", zap.Error(err))
 	}

@@ -9,7 +9,7 @@ import (
 // AppConfig is the configuration for the entire application
 type AppConfig struct {
 	DiscordToken              string `split_words:"true"`
-	GCPProjectID              string `split_words:"true"`
+	GCPProject                string `split_words:"true"`
 	PandapackChannelID        string `split_words:"true"`
 	MotivatedChannelID        string `split_words:"true"`
 	BrunswickCentralChannelID string `split_words:"true"`
