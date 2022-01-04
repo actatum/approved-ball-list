@@ -84,7 +84,9 @@ func CronJob(ctx context.Context, _ interface{}) error {
 // MessageSender is the entry point for the message sender cloud function.
 // This function receives events when a new entry is added to the database and sends messages to the corresponding channels
 func MessageSender(ctx context.Context, e FirestoreEvent) error {
-	return svc.AlertNewBall(ctx, e.Value.Fields)
+	fmt.Println(e.Value.Fields)
+	// return svc.AlertNewBall(ctx, e.Value.Fields)
+	return nil
 }
 
 // FirestoreEvent is the payload of a Firestore event.
@@ -102,7 +104,7 @@ type FirestoreValue struct {
 	// Fields is the data for this value. The type depends on the format of your
 	// database. Log the interface{} value and inspect the result to see a JSON
 	// representation of your database fields.
-	Fields     core.Ball `json:"fields"`
-	Name       string    `json:"name"`
-	UpdateTime time.Time `json:"updateTime"`
+	Fields     interface{} `json:"fields"`
+	Name       string      `json:"name"`
+	UpdateTime time.Time   `json:"updateTime"`
 }

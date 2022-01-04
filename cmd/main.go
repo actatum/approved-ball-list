@@ -41,6 +41,11 @@ func main() {
 		logger.Fatal("failed to initialize repository", zap.Error(err))
 	}
 
+	err = repo.ClearCollection(context.Background())
+	if err != nil {
+		logger.Fatal("failed to clear collection", zap.Error(err))
+	}
+
 	svc := core.NewService(&core.Config{
 		Logger: logger,
 		DiscordChannels: map[string]core.DiscordChannel{
