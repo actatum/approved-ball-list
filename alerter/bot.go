@@ -3,6 +3,7 @@ package alerter
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/actatum/approved-ball-list/core"
 	"github.com/bwmarrin/discordgo"
@@ -36,7 +37,9 @@ func (a *Alerter) SendMessage(ctx context.Context, channelIDs []string, ball cor
 			},
 		})
 		if err != nil {
-			return fmt.Errorf("dg.ChannelMessageSendEmbed: %w", err)
+			if !strings.Contains(err.Error(), "405") {
+				return fmt.Errorf("dg.ChannelMessageSendEmbed: %w", err)
+			}
 		}
 	}
 
