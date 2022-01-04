@@ -13,9 +13,6 @@ type Alerter struct {
 	dg *discordgo.Session
 }
 
-// var token = os.Getenv("DISCORD_TOKEN")
-// var channelID = os.Getenv("CHANNEL_ID")
-
 // NewAlerter returns an alerter using the given discord bot token
 func NewAlerter(token string) (*Alerter, error) {
 	dg, err := discordgo.New("Bot " + token)
