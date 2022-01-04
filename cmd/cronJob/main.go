@@ -48,22 +48,22 @@ func init() {
 		DiscordChannels: map[string]core.DiscordChannel{
 			"motivated": {
 				Name:   "motivated",
-				ID:     cfg.Channels["motivated"],
+				ID:     cfg.MotivatedChannelID,
 				Brands: []string{"Motiv"},
 			},
 			"panda-pack": {
 				Name:   "panda-pack",
-				ID:     cfg.Channels["panda-pack"],
+				ID:     cfg.PandapackChannelID,
 				Brands: []string{"Storm", "Roto Grip", "900 Global"},
 			},
 			"brunswick-central": {
 				Name:   "brunswick-central",
-				ID:     cfg.Channels["brunswick-central"],
+				ID:     cfg.BrunswickCentralChannelID,
 				Brands: []string{"Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Radical", "Track"},
 			},
 			"personal": {
 				Name:   "personal channel",
-				ID:     cfg.Channels["personal"],
+				ID:     cfg.PersonalChannelID,
 				Brands: []string{"900 Global", "BIG Bowling", "Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Motiv", "Radical", "Roto Grip", "Storm", "Track Inc."},
 			},
 		},
