@@ -1,11 +1,11 @@
-package db
+package repository
 
 import (
 	"context"
 	"fmt"
 
 	"cloud.google.com/go/firestore"
-	"github.com/actatum/approved-ball-list/models"
+	"github.com/actatum/approved-ball-list/core"
 	"github.com/google/uuid"
 	"google.golang.org/api/iterator"
 )
@@ -13,10 +13,28 @@ import (
 const ballCollection = "balls"
 const batchSize = 500
 
+// Repository handles interfacing with the persistence in layer
+// in this case implemented by firestore
+type Repository struct {
+	client *firestore.Client
+}
+
+// NewRepository creates a new repository connected to the given GCP project via the project ID
+func NewRepository(ctx context.Context, projectID string) (*Repository, error) {
+	client, err := firestore.NewClient(ctx, projectID)
+	if err != nil {
+		return nil, fmt.Errorf("firestore.NewClient: %w", err)
+	}
+
+	return &Repository{
+		client: client,
+	}, nil
+}
+
 // GetAllBalls retreives all the balls from the firestore database
-func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, error) {
-	list := make([]models.Ball, 0)
-	iter := client.Collection(ballCollection).Documents(ctx)
+func (r *Repository) GetAllBalls(ctx context.Context) ([]core.Ball, error) {
+	list := make([]core.Ball, 0)
+	iter := r.client.Collection(ballCollection).Documents(ctx)
 	for {
 		doc, err := iter.Next()
 		if err == iterator.Done {
@@ -25,7 +43,7 @@ func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, 
 		if err != nil {
 			return nil, fmt.Errorf("iter.Next: %w", err)
 		}
-		var b models.Ball
+		var b core.Ball
 		if err = doc.DataTo(&b); err != nil {
 			return nil, fmt.Errorf("doc.DataTo: %w", err)
 		}
@@ -35,13 +53,17 @@ func GetAllBalls(ctx context.Context, client *firestore.Client) ([]models.Ball, 
 	return list, nil
 }
 
-// AddBalls adds the new balls to the database
-func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball) error {
-	batch := client.Batch()
+// InsertNewBalls adds the new balls to the database
+func (r *Repository) InsertNewBalls(ctx context.Context, balls []core.Ball) error {
+	if len(balls) == 0 {
+		return nil
+	}
+
+	batch := r.client.Batch()
 	currentBatch := 0
 	for i := 0; i < len(balls); i++ {
 		currentBatch++
-		ref := client.Collection(ballCollection).Doc(uuid.NewString())
+		ref := r.client.Collection(ballCollection).Doc(uuid.NewString())
 		batch.Set(ref, balls[i])
 		if currentBatch == batchSize {
 			_, err := batch.Commit(ctx)
@@ -49,7 +71,7 @@ func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball
 				return fmt.Errorf("batch.Commit: %w", err)
 			}
 			currentBatch = 0
-			batch = client.Batch()
+			batch = r.client.Batch()
 		}
 	}
 	_, err := batch.Commit(ctx)
@@ -61,8 +83,8 @@ func AddBalls(ctx context.Context, client *firestore.Client, balls []models.Ball
 }
 
 // ClearCollection drops the entire collection of bowling balls
-func ClearCollection(ctx context.Context, client *firestore.Client) error {
-	ref := client.Collection(ballCollection)
+func (r *Repository) ClearCollection(ctx context.Context) error {
+	ref := r.client.Collection(ballCollection)
 	for {
 		// Get a batch of documents
 		iter := ref.Limit(batchSize).Documents(ctx)
@@ -71,7 +93,7 @@ func ClearCollection(ctx context.Context, client *firestore.Client) error {
 		// Iterate through the documents, adding
 		// a delete operation for each one to a
 		// WriteBatch.
-		batch := client.Batch()
+		batch := r.client.Batch()
 		for {
 			doc, err := iter.Next()
 			if err == iterator.Done {
@@ -96,4 +118,9 @@ func ClearCollection(ctx context.Context, client *firestore.Client) error {
 			return err
 		}
 	}
+}
+
+// Close shuts down the underlying firestore client
+func (r *Repository) Close() error {
+	return r.client.Close()
 }

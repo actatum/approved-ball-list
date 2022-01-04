@@ -5,7 +5,7 @@ run:
 linters:
   disable-all: true
   enable:
-    # - errcheck
+    - errcheck
     - goimports
     - revive
     - govet
