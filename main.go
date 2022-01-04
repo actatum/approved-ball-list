@@ -104,7 +104,19 @@ type FirestoreValue struct {
 	// Fields is the data for this value. The type depends on the format of your
 	// database. Log the interface{} value and inspect the result to see a JSON
 	// representation of your database fields.
-	Fields     interface{} `json:"fields"`
-	Name       string      `json:"name"`
-	UpdateTime time.Time   `json:"updateTime"`
+	Fields     firestoreEventBall `json:"fields"`
+	Name       string             `json:"name"`
+	UpdateTime time.Time          `json:"updateTime"`
+}
+
+//map[brand:map[stringValue:Track Inc.] date_approved:map[stringValue:September 22, 2016] image_url:map[stringValue:http://usbcongress.http.internapcdn.net/usbcongress/bowl/equipandspecs/images/approvedballs/CyborgPearl.JPG] name:map[stringValue:Cyborg Pearl]]
+
+type field struct {
+	StringValue string `json:"stringValue"`
+}
+type firestoreEventBall struct {
+	Brand        field `json:"brand"`
+	DateApproved field `json:"date_approved"`
+	ImageURL     field `json:"image_url"`
+	Name         field `json:"name"`
 }
