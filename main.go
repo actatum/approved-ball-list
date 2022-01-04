@@ -1,9 +1,10 @@
-package main
+package p
 
 import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/actatum/approved-ball-list/alerter"
 	"github.com/actatum/approved-ball-list/config"
@@ -14,7 +15,9 @@ import (
 	"go.uber.org/zap"
 )
 
-func main() {
+var svc core.Service
+
+func init() {
 	logger, err := log.NewLogger()
 	if err != nil {
 		fmt.Println(err)
@@ -41,7 +44,7 @@ func main() {
 		logger.Fatal("failed to initialize repository", zap.Error(err))
 	}
 
-	svc := core.NewService(&core.Config{
+	svc = core.NewService(&core.Config{
 		Logger: logger,
 		DiscordChannels: map[string]core.DiscordChannel{
 			"motivated": {
@@ -69,100 +72,37 @@ func main() {
 		Alerter:    a,
 		USBC:       usbcClient,
 	})
-
-	if err = svc.FilterAndAddBalls(context.Background()); err != nil {
-		logger.Fatal("failed to filter and add balls", zap.Error(err))
-	}
-
-	defer func() {
-		alerterErr := a.Close()
-		if alerterErr != nil {
-			logger.Warn("error closing alerter", zap.Error(alerterErr))
-		}
-		usbcClient.Close()
-	}()
 }
 
-// import (
-// 	"context"
-// 	"log"
-// 	"os"
+// CronJob is the entry point for the cronjob cloud function.
+// This function retrieves balls from the usbc and our database compares them to find
+// new entries on the usbc approved ball list and writes the new entries to our database
+func CronJob(ctx context.Context, _ interface{}) error {
+	return svc.FilterAndAddBalls(ctx)
+}
 
-// 	"cloud.google.com/go/firestore"
-// 	"github.com/actatum/approved-ball-list/db"
-// 	"github.com/actatum/approved-ball-list/discord"
-// 	"github.com/actatum/approved-ball-list/models"
-// 	"github.com/actatum/approved-ball-list/usbc"
-// )
+// MessageSender is the entry point for the message sender cloud function.
+// This function receives events when a new entry is added to the database and sends messages to the corresponding channels
+func MessageSender(ctx context.Context, e FirestoreEvent) error {
+	return svc.AlertNewBall(ctx, e.Value.Fields)
+}
 
-// var client *firestore.Client
+// FirestoreEvent is the payload of a Firestore event.
+type FirestoreEvent struct {
+	OldValue   FirestoreValue `json:"oldValue"`
+	Value      FirestoreValue `json:"value"`
+	UpdateMask struct {
+		FieldPaths []string `json:"fieldPaths"`
+	} `json:"updateMask"`
+}
 
-// func init() {
-// 	var err error
-// 	client, err = firestore.NewClient(context.Background(), os.Getenv("GCP_PROJECT"))
-// 	if err != nil {
-// 		log.Fatalf("firestore.NewClient: %v", err)
-// 	}
-// }
-
-// // ApprovedBallList is the entry point for the cloud function
-// // and handles orchestrating the smaller pieces to complete the workflow
-// func ApprovedBallList(ctx context.Context, _ interface{}) error {
-// 	// Get balls from db
-// 	ballsFromDB, err := db.GetAllBalls(ctx, client)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-// 	log.Printf("Number of balls in database: %d\n", len(ballsFromDB))
-
-// 	// Get balls from usbc
-// 	ballsFromUSBC, err := usbc.GetBalls(ctx)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-// 	log.Printf("Number of approved balls from USBC: %d\n", len(ballsFromUSBC))
-
-// 	// filter out balls from usbc that are in db
-// 	result := filter(ballsFromDB, ballsFromUSBC)
-// 	log.Printf("Number of newly approved balls: %d\n", len(result))
-
-// 	if len(result) == 0 {
-// 		return nil
-// 	}
-
-// 	err = discord.SendNewBalls(result)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-
-// 	// Add new balls to db
-// 	err = db.AddBalls(ctx, client, result)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-
-// 	return nil
-// }
-
-// func filter(fromDB []models.Ball, fromUSBC []models.Ball) []models.Ball {
-// 	var unique []models.Ball
-
-// 	for _, b := range fromUSBC { // each ball from the usbc
-// 		found := false
-// 		for i := 0; i < len(fromDB); i++ {
-// 			if b.Name == fromDB[i].Name && b.Brand == fromDB[i].Brand {
-// 				found = true
-// 				break
-// 			}
-// 		}
-// 		if !found {
-// 			unique = append(unique, b)
-// 		}
-// 	}
-
-// 	return unique
-// }
+// FirestoreValue holds Firestore fields.
+type FirestoreValue struct {
+	CreateTime time.Time `json:"createTime"`
+	// Fields is the data for this value. The type depends on the format of your
+	// database. Log the interface{} value and inspect the result to see a JSON
+	// representation of your database fields.
+	Fields     core.Ball `json:"fields"`
+	Name       string    `json:"name"`
+	UpdateTime time.Time `json:"updateTime"`
+}
