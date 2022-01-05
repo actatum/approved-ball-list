@@ -55,7 +55,7 @@ func init() {
 			"personal": {
 				Name:   "personal channel",
 				ID:     cfg.PersonalChannelID,
-				Brands: []string{"900 Global", "BIG Bowling", "Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Motiv", "Radical", "Roto Grip", "Storm", "Track Inc."},
+				Brands: core.AllBrands,
 			},
 		},
 		Repository: repo,
