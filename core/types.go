@@ -6,6 +6,9 @@ import (
 	"go.uber.org/zap"
 )
 
+// AllBrands is a list of all active brands
+var AllBrands = []string{"900 Global", "BIG Bowling", "Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Motiv", "Radical", "Roto Grip", "Storm", "Track Inc."}
+
 // CurrentBrands is a map of active brands
 var CurrentBrands = map[string]bool{
 	"900 Global":  true,

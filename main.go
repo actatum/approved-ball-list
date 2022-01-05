@@ -47,20 +47,10 @@ func init() {
 	svc = core.NewService(&core.Config{
 		Logger: logger,
 		DiscordChannels: map[string]core.DiscordChannel{
-			"motivated": {
-				Name:   "motivated",
-				ID:     cfg.MotivatedChannelID,
-				Brands: []string{"Motiv"},
-			},
-			"panda-pack": {
-				Name:   "panda-pack",
-				ID:     cfg.PandapackChannelID,
-				Brands: []string{"Storm", "Roto Grip", "900 Global"},
-			},
-			"brunswick-central": {
-				Name:   "brunswick-central",
-				ID:     cfg.BrunswickCentralChannelID,
-				Brands: []string{"Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Radical", "Track"},
+			"usbc-approved-ball-list": {
+				Name:   "usbc-approved-ball-list",
+				ID:     cfg.USBCApprovedBallListChannelID,
+				Brands: core.AllBrands,
 			},
 			"personal": {
 				Name:   "personal channel",

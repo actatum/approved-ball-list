@@ -8,12 +8,10 @@ import (
 
 // AppConfig is the configuration for the entire application
 type AppConfig struct {
-	DiscordToken              string `split_words:"true"`
-	GCPProject                string `split_words:"true"`
-	PandapackChannelID        string `split_words:"true"`
-	MotivatedChannelID        string `split_words:"true"`
-	BrunswickCentralChannelID string `split_words:"true"`
-	PersonalChannelID         string `split_words:"true"`
+	DiscordToken                  string `split_words:"true"`
+	GCPProject                    string `split_words:"true"`
+	USBCApprovedBallListChannelID string `split_words:"true"`
+	PersonalChannelID             string `split_words:"true"`
 }
 
 // NewAppConfig returns a new app config loaded from the environment
