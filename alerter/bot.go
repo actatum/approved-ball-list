@@ -11,7 +11,12 @@ import (
 
 // Alerter handles sending messages to discord
 type Alerter struct {
-	dg *discordgo.Session
+	dg discordSession
+}
+
+type discordSession interface {
+	ChannelMessageSendEmbed(channelID string, embed *discordgo.MessageEmbed) (*discordgo.Message, error)
+	Close() error
 }
 
 // NewAlerter returns an alerter using the given discord bot token
