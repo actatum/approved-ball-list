@@ -4,7 +4,7 @@
 
 Approved Ball List is a discord bot that messages a channel when new balls are added to the [USBC approved ball list](https://www.bowl.com/approvedballlist/)
 
-The approved ball list runs as two parts deployed as separate cloud functions on Google Cloud Platform. The first cloud functions is triggered on a cron schedule every day at Noon eastern time. This function retrieves the entire list of approved balls from the USBC, filters out inactive brands and then compares the list to the current database. If there are any balls on the approved ball list that aren't in the database they are added. The second cloud function is triggered from firestore write events and for each new ball it will send a discord message to the configured channels.
+The bot runs as two parts deployed as separate cloud functions on Google Cloud Platform. The first cloud functions is triggered on a cron schedule every day at Noon eastern time. This function retrieves the entire list of approved balls from the USBC, filters out inactive brands and then compares the list to the current database. If there are any balls on the approved ball list that aren't in the database they are added. The second cloud function is triggered from firestore write events and for each new ball it will send a discord message to the configured channels.
 
 ## Motivation
 
