@@ -1,8 +1,3 @@
-# resource "google_app_engine_application" "app" {
-#   project     = var.project
-#   location_id = var.region
-# }
-
 resource "google_cloud_scheduler_job" "job" {
   project     = var.project
   name        = "approvedBallListJob"
