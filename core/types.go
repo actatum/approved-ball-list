@@ -3,7 +3,7 @@ package core
 import (
 	"encoding/xml"
 
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
 )
 
 // AllBrands is a list of all active brands
@@ -27,7 +27,7 @@ var CurrentBrands = map[string]bool{
 
 // Config is the configurable values for the service
 type Config struct {
-	Logger          *zap.Logger
+	Logger          *zerolog.Logger
 	DiscordChannels map[string]DiscordChannel // Channel name is key, Channel ID is value
 	Repository      Repository
 	Alerter         Alerter

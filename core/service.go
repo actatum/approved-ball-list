@@ -3,7 +3,7 @@ package core
 import (
 	"context"
 
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
 )
 
 // Service is the interface for the business logic
@@ -16,7 +16,7 @@ type service struct {
 	alerter         Alerter
 	repository      Repository
 	usbc            USBC
-	logger          *zap.Logger
+	logger          *zerolog.Logger
 	discordChannels map[string]DiscordChannel
 }
 
@@ -49,16 +49,16 @@ func (s service) FilterAndAddBalls(ctx context.Context) error {
 	if repoResult.Err != nil {
 		return repoResult.Err
 	}
-	s.logger.Sugar().Infof("number of balls in database: %d", len(repoResult.Balls))
+	s.logger.Info().Msgf("number of balls in database: %d", len(repoResult.Balls))
 
 	usbcResult := <-fromUSBC
 	if usbcResult.Err != nil {
 		return usbcResult.Err
 	}
-	s.logger.Sugar().Infof("number of approved balls from USBC: %d", len(usbcResult.Balls))
+	s.logger.Info().Msgf("number of approved balls from USBC: %d", len(usbcResult.Balls))
 
 	filteredBalls := s.filter(repoResult.Balls, usbcResult.Balls)
-	s.logger.Sugar().Infof("number of newly approved balls: %d", len(filteredBalls))
+	s.logger.Info().Msgf("number of newly approved balls: %d", len(filteredBalls))
 
 	if err := s.repository.InsertNewBalls(ctx, filteredBalls); err != nil {
 		return err
