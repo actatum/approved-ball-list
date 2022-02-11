@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"os"
 
 	"github.com/actatum/approved-ball-list/alerter"
 	"github.com/actatum/approved-ball-list/config"
@@ -11,24 +9,20 @@ import (
 	"github.com/actatum/approved-ball-list/log"
 	"github.com/actatum/approved-ball-list/repository"
 	"github.com/actatum/approved-ball-list/usbc"
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
 )
 
 func main() {
-	logger, err := log.NewLogger()
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	logger := log.NewLogger("approved-ball-list", zerolog.InfoLevel)
 
 	cfg, err := config.NewAppConfig()
 	if err != nil {
-		logger.Fatal("failed to initialize app config", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize app config")
 	}
 
 	a, err := alerter.NewAlerter(cfg.DiscordToken)
 	if err != nil {
-		logger.Fatal("failed to initialize alerter", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize alerter")
 	}
 
 	usbcClient := usbc.NewClient(&usbc.Config{
@@ -38,12 +32,12 @@ func main() {
 
 	repo, err := repository.NewRepository(context.Background(), cfg.GCPProject)
 	if err != nil {
-		logger.Fatal("failed to initialize repository", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize repository")
 	}
 
 	err = repo.ClearCollection(context.Background())
 	if err != nil {
-		logger.Fatal("failed to clear collection", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to clear collection")
 	}
 
 	svc := core.NewService(&core.Config{
@@ -66,13 +60,13 @@ func main() {
 	})
 
 	if err = svc.FilterAndAddBalls(context.Background()); err != nil {
-		logger.Fatal("failed to filter and add balls", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to filter and add balls")
 	}
 
 	defer func() {
 		alerterErr := a.Close()
 		if alerterErr != nil {
-			logger.Warn("error closing alerter", zap.Error(alerterErr))
+			logger.Fatal().Err(alerterErr).Msg("error closing alerter")
 		}
 		usbcClient.Close()
 	}()

@@ -5,9 +5,10 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/actatum/approved-ball-list/log"
+	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.uber.org/zap"
 )
 
 type mockAlerter struct {
@@ -65,10 +66,7 @@ func Test_service_FilterAndAddBalls(t *testing.T) {
 			ma := new(mockAlerter)
 			mr := new(mockRepository)
 			mu := new(mockUSBC)
-			logger, err := zap.NewProduction()
-			if err != nil {
-				t.Fatalf("failed to init logger: %v", err)
-			}
+			logger := log.NewLogger("test", zerolog.DebugLevel)
 			s := NewService(&Config{
 				Alerter:         ma,
 				Repository:      mr,
@@ -124,10 +122,7 @@ func Test_service_AlertNewBall(t *testing.T) {
 			ma := new(mockAlerter)
 			mr := new(mockRepository)
 			mu := new(mockUSBC)
-			logger, err := zap.NewProduction()
-			if err != nil {
-				t.Fatalf("failed to init logger: %v", err)
-			}
+			logger := log.NewLogger("test", zerolog.DebugLevel)
 			s := NewService(&Config{
 				Alerter:    ma,
 				Repository: mr,
@@ -199,10 +194,7 @@ func Test_service_filter(t *testing.T) {
 			ma := new(mockAlerter)
 			mr := new(mockRepository)
 			mu := new(mockUSBC)
-			logger, err := zap.NewProduction()
-			if err != nil {
-				t.Fatalf("failed to init logger: %v", err)
-			}
+			logger := log.NewLogger("test", zerolog.DebugLevel)
 			s := service{
 				alerter:         ma,
 				repository:      mr,

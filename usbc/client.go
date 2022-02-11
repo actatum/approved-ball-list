@@ -10,7 +10,7 @@ import (
 	"os"
 
 	"github.com/actatum/approved-ball-list/core"
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
 )
 
 const ballListURL = "https://www.bowl.com/approvedballlist/netballs.xml"
@@ -18,12 +18,12 @@ const ballListURL = "https://www.bowl.com/approvedballlist/netballs.xml"
 // Client handles interfacing with the usbc approved ball list xml api
 type Client struct {
 	client *http.Client
-	logger *zap.Logger
+	logger *zerolog.Logger
 }
 
 // Config is the configuration for the usbc api client
 type Config struct {
-	Logger     *zap.Logger
+	Logger     *zerolog.Logger
 	HTTPClient *http.Client
 }
 
@@ -52,7 +52,7 @@ func (c *Client) GetApprovedBallList(ctx context.Context) ([]core.Ball, error) {
 	defer func() {
 		closeErr := resp.Body.Close()
 		if closeErr != nil {
-			c.logger.Warn("error closing response body", zap.Error(closeErr))
+			c.logger.Warn().Err(closeErr).Msg("error closing response body")
 		}
 	}()
 
@@ -106,7 +106,7 @@ func (c *Client) writeToJSONFile(balls []core.Ball) error {
 	defer func() {
 		fileErr := file.Close()
 		if fileErr != nil {
-			c.logger.Warn("error closing file", zap.Error(err))
+			c.logger.Warn().Err(fileErr).Msg("error closing filer")
 		}
 	}()
 

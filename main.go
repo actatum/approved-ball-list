@@ -2,8 +2,6 @@ package p
 
 import (
 	"context"
-	"fmt"
-	"os"
 	"time"
 
 	"github.com/actatum/approved-ball-list/alerter"
@@ -12,26 +10,22 @@ import (
 	"github.com/actatum/approved-ball-list/log"
 	"github.com/actatum/approved-ball-list/repository"
 	"github.com/actatum/approved-ball-list/usbc"
-	"go.uber.org/zap"
+	"github.com/rs/zerolog"
 )
 
 var svc core.Service
 
 func init() {
-	logger, err := log.NewLogger()
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	logger := log.NewLogger("approved-ball-list", zerolog.InfoLevel)
 
 	cfg, err := config.NewAppConfig()
 	if err != nil {
-		logger.Fatal("failed to initialize app config", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize app config")
 	}
 
 	a, err := alerter.NewAlerter(cfg.DiscordToken)
 	if err != nil {
-		logger.Fatal("failed to initialize alerter", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize alerter")
 	}
 
 	usbcClient := usbc.NewClient(&usbc.Config{
@@ -41,7 +35,7 @@ func init() {
 
 	repo, err := repository.NewRepository(context.Background(), cfg.GCPProject)
 	if err != nil {
-		logger.Fatal("failed to initialize repository", zap.Error(err))
+		logger.Fatal().Err(err).Msg("failed to initialize repository")
 	}
 
 	svc = core.NewService(&core.Config{
