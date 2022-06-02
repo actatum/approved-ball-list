@@ -60,47 +60,45 @@ func CronJob(ctx context.Context, _ interface{}) error {
 		return err
 	}
 
-	list, cnt, err := ballService.ListBalls(ctx, abl.BallFilter{})
+	list, _, err := ballService.ListBalls(ctx, abl.BallFilter{})
 	if err != nil {
 		return err
 	}
 
-	if len(usbcList) > cnt {
-		logger.Info().Msgf("%d newly approved balls", len(usbcList)-cnt)
-		newlyApproved := make([]abl.Ball, 0)
-		for _, b := range usbcList {
-			if !contains(list, b) {
-				logger.Info().Msgf("new ball: %s %s", b.Brand, b.Name)
-				newlyApproved = append(newlyApproved, b)
-			}
+	newlyApproved := make([]abl.Ball, 0)
+	for _, b := range usbcList {
+		if !contains(list, b) {
+			logger.Info().Msgf("new ball: %s %s", b.Brand, b.Name)
+			newlyApproved = append(newlyApproved, b)
 		}
+	}
+	logger.Info().Msgf("%d newly approved balls", len(newlyApproved))
 
-		if err = ballService.AddBalls(ctx, newlyApproved...); err != nil {
-			return err
-		}
+	if err = ballService.AddBalls(ctx, newlyApproved...); err != nil {
+		return err
+	}
 
-		// send notifications
-		notifications := make([]abl.Notification, 0, len(newlyApproved))
-		for _, b := range newlyApproved {
-			notifications = append(notifications, abl.Notification{Ball: b})
+	revoked := make([]abl.Ball, 0)
+	for _, b := range list {
+		if !contains(usbcList, b) {
+			logger.Info().Msgf("ball revoked: %s %s", b.Brand, b.Name)
+			revoked = append(revoked, b)
 		}
+	}
+	logger.Info().Msgf("%d balls revoked", len(revoked))
 
-		if err = notiService.SendNotifications(ctx, notifications...); err != nil {
-			return err
-		}
+	if err = ballService.RemoveBalls(ctx, revoked...); err != nil {
+		return err
+	}
 
-	} else if len(usbcList) < cnt {
-		revoked := make([]abl.Ball, 0)
-		for _, b := range list {
-			if !contains(usbcList, b) {
-				logger.Info().Msgf("ball revoked: %s %s", b.Brand, b.Name)
-				revoked = append(revoked, b)
-			}
-		}
+	// send notifications
+	notifications := make([]abl.Notification, 0, len(newlyApproved))
+	for _, b := range newlyApproved {
+		notifications = append(notifications, abl.Notification{Ball: b})
+	}
 
-		if err = ballService.RemoveBalls(context.Background(), revoked...); err != nil {
-			return err
-		}
+	if err = notiService.SendNotifications(ctx, notifications...); err != nil {
+		return err
 	}
 
 	return nil

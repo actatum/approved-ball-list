@@ -36,6 +36,10 @@ func NewBallService(db *sqlx.DB) *BallService {
 
 // AddBalls adds a batch of balls.
 func (s *BallService) AddBalls(ctx context.Context, balls ...abl.Ball) error {
+	if len(balls) == 0 {
+		return nil
+	}
+
 	batch := make([]ball, 0, len(balls))
 	for i := range balls {
 		batch = append(batch, ball{
@@ -112,6 +116,10 @@ func (s *BallService) ListBalls(ctx context.Context, filter abl.BallFilter) ([]a
 
 // RemoveBalls removes a batch of balls.
 func (s *BallService) RemoveBalls(ctx context.Context, balls ...abl.Ball) error {
+	if len(balls) == 0 {
+		return nil
+	}
+
 	return crdbsqlx.ExecuteTx(ctx, s.db, &sql.TxOptions{}, func(tx *sqlx.Tx) error {
 		query := `DELETE FROM balls WHERE (brand, name) IN (`
 		for i := range balls {
