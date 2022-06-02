@@ -46,7 +46,7 @@ func (s *NotificationService) SendNotifications(ctx context.Context, n ...abl.No
 		_, err := s.dg.ChannelMessageSendEmbeds(id, embeds)
 		if err != nil {
 			if !strings.Contains(err.Error(), "405") {
-				return fmt.Errorf("dg.ChannelMessageSendEmbeds")
+				return fmt.Errorf("dg.ChannelMessageSendEmbeds: %v", err)
 			}
 		}
 	}

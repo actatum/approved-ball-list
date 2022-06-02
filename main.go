@@ -48,7 +48,7 @@ func init() {
 	})
 
 	ballService = cockroachdb.NewBallService(db)
-	notiService = discord.NewNotificationService(dg, []string{cfg.PersonalChannelID})
+	notiService = discord.NewNotificationService(dg, []string{cfg.PersonalChannelID, cfg.USBCApprovedBallListChannelID})
 }
 
 // CronJob is the entry point for the cronjob cloud function.
