@@ -11,6 +11,7 @@ linters:
     - govet
     - staticcheck
     - gosimple
+    - lll
 
 issues:
   exclude-use-default: false

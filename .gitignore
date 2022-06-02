@@ -2,6 +2,9 @@
 .idea
 /vendor
 .DS_Store
+cockroach-data
+gcp_key.json
+
 
 # Local .terraform directories
 **/.terraform/*

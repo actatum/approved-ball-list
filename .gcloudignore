@@ -5,3 +5,8 @@
 .golangci.yml
 Makefile
 .env
+gcp_key.json
+start-cockroach.sh
+stop-cockroach.sh
+README.md
+/cmd

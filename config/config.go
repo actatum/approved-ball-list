@@ -6,19 +6,20 @@ import (
 	"github.com/kelseyhightower/envconfig"
 )
 
-// AppConfig is the configuration for the entire application
-type AppConfig struct {
+// Config is the configuration for the entire application
+type Config struct {
+	CockroachDSN                  string `split_words:"true"`
 	DiscordToken                  string `split_words:"true"`
 	GCPProject                    string `split_words:"true"`
 	USBCApprovedBallListChannelID string `split_words:"true"`
 	PersonalChannelID             string `split_words:"true"`
 }
 
-// NewAppConfig returns a new app config loaded from the environment
-func NewAppConfig() (AppConfig, error) {
-	var c AppConfig
+// NewConfig returns a new app config loaded from the environment
+func NewConfig() (Config, error) {
+	var c Config
 	if err := envconfig.Process("", &c); err != nil {
-		return AppConfig{}, fmt.Errorf("envconfig.Process: %w", err)
+		return Config{}, fmt.Errorf("envconfig.Process: %w", err)
 	}
 
 	return c, nil
