@@ -2,156 +2,100 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"net/http"
 
-	"github.com/actatum/approved-ball-list/alerter"
-	"github.com/actatum/approved-ball-list/config"
-	"github.com/actatum/approved-ball-list/core"
-	"github.com/actatum/approved-ball-list/log"
-	"github.com/actatum/approved-ball-list/repository"
+	abl2 "github.com/actatum/approved-ball-list/abl"
+	"github.com/actatum/approved-ball-list/cockroachdb"
+	"github.com/actatum/approved-ball-list/discord"
 	"github.com/actatum/approved-ball-list/usbc"
+	"github.com/bwmarrin/discordgo"
 	"github.com/rs/zerolog"
 )
 
+// NOTE: This main is only for local testing.
+
 func main() {
-	logger := log.NewLogger("approved-ball-list", zerolog.InfoLevel)
+	logger := abl2.NewLogger("test", zerolog.DebugLevel)
 
-	cfg, err := config.NewAppConfig()
+	db, err := cockroachdb.NewDB("postgres://root@localhost:26257/defaultdb")
 	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize app config")
+		logger.Fatal().Err(err).Send()
 	}
-
-	a, err := alerter.NewAlerter(cfg.DiscordToken)
-	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize alerter")
-	}
-
-	usbcClient := usbc.NewClient(&usbc.Config{
-		Logger:     logger,
-		HTTPClient: nil,
-	})
-
-	repo, err := repository.NewRepository(context.Background(), cfg.GCPProject)
-	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize repository")
-	}
-
-	err = repo.ClearCollection(context.Background())
-	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to clear collection")
-	}
-
-	svc := core.NewService(&core.Config{
-		Logger: logger,
-		DiscordChannels: map[string]core.DiscordChannel{
-			"usbc-approved-ball-list": {
-				Name:   "usbc-approved-ball-list",
-				ID:     cfg.USBCApprovedBallListChannelID,
-				Brands: core.AllBrands,
-			},
-			"personal": {
-				Name:   "personal channel",
-				ID:     cfg.PersonalChannelID,
-				Brands: []string{"900 Global", "BIG Bowling", "Brunswick", "Columbia", "DV8", "Ebonite", "Hammer", "Motiv", "Radical", "Roto Grip", "Storm", "Track Inc."},
-			},
-		},
-		Repository: repo,
-		Alerter:    a,
-		USBC:       usbcClient,
-	})
-
-	if err = svc.FilterAndAddBalls(context.Background()); err != nil {
-		logger.Fatal().Err(err).Msg("failed to filter and add balls")
-	}
-
 	defer func() {
-		alerterErr := a.Close()
-		if alerterErr != nil {
-			logger.Fatal().Err(alerterErr).Msg("error closing alerter")
-		}
-		usbcClient.Close()
+		_ = db.Close()
 	}()
+
+	dg, err := discordgo.New("Bot OTExMDgwODE0ODgyNzI1OTM5.YZcMIQ.27D08TjxbbFs2EFBTW-a9w0NqQM")
+	if err != nil {
+		logger.Fatal().Err(err).Send()
+	}
+	defer func() {
+		_ = dg.Close()
+	}()
+
+	ballService := cockroachdb.NewBallService(db)
+	notiService := discord.NewNotificationService(dg, []string{"77164508690264064"})
+
+	client := usbc.NewClient(&usbc.Config{
+		Logger:     logger,
+		HTTPClient: &http.Client{},
+	})
+
+	usbcList, err := client.GetApprovedBallList(context.Background())
+	if err != nil {
+		logger.Fatal().Err(err).Send()
+	}
+
+	list, cnt, err := ballService.ListBalls(context.Background(), abl2.BallFilter{})
+	if err != nil {
+		logger.Fatal().Err(err).Send()
+	}
+
+	if len(usbcList) > cnt {
+		fmt.Println("NEWLY APPROVED BALL(S)")
+		newlyApproved := make([]abl2.Ball, 0)
+		for _, b := range usbcList {
+			if !contains(list, b) {
+				logger.Info().Msgf("new ball: %s %s", b.Brand, b.Name)
+				newlyApproved = append(newlyApproved, b)
+			}
+		}
+
+		if err = ballService.AddBalls(context.Background(), newlyApproved...); err != nil {
+			logger.Fatal().Err(err).Send()
+		}
+
+		// send notifications
+		notifications := make([]abl2.Notification, 0, len(newlyApproved))
+		for _, b := range newlyApproved {
+			notifications = append(notifications, abl2.Notification{Ball: b})
+		}
+
+		if err = notiService.SendNotifications(context.Background(), notifications...); err != nil {
+			logger.Fatal().Err(err).Send()
+		}
+
+	} else if len(usbcList) < cnt {
+		revoked := make([]abl2.Ball, 0)
+		for _, b := range list {
+			if !contains(usbcList, b) {
+				logger.Info().Msgf("ball revoked: %s %s", b.Brand, b.Name)
+				revoked = append(revoked, b)
+			}
+		}
+
+		if err = ballService.RemoveBalls(context.Background(), revoked...); err != nil {
+			logger.Fatal().Err(err).Send()
+		}
+	}
 }
 
-// import (
-// 	"context"
-// 	"log"
-// 	"os"
-
-// 	"cloud.google.com/go/firestore"
-// 	"github.com/actatum/approved-ball-list/db"
-// 	"github.com/actatum/approved-ball-list/discord"
-// 	"github.com/actatum/approved-ball-list/models"
-// 	"github.com/actatum/approved-ball-list/usbc"
-// )
-
-// var client *firestore.Client
-
-// func init() {
-// 	var err error
-// 	client, err = firestore.NewClient(context.Background(), os.Getenv("GCP_PROJECT"))
-// 	if err != nil {
-// 		log.Fatalf("firestore.NewClient: %v", err)
-// 	}
-// }
-
-// // ApprovedBallList is the entry point for the cloud function
-// // and handles orchestrating the smaller pieces to complete the workflow
-// func ApprovedBallList(ctx context.Context, _ interface{}) error {
-// 	// Get balls from db
-// 	ballsFromDB, err := db.GetAllBalls(ctx, client)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-// 	log.Printf("Number of balls in database: %d\n", len(ballsFromDB))
-
-// 	// Get balls from usbc
-// 	ballsFromUSBC, err := usbc.GetBalls(ctx)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-// 	log.Printf("Number of approved balls from USBC: %d\n", len(ballsFromUSBC))
-
-// 	// filter out balls from usbc that are in db
-// 	result := filter(ballsFromDB, ballsFromUSBC)
-// 	log.Printf("Number of newly approved balls: %d\n", len(result))
-
-// 	if len(result) == 0 {
-// 		return nil
-// 	}
-
-// 	err = discord.SendNewBalls(result)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-
-// 	// Add new balls to db
-// 	err = db.AddBalls(ctx, client, result)
-// 	if err != nil {
-// 		log.Println(err)
-// 		return err
-// 	}
-
-// 	return nil
-// }
-
-// func filter(fromDB []models.Ball, fromUSBC []models.Ball) []models.Ball {
-// 	var unique []models.Ball
-
-// 	for _, b := range fromUSBC { // each ball from the usbc
-// 		found := false
-// 		for i := 0; i < len(fromDB); i++ {
-// 			if b.Name == fromDB[i].Name && b.Brand == fromDB[i].Brand {
-// 				found = true
-// 				break
-// 			}
-// 		}
-// 		if !found {
-// 			unique = append(unique, b)
-// 		}
-// 	}
-
-// 	return unique
-// }
+func contains(s []abl2.Ball, b abl2.Ball) bool {
+	for _, a := range s {
+		if a.Equal(b) {
+			return true
+		}
+	}
+	return false
+}

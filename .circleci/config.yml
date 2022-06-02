@@ -8,7 +8,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.17.5
+      - image: cimg/go:1.17.11
     resource_class: medium
     steps:
       - checkout
@@ -29,7 +29,7 @@ jobs:
     steps:
       - checkout
       - go/install:
-          version: '1.17.5'
+          version: '1.17.11'
       - go/mod-download-cached
       - gcp-cli/install
       - run: make test
@@ -64,7 +64,7 @@ jobs:
           path: ./terraform
           var_file: terraform.tfvars
   
-  deploy_cronjob_function:
+  deploy_function:
     docker:
       - image: google/cloud-sdk
     steps:
@@ -82,29 +82,7 @@ jobs:
               --runtime go116 \
               --trigger-topic cron \
               --project $GCP_PROJECT \
-              --set-env-vars DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
-
-  deploy_message_sender_function:
-    docker:
-      - image: google/cloud-sdk
-    steps:
-      - checkout
-      - run:
-          name: Authorize GCloud Command Line Tool
-          command: |
-            echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
-      - run:
-          name: Deploy To Google Cloud Functions
-          command: |
-            # Deploy command
-            gcloud functions deploy messageSender \
-              --entry-point MessageSender \
-              --runtime go116 \
-              --trigger-event "providers/cloud.firestore/eventTypes/document.create" \
-              --trigger-resource "projects/$GCP_PROJECT/databases/(default)/documents/balls/{ballId}" \
-              --project $GCP_PROJECT \
-              --set-env-vars DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
-
+              --set-env-vars COCKROACH_DSN=$COCKROACH_DSN,DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
 
 workflows:
   deploy:
@@ -127,14 +105,7 @@ workflows:
             branches:
               only:
                 - main
-      - deploy_cronjob_function:
-          requires:
-            - terraform_apply
-          filters:
-            branches:
-              only:
-                - main
-      - deploy_message_sender_function:
+      - deploy_function:
           requires:
             - terraform_apply
           filters:

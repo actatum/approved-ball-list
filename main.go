@@ -1,109 +1,116 @@
-package p
+package sn
 
 import (
 	"context"
+	"net/http"
 	"time"
 
-	"github.com/actatum/approved-ball-list/alerter"
+	"github.com/actatum/approved-ball-list/abl"
+	"github.com/actatum/approved-ball-list/cockroachdb"
 	"github.com/actatum/approved-ball-list/config"
-	"github.com/actatum/approved-ball-list/core"
-	"github.com/actatum/approved-ball-list/log"
-	"github.com/actatum/approved-ball-list/repository"
+	"github.com/actatum/approved-ball-list/discord"
 	"github.com/actatum/approved-ball-list/usbc"
+	"github.com/bwmarrin/discordgo"
+	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 )
 
-var svc core.Service
+var (
+	logger      *zerolog.Logger
+	db          *sqlx.DB
+	dg          *discordgo.Session
+	usbcClient  *usbc.Client
+	ballService abl.BallService
+	notiService abl.NotificationService
+)
 
 func init() {
-	logger := log.NewLogger("approved-ball-list", zerolog.InfoLevel)
+	logger = abl.NewLogger("approved-ball-list", zerolog.InfoLevel)
 
-	cfg, err := config.NewAppConfig()
+	cfg, err := config.NewConfig()
 	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize app config")
+		logger.Fatal().Err(err).Msg("failed to init config")
 	}
 
-	a, err := alerter.NewAlerter(cfg.DiscordToken)
+	db, err = cockroachdb.NewDB(cfg.CockroachDSN)
 	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize alerter")
+		logger.Fatal().Err(err).Msg("failed to connect to db")
 	}
 
-	usbcClient := usbc.NewClient(&usbc.Config{
+	dg, err = discordgo.New("Bot " + cfg.DiscordToken)
+	if err != nil {
+		logger.Fatal().Err(err).Msg("failed to create discord session")
+	}
+
+	usbcClient = usbc.NewClient(&usbc.Config{
 		Logger:     logger,
-		HTTPClient: nil,
+		HTTPClient: &http.Client{Timeout: 5 * time.Second},
 	})
 
-	repo, err := repository.NewRepository(context.Background(), cfg.GCPProject)
-	if err != nil {
-		logger.Fatal().Err(err).Msg("failed to initialize repository")
-	}
-
-	svc = core.NewService(&core.Config{
-		Logger: logger,
-		DiscordChannels: map[string]core.DiscordChannel{
-			"usbc-approved-ball-list": {
-				Name:   "usbc-approved-ball-list",
-				ID:     cfg.USBCApprovedBallListChannelID,
-				Brands: core.AllBrands,
-			},
-			"personal": {
-				Name:   "personal channel",
-				ID:     cfg.PersonalChannelID,
-				Brands: core.AllBrands,
-			},
-		},
-		Repository: repo,
-		Alerter:    a,
-		USBC:       usbcClient,
-	})
+	ballService = cockroachdb.NewBallService(db)
+	notiService = discord.NewNotificationService(dg, []string{cfg.PersonalChannelID})
 }
 
 // CronJob is the entry point for the cronjob cloud function.
 // This function retrieves balls from the usbc and our database compares them to find
-// new entries on the usbc approved ball list and writes the new entries to our database
+// new entries on the usbc approved ball list and writes the new entries to our database.
 func CronJob(ctx context.Context, _ interface{}) error {
-	return svc.FilterAndAddBalls(ctx)
+	usbcList, err := usbcClient.GetApprovedBallList(ctx)
+	if err != nil {
+		return err
+	}
+
+	list, cnt, err := ballService.ListBalls(ctx, abl.BallFilter{})
+	if err != nil {
+		return err
+	}
+
+	if len(usbcList) > cnt {
+		logger.Info().Msgf("%d newly approved balls", len(usbcList)-cnt)
+		newlyApproved := make([]abl.Ball, 0)
+		for _, b := range usbcList {
+			if !contains(list, b) {
+				logger.Info().Msgf("new ball: %s %s", b.Brand, b.Name)
+				newlyApproved = append(newlyApproved, b)
+			}
+		}
+
+		if err = ballService.AddBalls(ctx, newlyApproved...); err != nil {
+			return err
+		}
+
+		// send notifications
+		notifications := make([]abl.Notification, 0, len(newlyApproved))
+		for _, b := range newlyApproved {
+			notifications = append(notifications, abl.Notification{Ball: b})
+		}
+
+		if err = notiService.SendNotifications(ctx, notifications...); err != nil {
+			return err
+		}
+
+	} else if len(usbcList) < cnt {
+		revoked := make([]abl.Ball, 0)
+		for _, b := range list {
+			if !contains(usbcList, b) {
+				logger.Info().Msgf("ball revoked: %s %s", b.Brand, b.Name)
+				revoked = append(revoked, b)
+			}
+		}
+
+		if err = ballService.RemoveBalls(context.Background(), revoked...); err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
 
-// MessageSender is the entry point for the message sender cloud function.
-// This function receives events when a new entry is added to the database and sends messages to the corresponding channels
-func MessageSender(ctx context.Context, e FirestoreEvent) error {
-	return svc.AlertNewBall(ctx, core.Ball{
-		Brand:        e.Value.Fields.Brand.StringValue,
-		Name:         e.Value.Fields.Name.StringValue,
-		DateApproved: e.Value.Fields.DateApproved.StringValue,
-		ImageURL:     e.Value.Fields.ImageURL.StringValue,
-	})
-}
-
-// FirestoreEvent is the payload of a Firestore event.
-type FirestoreEvent struct {
-	OldValue   FirestoreValue `json:"oldValue"`
-	Value      FirestoreValue `json:"value"`
-	UpdateMask struct {
-		FieldPaths []string `json:"fieldPaths"`
-	} `json:"updateMask"`
-}
-
-// FirestoreValue holds Firestore fields.
-type FirestoreValue struct {
-	CreateTime time.Time `json:"createTime"`
-	// Fields is the data for this value. The type depends on the format of your
-	// database. Log the interface{} value and inspect the result to see a JSON
-	// representation of your database fields.
-	Fields     firestoreEventBall `json:"fields"`
-	Name       string             `json:"name"`
-	UpdateTime time.Time          `json:"updateTime"`
-}
-
-//map[brand:map[stringValue:Track Inc.] date_approved:map[stringValue:September 22, 2016] image_url:map[stringValue:http://usbcongress.http.internapcdn.net/usbcongress/bowl/equipandspecs/images/approvedballs/CyborgPearl.JPG] name:map[stringValue:Cyborg Pearl]]
-
-type field struct {
-	StringValue string `json:"stringValue"`
-}
-type firestoreEventBall struct {
-	Brand        field `json:"brand"`
-	DateApproved field `json:"date_approved"`
-	ImageURL     field `json:"image_url"`
-	Name         field `json:"name"`
+func contains(s []abl.Ball, b abl.Ball) bool {
+	for _, a := range s {
+		if a.Equal(b) {
+			return true
+		}
+	}
+	return false
 }
