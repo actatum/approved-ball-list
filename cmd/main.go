@@ -26,7 +26,7 @@ func main() {
 		_ = db.Close()
 	}()
 
-	dg, err := discordgo.New("Bot OTExMDgwODE0ODgyNzI1OTM5.YZcMIQ.27D08TjxbbFs2EFBTW-a9w0NqQM")
+	dg, err := discordgo.New("Bot ")
 	if err != nil {
 		logger.Fatal().Err(err).Send()
 	}
