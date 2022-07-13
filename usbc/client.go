@@ -2,8 +2,8 @@ package usbc
 
 import (
 	"context"
+	"encoding/base64"
 	"encoding/json"
-	"encoding/xml"
 	"fmt"
 	"io"
 	"net/http"
@@ -14,11 +14,12 @@ import (
 
 	"github.com/actatum/approved-ball-list/abl"
 	"github.com/rs/zerolog"
+	"golang.org/x/sync/errgroup"
 )
 
 const layoutUS = "January 2, 2006"
 
-const ballListURL = "https://www.bowl.com/approvedballlist/netballs.xml"
+const ballListURL = "https://bowl.com/api/approvedballs?brandName="
 
 var monthMap = map[string]int{
 	"Jan":       1,
@@ -48,16 +49,10 @@ var monthMap = map[string]int{
 }
 
 type ball struct {
-	XMLName      xml.Name `xml:"Brand"`
-	Brand        string   `xml:"name,attr"`
-	Name         string   `xml:"BallName"`
-	DateApproved string   `xml:"DateApproved"`
-	ImageURL     string   `xml:"link"`
-}
-
-type ballList struct {
-	XMLName xml.Name `xml:"BallList"`
-	Balls   []ball   `xml:"Brand"`
+	Brand        string `json:"brandName"`
+	Name         string `json:"name"`
+	DateApproved string `json:"dateApproved"`
+	ImageURL     string `json:"image"`
 }
 
 // Client handles interfacing with the usbc approved ball list xml api
@@ -85,14 +80,44 @@ func NewClient(cfg *Config) *Client {
 
 // GetApprovedBallList retrieves the current approved ball list from the usbc xml api
 func (c *Client) GetApprovedBallList(ctx context.Context) ([]abl.Ball, error) {
-	req, err := http.NewRequestWithContext(ctx, "GET", ballListURL, nil)
+	ch := make(chan []abl.Ball, len(abl.ActiveBrands))
+	g, gCtx := errgroup.WithContext(ctx)
+
+	for brand := range abl.ActiveBrands {
+		b := brand
+		fmt.Println(b)
+		g.Go(func() error {
+			return c.getBallsByBrand(gCtx, base64.StdEncoding.EncodeToString([]byte(b)), ch)
+		})
+	}
+
+	var balls []abl.Ball
+	for i := 0; i < len(abl.ActiveBrands); i++ {
+		b := <-ch
+		balls = append(balls, b...)
+	}
+
+	if err := g.Wait(); err != nil {
+		return nil, err
+	}
+
+	return balls, nil
+}
+
+// Close shuts down idle connections
+func (c *Client) Close() {
+	c.client.CloseIdleConnections()
+}
+
+func (c *Client) getBallsByBrand(ctx context.Context, brand string, result chan<- []abl.Ball) error {
+	req, err := http.NewRequestWithContext(ctx, "GET", ballListURL+brand, nil)
 	if err != nil {
-		return nil, fmt.Errorf("http.NewRequestWithContext: %w", err)
+		return fmt.Errorf("http.NewRequestWithContext: %w", err)
 	}
 
 	resp, err := c.client.Do(req)
 	if err != nil {
-		return nil, fmt.Errorf("client.Do: %w", err)
+		return fmt.Errorf("client.Do: %w", err)
 	}
 	defer func() {
 		closeErr := resp.Body.Close()
@@ -101,41 +126,67 @@ func (c *Client) GetApprovedBallList(ctx context.Context) ([]abl.Ball, error) {
 		}
 	}()
 
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("status: %s", resp.Status)
+	}
+
 	data, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return nil, fmt.Errorf("io.ReadAll: %w", err)
+		return fmt.Errorf("io.ReadAll: %w", err)
 	}
 
-	var list ballList
-	err = xml.Unmarshal(data, &list)
+	var list []ball
+	err = json.Unmarshal(data, &list)
 	if err != nil {
-		return nil, fmt.Errorf("xml.Unmarshal: %w", err)
+		return fmt.Errorf("json.Unmarshal: %w", err)
 	}
 
-	list.Balls = filterBrands(list.Balls)
+	balls := filterBrands(list)
 
-	result := make([]abl.Ball, 0, len(list.Balls))
-	for i := range list.Balls {
+	res := make([]abl.Ball, 0, len(balls))
+	for i := range balls {
 		var approvedAt time.Time
-		approvedAt, err = parseDate(list.Balls[i].DateApproved)
+		approvedAt, err = parseDate(balls[i].DateApproved)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
-		result = append(result, abl.Ball{
-			Brand:      list.Balls[i].Brand,
-			Name:       list.Balls[i].Name,
+		res = append(res, abl.Ball{
+			Brand:      balls[i].Brand,
+			Name:       balls[i].Name,
 			ApprovedAt: approvedAt,
-			ImageURL:   list.Balls[i].ImageURL,
+			ImageURL:   balls[i].ImageURL,
 		})
 	}
 
-	return result, nil
+	result <- res
+	return nil
 }
 
-// Close shuts down idle connections
-func (c *Client) Close() {
-	c.client.CloseIdleConnections()
+func (c *Client) writeToJSONFile(balls []abl.Ball) error {
+	data, err := json.MarshalIndent(balls, "", "  ")
+	if err != nil {
+		return fmt.Errorf("json.MarshalIndent: %w", err)
+	}
+
+	file, err := os.Create("approvedBalls.json")
+	if err != nil {
+		return fmt.Errorf("os.Create: %w", err)
+	}
+
+	_, err = file.Write(data)
+	if err != nil {
+		return fmt.Errorf("file.Write: %w", err)
+	}
+
+	defer func() {
+		fileErr := file.Close()
+		if fileErr != nil {
+			c.logger.Warn().Err(fileErr).Msg("error closing filer")
+		}
+	}()
+
+	return nil
 }
 
 func filterBrands(balls []ball) []ball {
@@ -199,30 +250,4 @@ func parseDate(date string) (time.Time, error) {
 	} else {
 		return time.Time{}, fmt.Errorf("unexpected date format: %s", date)
 	}
-}
-
-func (c *Client) writeToJSONFile(balls []abl.Ball) error {
-	data, err := json.MarshalIndent(balls, "", "  ")
-	if err != nil {
-		return fmt.Errorf("json.MarshalIndent: %w", err)
-	}
-
-	file, err := os.Create("approvedBalls.json")
-	if err != nil {
-		return fmt.Errorf("os.Create: %w", err)
-	}
-
-	_, err = file.Write(data)
-	if err != nil {
-		return fmt.Errorf("file.Write: %w", err)
-	}
-
-	defer func() {
-		fileErr := file.Close()
-		if fileErr != nil {
-			c.logger.Warn().Err(fileErr).Msg("error closing filer")
-		}
-	}()
-
-	return nil
 }
