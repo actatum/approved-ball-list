@@ -85,7 +85,6 @@ func (c *Client) GetApprovedBallList(ctx context.Context) ([]abl.Ball, error) {
 
 	for brand := range abl.ActiveBrands {
 		b := brand
-		fmt.Println(b)
 		g.Go(func() error {
 			return c.getBallsByBrand(gCtx, base64.StdEncoding.EncodeToString([]byte(b)), ch)
 		})
