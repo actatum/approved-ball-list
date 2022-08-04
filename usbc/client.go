@@ -150,6 +150,10 @@ func (c *Client) getBallsByBrand(ctx context.Context, brand string, result chan<
 			return err
 		}
 
+		if strings.Contains(balls[i].ImageURL, "getmedia") {
+			balls[i].ImageURL = fixImageURL(balls[i].ImageURL)
+		}
+
 		res = append(res, abl.Ball{
 			Brand:      balls[i].Brand,
 			Name:       balls[i].Name,
@@ -198,6 +202,11 @@ func filterBrands(balls []ball) []ball {
 	}
 
 	return filtered
+}
+
+func fixImageURL(dirty string) string {
+	trimmed := strings.TrimLeft(dirty, "~")
+	return fmt.Sprintf("https://bowl.com%s", trimmed)
 }
 
 func parseDate(date string) (time.Time, error) {
