@@ -21,9 +21,6 @@ linters-settings:
     exclude-functions:
       - (io.Closer).Close
       - (io.Reader).Close
-      - (io.ReadCloser).Close
-      # - (net/http.ResponseWriter).Write
-      # - (*os.File).Close
 
 issues:
   exclude-use-default: false
