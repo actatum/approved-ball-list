@@ -9,19 +9,19 @@ resource "google_cloud_run_service" "abl" {
       containers {
         image = "us-central1-docker.pkg.dev/${var.project}/abl:latest"
         env {
-          name = ENV
+          name = "ENV"
           value = "prod" 
         }
         env {
-          name = STORAGE_BUCKET
+          name = "STORAGE_BUCKET"
           value = var.storage_bucket
         }
         env {
-          name = DISCORD_TOKEN
+          name = "DISCORD_TOKEN"
           value = var.discord_token
         }
         env {
-          name = DISCORD_CHANNELS
+          name = "DISCORD_CHANNELS"
           value = var.discord_channels
         }
       }
