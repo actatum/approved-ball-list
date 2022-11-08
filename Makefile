@@ -18,7 +18,7 @@ build-image:
 		-t ${GOOGLE_COMPUTE_REGION}-docker.pkg.dev/${GOOGLE_PROJECT_ID}/abl:${CIRCLE_SHA1} .
 
 push-image:
-	docker push ${GOOGLE_COMPUTE_REGION}-docker.pkg.dev/${GOOGLE_PROJECT_ID}/abl --all-tags
+	docker push ${GOOGLE_COMPUTE_REGION}-docker.pkg.dev/${GOOGLE_PROJECT_ID}/abl/abl --all-tags
 
 start-crdb:
 	./start-cockroach.sh

@@ -86,10 +86,6 @@ jobs:
           version: 397.0.0
       - gcp-cli/initialize
       - docker-orb/install-docker
-      # - run:
-      #     name: Authorize GCloud Command Line Tool
-      #     command: |
-      #       echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
       - run:
           name: create artifact repository
           command: |
@@ -160,14 +156,6 @@ workflows:
           <<: *main_only
           requires:
             - approve_terraform_plan
-          filters:
-            branches:
-              only:
-                - main
-      - deploy_function:
-          <<: *main_only
-          requires:
-            - terraform_apply
           filters:
             branches:
               only:
