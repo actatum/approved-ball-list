@@ -49,4 +49,14 @@ type BallService interface {
 // BallFilter is used to filter the returns from ListBalls.
 type BallFilter struct {
 	Brand *string
+
+	PageSize  int
+	PageToken string
+}
+
+// ListBallsResult collects results for listing balls.
+type ListBallsResult struct {
+	Balls         []Ball
+	NextPageToken string
+	Count         int
 }

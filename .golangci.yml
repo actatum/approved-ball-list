@@ -13,6 +13,18 @@ linters:
     - gosimple
     - lll
 
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    verbose: true
+    # exclude: 
+    exclude-functions:
+      - (io.Closer).Close
+      - (io.Reader).Close
+      - (io.ReadCloser).Close
+      # - (net/http.ResponseWriter).Write
+      # - (*os.File).Close
+
 issues:
   exclude-use-default: false
   max-issues-per-linter: 0
