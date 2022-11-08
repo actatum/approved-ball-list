@@ -47,7 +47,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          echo $GCLOUD_SERVICE_KEY >> gcp_key.json
           cd terraform && \
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
@@ -66,7 +66,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
+          echo $GCLOUD_SERVICE_KEY >> gcp_key.json
           cd terraform && \
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
