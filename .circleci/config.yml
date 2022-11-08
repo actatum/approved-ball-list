@@ -13,6 +13,7 @@ main_only: &main_only
 orbs:
   terraform: circleci/terraform@3.1.0
   gcp-cli: circleci/gcp-cli@2.4.1
+  docker-orb: circleci/docker@2.1.2
 
 jobs:
   lint:
@@ -78,10 +79,12 @@ jobs:
           var_file: terraform.tfvars
   
   build-and-push-image:
-    docker:
-      - image: google/cloud-sdk
+    executor: gcp-cli/machine
     steps:
       - checkout
+      - gcp-cli/install:
+          version: 397.0.0
+      - docker-orb/install-docker
       - run:
           name: Authorize GCloud Command Line Tool
           command: |
