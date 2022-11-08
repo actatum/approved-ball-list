@@ -15,3 +15,12 @@ resource "google_storage_bucket" "function_bucket" {
     enabled = true
   }
 }
+
+resource "google_storage_bucket" "backups" {
+  name = "${var.project}-backups"
+  location = "us-central1"
+  force_destroy = true
+  versioning {
+    enabled = true
+  }
+}

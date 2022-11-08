@@ -1,3 +1,4 @@
+// Package usbc provides an implementation of the USBCClient using the USBC json API.
 package usbc
 
 import (
@@ -12,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/actatum/approved-ball-list/abl"
+	"github.com/actatum/approved-ball-list/internal/abl"
 	"github.com/rs/zerolog"
 	"golang.org/x/sync/errgroup"
 )

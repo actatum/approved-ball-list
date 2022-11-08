@@ -1,37 +1,42 @@
 version: 2.1
 
+feature_only: &feature_only
+  filters:
+    branches:
+      ignore: main
+
+main_only: &main_only
+  filters:
+    branches:
+      only: main
+
 orbs:
-  go: circleci/go@1.7
-  terraform: circleci/terraform@3.0.0
-  gcp-cli: circleci/gcp-cli@2.4.0
+  terraform: circleci/terraform@3.1.0
+  gcp-cli: circleci/gcp-cli@2.4.1
 
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.17.10
+      - image: cimg/go:1.19.3
     resource_class: medium
     steps:
       - checkout
       - run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.43.0
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
           golangci-lint --version
           make lint
       - terraform/install:
-          terraform_version: 1.0.11
+          terraform_version: 1.3.4
       - terraform/validate:
           path: ./terraform
       - terraform/fmt:
           path: ./terraform
   test:
-    machine:
-      image: ubuntu-2004:202107-02
-    resource_class: large
+    docker:
+      - image: cimg/go:1.19.3
+    resource_class: medium
     steps:
       - checkout
-      - go/install:
-          version: '1.17.10'
-      - go/mod-download-cached
-      - gcp-cli/install
       - run: make test
   
   terraform_plan:
@@ -42,7 +47,11 @@ jobs:
       - checkout
       - run: |
           echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
-          cd terraform && echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && echo 'region = "us-central1"' >> terraform.tfvars
+          cd terraform && \
+          echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
+          echo 'region = "us-central1"' >> terraform.tfvars && \
+          echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/plan:
@@ -57,12 +66,39 @@ jobs:
       - checkout
       - run: |
           echo $GCLOUD_SERVICE_KEY | base64 -d >> gcp_key.json
-          cd terraform && echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && echo 'region = "us-central1"' >> terraform.tfvars
+          cd terraform && \
+          echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
+          echo 'region = "us-central1"' >> terraform.tfvars && \
+          echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID'"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/apply:
           path: ./terraform
           var_file: terraform.tfvars
+  
+  build-and-push-image:
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - checkout
+      - run:
+          name: Authorize GCloud Command Line Tool
+          command: |
+            echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
+      - run:
+          name: create artifact repository
+          command: |
+            gcloud artifacts repositories create abl --repository-format=docker \
+              --location=${GOOGLE_COMPUTE_REGION} || true
+      - run:
+          name: configure docker auth
+          command: gcloud auth configure-docker ${GOOGLE_COMPUTE_REGION}-docker.pkg.dev
+      - run:
+          name: build and push image
+          command: |
+            make build-image
+            make push-image
   
   deploy_function:
     docker:
@@ -85,20 +121,39 @@ jobs:
               --set-env-vars COCKROACH_DSN=$COCKROACH_DSN,DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
 
 workflows:
+  feature-branch:
+    jobs:
+      - lint:
+          <<: *feature_only
+      - test:
+          <<: *feature_only
+      - terraform_plan:
+          <<: *feature_only
+
   deploy:
     jobs:
-      - lint
-      - test
+      - lint:
+          <<: *main_only
+      - test:
+          <<: *main_only
       - terraform_plan:
+          <<: *main_only
+          requires:
+            - lint
+            - test
+      - build-and-push-image:
+          <<: *main_only
           requires:
             - lint
             - test
       - approve_terraform_plan:
+          <<: *main_only
           name: approve_terraform_plan
           type: approval
           requires:
             - terraform_plan
       - terraform_apply:
+          <<: *main_only
           requires:
             - approve_terraform_plan
           filters:
@@ -106,6 +161,7 @@ workflows:
               only:
                 - main
       - deploy_function:
+          <<: *main_only
           requires:
             - terraform_apply
           filters:
