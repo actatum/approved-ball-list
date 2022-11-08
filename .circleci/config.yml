@@ -1,5 +1,15 @@
 version: 2.1
 
+feature_only: &feature_only
+  filters:
+    branches:
+      ignore: main
+
+main_only: &main_only
+  filters:
+    branches:
+      only: main
+
 orbs:
   terraform: circleci/terraform@3.1.0
   gcp-cli: circleci/gcp-cli@2.4.1
@@ -111,32 +121,39 @@ jobs:
               --set-env-vars COCKROACH_DSN=$COCKROACH_DSN,DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
 
 workflows:
+  feature-branch:
+    jobs:
+      - lint:
+          <<: *feature_only
+      - test:
+          <<: *feature_only
+      - plan:
+          <<: *feature_only
+
   deploy:
     jobs:
-      - lint
-      - test
+      - lint:
+          <<: *main_only
+      - test:
+          <<: *main_only
       - terraform_plan:
+          <<: *main_only
           requires:
             - lint
             - test
       - build-and-push-image:
+          <<: *main_only
           requires:
             - lint
             - test
-          filters:
-            branches:
-              only:
-                - main
       - approve_terraform_plan:
+          <<: *main_only
           name: approve_terraform_plan
           type: approval
           requires:
             - terraform_plan
-          filters:
-            branches:
-              only:
-                - main
       - terraform_apply:
+          <<: *main_only
           requires:
             - approve_terraform_plan
           filters:
@@ -144,6 +161,7 @@ workflows:
               only:
                 - main
       - deploy_function:
+          <<: *main_only
           requires:
             - terraform_apply
           filters:
