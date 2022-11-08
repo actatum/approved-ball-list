@@ -28,11 +28,11 @@ module "pubsub" {
 }
 
 module "cloud_run" {
-  source = "./modules/cloud_run"
-  project = var.project
-  storage_bucket = module.storage.backups_bucket_name
+  source           = "./modules/cloud_run"
+  project          = var.project
+  storage_bucket   = module.storage.backups_bucket_name
   discord_channels = var.discord_channels
-  discord_token = var.discord_token
+  discord_token    = var.discord_token
 
   depends_on = [
     module.services,
@@ -45,7 +45,7 @@ module "scheduler" {
   project      = var.project
   pubsub_topic = module.pubsub.topic
   region       = var.region
-  uri = "${module.cloud_run.url}/v1/cron"
+  uri          = "${module.cloud_run.url}/v1/cron"
 
   depends_on = [
     module.services,
