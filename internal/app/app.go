@@ -71,8 +71,6 @@ func NewApplication(cfg Config) (*Application, error) {
 	}
 	a.logger = &logger
 
-	logger.Info().Interface("config", cfg).Send()
-
 	return a, nil
 }
 
@@ -125,7 +123,7 @@ func (a *Application) Run() error {
 	var notifier abl.Notifier
 	{
 		if a.config.Env != "local" {
-			notifier, err = discord.NewNotifier(a.config.DiscordToken, nil)
+			notifier, err = discord.NewNotifier(a.config.DiscordToken, a.config.DiscordChannels)
 			if err != nil {
 				return fmt.Errorf("NewNotifier")
 			}

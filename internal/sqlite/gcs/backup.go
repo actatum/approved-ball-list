@@ -104,9 +104,9 @@ func (bm *BackupManager) Restore(ctx context.Context, file string) (err error) {
 		return fmt.Errorf("os.Create: %w", err)
 	}
 	defer func() {
-		closeErr := f.Close()
-		if err == nil {
-			err = fmt.Errorf("f.Close: %w", closeErr)
+		e := f.Close()
+		if e != nil {
+			zerolog.Ctx(ctx).Info().Err(e).Msg("f.Close")
 		}
 	}()
 
