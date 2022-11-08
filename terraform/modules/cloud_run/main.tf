@@ -7,7 +7,7 @@ resource "google_cloud_run_service" "abl" {
   template {
     spec {
       containers {
-        image = "us-central1-docker.pkg.dev/${var.project}/abl:latest"
+        image = "us-central1-docker.pkg.dev/${var.project}/abl/abl:latest"
         env {
           name = "ENV"
           value = "prod" 
