@@ -48,6 +48,6 @@ resource "google_cloud_scheduler_job" "http_job" {
 resource "google_cloud_run_service_iam_member" "default" {
   location = var.region
   service = var.cloud_run_service_name
-  roles = "roles/run.invoker"
+  role = "roles/run.invoker"
   member = "serviceAccount:${module.service_accounts.email}"
 }

@@ -41,11 +41,12 @@ module "cloud_run" {
 }
 
 module "scheduler" {
-  source       = "./modules/scheduler"
-  project      = var.project
-  pubsub_topic = module.pubsub.topic
-  region       = var.region
-  uri          = "${module.cloud_run.url}/v1/cron"
+  source                 = "./modules/scheduler"
+  project                = var.project
+  pubsub_topic           = module.pubsub.topic
+  region                 = var.region
+  uri                    = "${module.cloud_run.url}/v1/cron"
+  cloud_run_service_name = module.cloud_run.name
 
   depends_on = [
     module.services,
