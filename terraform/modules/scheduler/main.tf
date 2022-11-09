@@ -17,6 +17,16 @@ resource "google_service_account_iam_binding" "cloud_run_invoker" {
   ]
 }
 
+module "service_accounts" {
+  source = "terraform-google-modules/service-accounts/google"
+  version = "~> 3.0"
+  project_id = var.project
+  names = "scheduler-service-account"
+  project_roles = [
+    "${var.project}=>roles/run.invoker"
+  ]
+}
+
 resource "google_cloud_scheduler_job" "job" {
   project     = var.project
   name        = "approvedBallListJob"
@@ -49,7 +59,7 @@ resource "google_cloud_scheduler_job" "http_job" {
     uri = var.uri
 
     oidc_token {
-      service_account_email = google_service_account.default.email
+      service_account_email = module.service_accounts.email
     }
   }
 
