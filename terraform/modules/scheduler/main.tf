@@ -4,6 +4,19 @@ resource "google_service_account" "default" {
   display_name = "scheduler-sa"
 }
 
+resource "google_service_account_iam_binding" "cloud_run_invoker" {
+  service_account_id = google_service_account.default.name
+  role = "roles/run.invoker"
+
+  members = [
+    "serviceAccount:${google_service_account.default.email}"
+  ]
+
+  depends_on = [
+    google_service_account.default
+  ]
+}
+
 resource "google_cloud_scheduler_job" "job" {
   project     = var.project
   name        = "approvedBallListJob"
