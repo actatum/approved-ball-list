@@ -1,3 +1,9 @@
+resource "google_service_account" "default" {
+  account_id = "scheduler-sa"
+  description = "Cloud Scheduler service account"
+  display_name = "scheduler-sa"
+}
+
 resource "google_cloud_scheduler_job" "job" {
   project     = var.project
   name        = "approvedBallListJob"
@@ -28,5 +34,13 @@ resource "google_cloud_scheduler_job" "http_job" {
   http_target {
     http_method = "GET"
     uri = var.uri
+
+    oidc_token {
+      service_account_email = google_service_account.default.email
+    }
   }
+
+  depends_on = [
+    google_service_account.default
+  ]
 }
