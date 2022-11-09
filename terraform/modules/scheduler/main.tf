@@ -21,7 +21,7 @@ module "service_accounts" {
   source = "terraform-google-modules/service-accounts/google"
   version = "~> 3.0"
   project_id = var.project
-  names = "scheduler-service-account"
+  names = ["scheduler-service-account"]
   project_roles = [
     "${var.project}=>roles/run.invoker"
   ]
