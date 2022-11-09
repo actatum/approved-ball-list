@@ -1,22 +1,3 @@
-resource "google_service_account" "default" {
-  account_id = "scheduler-sa"
-  description = "Cloud Scheduler service account"
-  display_name = "scheduler-sa"
-}
-
-resource "google_service_account_iam_binding" "cloud_run_invoker" {
-  service_account_id = google_service_account.default.name
-  role = "roles/run.invoker"
-
-  members = [
-    "serviceAccount:${google_service_account.default.email}"
-  ]
-
-  depends_on = [
-    google_service_account.default
-  ]
-}
-
 module "service_accounts" {
   source = "terraform-google-modules/service-accounts/google"
   version = "~> 3.0"
@@ -62,8 +43,4 @@ resource "google_cloud_scheduler_job" "http_job" {
       service_account_email = module.service_accounts.email
     }
   }
-
-  depends_on = [
-    google_service_account.default
-  ]
 }
