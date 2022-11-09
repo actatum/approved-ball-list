@@ -33,6 +33,7 @@ module "cloud_run" {
   storage_bucket   = module.storage.backups_bucket_name
   discord_channels = var.discord_channels
   discord_token    = var.discord_token
+  image_tag        = var.circle_sha1
 
   depends_on = [
     module.services,

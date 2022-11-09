@@ -13,3 +13,7 @@ variable "discord_token" {
 variable "discord_channels" {
   default = ""
 }
+
+variable "circle_sha1" {
+  default = ""
+}
