@@ -193,12 +193,8 @@ func (r *Repository) Close() error {
 		return nil
 	}
 
-	start := time.Now()
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	defer func(start time.Time) {
-		fmt.Println(time.Since(start))
-	}(start)
 
 	return r.backupManager.Backup(ctx, r.file)
 }

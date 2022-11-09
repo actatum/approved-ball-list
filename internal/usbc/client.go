@@ -216,7 +216,7 @@ func parseDate(date string) (time.Time, error) {
 	if strings.Contains(date, ",") {
 		t, err := time.Parse(layoutUS, date)
 		if err != nil {
-			fmt.Println(err)
+			return time.Time{}, fmt.Errorf("time.Parse: %w", err)
 		}
 		return t, err
 	} else if strings.Contains(date, "-") {
