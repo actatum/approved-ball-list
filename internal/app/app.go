@@ -46,10 +46,9 @@ type Config struct {
 
 // Application ...
 type Application struct {
-	config     Config
-	service    abl.Service
-	httpServer *http.Server
-	logger     *zerolog.Logger
+	config  Config
+	service abl.Service
+	logger  *zerolog.Logger
 }
 
 // NewApplication returns a new instance of the application.
@@ -125,7 +124,7 @@ func (a *Application) Run() error {
 		if a.config.Env != "local" {
 			notifier, err = discord.NewNotifier(a.config.DiscordToken, a.config.DiscordChannels)
 			if err != nil {
-				return fmt.Errorf("NewNotifier")
+				return fmt.Errorf("NewNotifier: %w", err)
 			}
 		} else {
 			notifier = &mocks.NotifierMock{
@@ -165,18 +164,16 @@ func (a *Application) Run() error {
 		WriteTimeout: 30 * time.Second,
 	}
 
-	a.httpServer = srv
-
 	var g run.Group
 	{
 		// HTTP Server
 		g.Add(func() error {
 			a.logger.Info().Msgf("👋 HTTP server listening on :%s", a.config.Port)
-			return a.httpServer.ListenAndServe()
+			return srv.ListenAndServe()
 		}, func(err error) {
 			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 			defer cancel()
-			if err := a.httpServer.Shutdown(ctx); err != nil {
+			if err := srv.Shutdown(ctx); err != nil {
 				a.logger.Error().Err(err).Msg("failed to shutdown HTTP server")
 			}
 		})
