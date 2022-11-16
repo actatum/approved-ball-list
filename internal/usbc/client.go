@@ -73,6 +73,7 @@ func NewClient(cfg *Config) *Client {
 	if cfg.HTTPClient == nil {
 		cfg.HTTPClient = &http.Client{}
 	}
+	cfg.HTTPClient.Timeout = 10 * time.Second
 	return &Client{
 		client: cfg.HTTPClient,
 		logger: cfg.Logger,
