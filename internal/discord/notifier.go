@@ -5,15 +5,12 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	"time"
 
 	"github.com/actatum/approved-ball-list/internal/abl"
 	"github.com/bwmarrin/discordgo"
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
 )
 
-const layoutUS = "January 2, 2006"
+// const layoutUS = "January 2, 2006"
 
 // Notifier handles sending notification messages to discord.
 type Notifier struct {
@@ -59,16 +56,16 @@ func (n *Notifier) Notify(ctx context.Context, notifications []abl.Notification)
 	}
 
 	for _, id := range n.channels {
-		msgType := notifications[0].Type
-		caser := cases.Title(language.AmericanEnglish)
-		_, err := n.dg.ChannelMessageSend(
-			id,
-			fmt.Sprintf("%s Balls: %s", caser.String(string(msgType)), time.Now().Format(layoutUS)),
-		)
-		if err != nil {
-			return fmt.Errorf("dg.ChannelMessageSend: %w", err)
-		}
-		_, err = n.dg.ChannelMessageSendEmbeds(id, embeds)
+		// msgType := notifications[0].Type
+		// caser := cases.Title(language.AmericanEnglish)
+		// _, err := n.dg.ChannelMessageSend(
+		// 	id,
+		// 	fmt.Sprintf("%s Balls: %s", caser.String(string(msgType)), time.Now().Format(layoutUS)),
+		// )
+		// if err != nil {
+		// 	return fmt.Errorf("dg.ChannelMessageSend: %w", err)
+		// }
+		_, err := n.dg.ChannelMessageSendEmbeds(id, embeds)
 		if err != nil {
 			if !strings.Contains(err.Error(), "405") {
 				return fmt.Errorf("dg.ChannelMessageSendEmbeds: %w", err)

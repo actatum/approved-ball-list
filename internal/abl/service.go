@@ -83,17 +83,17 @@ func (s service) RefreshBalls(ctx context.Context) error {
 		return fmt.Errorf("notifier.Notify: %w", err)
 	}
 
-	revocationNotifications := make([]Notification, 0, len(revoked))
-	for _, ball := range revoked {
-		revocationNotifications = append(revocationNotifications, Notification{
-			Type: NotificationTypeRevoked,
-			Ball: ball,
-		})
-	}
+	// revocationNotifications := make([]Notification, 0, len(revoked))
+	// for _, ball := range revoked {
+	// 	revocationNotifications = append(revocationNotifications, Notification{
+	// 		Type: NotificationTypeRevoked,
+	// 		Ball: ball,
+	// 	})
+	// }
 
-	if err = s.notifier.Notify(ctx, revocationNotifications); err != nil {
-		return fmt.Errorf("notifier.Notify: %w", err)
-	}
+	// if err = s.notifier.Notify(ctx, revocationNotifications); err != nil {
+	// 	return fmt.Errorf("notifier.Notify: %w", err)
+	// }
 
 	return nil
 }
