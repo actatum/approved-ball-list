@@ -5,40 +5,48 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/actatum/approved-ball-list/internal/abl"
+
 	"github.com/actatum/errs/httperr"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/rs/zerolog"
 )
 
+type handler struct {
+	svc    abl.Service
+	logger *zerolog.Logger
+	cfg    config
+}
+
 type envelope map[string]any
 
-func (a *Application) routes(logger *zerolog.Logger) *chi.Mux {
+func (h *handler) routes() *chi.Mux {
 	r := chi.NewRouter()
 
 	r.Use(
-		requestLogger(logger),
+		requestLogger(h.logger),
 		middleware.StripSlashes,
 		middleware.Recoverer,
 	)
 
-	r.Get("/v1/health", a.handleHealth())
-	r.Get("/v1/cron", a.handleCronJob())
+	r.Get("/v1/health", h.handleHealth())
+	r.Get("/v1/cron", h.handleCronJob())
 
 	return r
 }
 
-func (a *Application) handleHealth() http.HandlerFunc {
+func (h *handler) handleHealth() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		response := envelope{
 			"status": "available",
 			"system_info": map[string]string{
-				"environment": a.config.Env,
+				"environment": h.cfg.Env,
 				"version":     "v1",
 			},
 		}
 
-		err := a.renderJSON(w, http.StatusOK, response, nil)
+		err := h.renderJSON(w, http.StatusOK, response, nil)
 		if err != nil {
 			zerolog.Ctx(r.Context()).Error().Err(err).Send()
 			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -46,9 +54,9 @@ func (a *Application) handleHealth() http.HandlerFunc {
 	}
 }
 
-func (a *Application) handleCronJob() http.HandlerFunc {
+func (h *handler) handleCronJob() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		err := a.service.RefreshBalls(r.Context())
+		err := h.svc.RefreshBalls(r.Context())
 		if err != nil {
 			zerolog.Ctx(r.Context()).Error().Err(err).Send()
 			// sentry it?
@@ -60,7 +68,7 @@ func (a *Application) handleCronJob() http.HandlerFunc {
 	}
 }
 
-func (a *Application) renderJSON(w http.ResponseWriter, status int, response envelope, headers http.Header) error {
+func (h *handler) renderJSON(w http.ResponseWriter, status int, response envelope, headers http.Header) error {
 	buf := &bytes.Buffer{}
 	enc := json.NewEncoder(buf)
 	enc.SetEscapeHTML(true)

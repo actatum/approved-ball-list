@@ -3,6 +3,7 @@ package app
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"net/http"
 	"os"
@@ -35,8 +36,8 @@ func (c *Channels) Set(value string) error {
 	return nil
 }
 
-// Config holds the configurable values for the service.
-type Config struct {
+// config holds the configurable values for the service.
+type config struct {
 	Env             string
 	Port            string
 	StorageBucket   string
@@ -44,18 +45,23 @@ type Config struct {
 	DiscordChannels Channels
 }
 
-// Application ...
-type Application struct {
-	config  Config
-	service abl.Service
-	logger  *zerolog.Logger
+func newConfig() config {
+	var cfg config
+	cfg.DiscordChannels = strings.Split(lookupEnv("DISCORD_CHANNELS", ""), ",")
+	flag.StringVar(&cfg.Env, "env", lookupEnv("ENV", "local"), "environment service is running in")
+	flag.StringVar(&cfg.Port, "port", lookupEnv("PORT", "8080"), "http server port")
+	flag.StringVar(&cfg.StorageBucket, "storage-bucket", lookupEnv("STORAGE_BUCKET", ""), "gcp storage bucket for backups")
+	flag.StringVar(&cfg.DiscordToken, "discord-token", lookupEnv("DISCORD_TOKEN", ""), "discord bot token")
+	flag.Var(&cfg.DiscordChannels, "discord-channels", "discord channels to notify")
+	flag.Parse()
+
+	return cfg
 }
 
-// NewApplication returns a new instance of the application.
-func NewApplication(cfg Config) (*Application, error) {
-	a := &Application{
-		config: cfg,
-	}
+// Run runs the application.
+func Run() error {
+	cfg := newConfig()
+
 	zerolog.TimeFieldFormat = time.RFC3339
 
 	var logger zerolog.Logger
@@ -68,19 +74,12 @@ func NewApplication(cfg Config) (*Application, error) {
 				Level(zerolog.TraceLevel).With().Timestamp().Logger().Hook(&severityHook{})
 		}
 	}
-	a.logger = &logger
 
-	return a, nil
-}
-
-// Run runs the application.
-func (a *Application) Run() error {
 	var err error
-
 	var bm sqlite.BackupManager
 	{
-		if a.config.Env != "local" {
-			bm, err = gcs.NewBackupManager(a.config.StorageBucket)
+		if cfg.Env != "local" {
+			bm, err = gcs.NewBackupManager(cfg.StorageBucket)
 			if err != nil {
 				return fmt.Errorf("NewBackupManager: %w", err)
 			}
@@ -101,7 +100,7 @@ func (a *Application) Run() error {
 	defer func() {
 		e := bm.Close()
 		if e != nil {
-			a.logger.Info().Err(e).Msg("BackupManager.Close")
+			logger.Info().Err(e).Msg("BackupManager.Close")
 		}
 	}()
 
@@ -115,14 +114,14 @@ func (a *Application) Run() error {
 	defer func() {
 		e := repo.Close()
 		if e != nil {
-			a.logger.Info().Err(e).Msg("Repository.Close")
+			logger.Info().Err(e).Msg("Repository.Close")
 		}
 	}()
 
 	var notifier abl.Notifier
 	{
-		if a.config.Env != "local" {
-			notifier, err = discord.NewNotifier(a.config.DiscordToken, a.config.DiscordChannels)
+		if cfg.Env != "local" {
+			notifier, err = discord.NewNotifier(cfg.DiscordToken, cfg.DiscordChannels)
 			if err != nil {
 				return fmt.Errorf("NewNotifier: %w", err)
 			}
@@ -140,7 +139,7 @@ func (a *Application) Run() error {
 	defer func() {
 		e := notifier.Close()
 		if e != nil {
-			a.logger.Info().Err(e).Msg("Notifier.Close")
+			logger.Info().Err(e).Msg("Notifier.Close")
 		}
 	}()
 
@@ -154,11 +153,16 @@ func (a *Application) Run() error {
 	defer usbcClient.Close()
 
 	svc := abl.NewService(repo, notifier, usbcClient)
-	a.service = svc
+
+	h := &handler{
+		svc:    svc,
+		logger: &logger,
+		cfg:    cfg,
+	}
 
 	srv := &http.Server{
-		Addr:         fmt.Sprintf(":%s", a.config.Port),
-		Handler:      a.routes(a.logger),
+		Addr:         fmt.Sprintf(":%s", h.cfg.Port),
+		Handler:      h.routes(),
 		IdleTimeout:  time.Minute,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 30 * time.Second,
@@ -168,13 +172,13 @@ func (a *Application) Run() error {
 	{
 		// HTTP Server
 		g.Add(func() error {
-			a.logger.Info().Msgf("👋 HTTP server listening on :%s", a.config.Port)
+			h.logger.Info().Msgf("👋 HTTP server listening on :%s", h.cfg.Port)
 			return srv.ListenAndServe()
 		}, func(err error) {
 			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 			defer cancel()
 			if err := srv.Shutdown(ctx); err != nil {
-				a.logger.Error().Err(err).Msg("failed to shutdown HTTP server")
+				h.logger.Error().Err(err).Msg("failed to shutdown HTTP server")
 			}
 		})
 	}
@@ -196,4 +200,12 @@ func (a *Application) Run() error {
 	}
 
 	return g.Run()
+}
+
+func lookupEnv(key string, defaultValue string) string {
+	if val, ok := os.LookupEnv(key); ok {
+		return val
+	}
+
+	return defaultValue
 }
