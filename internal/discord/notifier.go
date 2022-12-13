@@ -20,7 +20,6 @@ type Notifier struct {
 
 // NewNotifier returns a new instance of Notifier.
 func NewNotifier(token string, channels []string) (*Notifier, error) {
-	fmt.Printf("Bot %s", token)
 	dg, err := discordgo.New(fmt.Sprintf("Bot %s", token))
 	if err != nil {
 		return nil, err
