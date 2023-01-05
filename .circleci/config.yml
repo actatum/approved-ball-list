@@ -72,7 +72,7 @@ jobs:
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
           echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
-          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
           echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
@@ -101,26 +101,6 @@ jobs:
           command: |
             make build-image
             make push-image
-  
-  deploy_function:
-    docker:
-      - image: google/cloud-sdk
-    steps:
-      - checkout
-      - run:
-          name: Authorize GCloud Command Line Tool
-          command: |
-            echo $GCLOUD_SERVICE_KEY | base64 --decode | gcloud auth activate-service-account --key-file=-
-      - run:
-          name: Deploy To Google Cloud Functions
-          command: |
-            # Deploy command
-            gcloud functions deploy cronJob \
-              --entry-point CronJob \
-              --runtime go116 \
-              --trigger-topic cron \
-              --project $GCP_PROJECT \
-              --set-env-vars COCKROACH_DSN=$COCKROACH_DSN,DISCORD_TOKEN=$DISCORD_TOKEN,PERSONAL_CHANNEL_ID=$PERSONAL_CHANNEL_ID,USBC_APPROVED_BALL_LIST_CHANNEL_ID=$USBC_APPROVED_BALL_LIST_CHANNEL_ID,GCP_PROJECT=$GCP_PROJECT
 
 workflows:
   feature-branch:
