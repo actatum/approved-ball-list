@@ -81,11 +81,12 @@ jobs:
           var_file: terraform.tfvars
   
   build-and-push-image:
-    executor: gcp-cli/machine
+    machine:
+      image: ubuntu-2004:current
     steps:
       - checkout
       - gcp-cli/install:
-          version: 397.0.0
+          version: 412.0.0
       - gcp-cli/initialize
       - docker-orb/install-docker
       - run:
