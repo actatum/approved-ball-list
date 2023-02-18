@@ -35,19 +35,50 @@ func NewService(repo Repository, notifier Notifier, usbcClient USBCClient) Servi
 func (s service) RefreshBalls(ctx context.Context) error {
 	logger := zerolog.Ctx(ctx)
 
-	usbcList, err := s.usbcClient.GetApprovedBallList(ctx)
-	if err != nil {
-		return fmt.Errorf("ubscClient.GetApprovedBallList: %w", err)
+	type usbcResp struct {
+		Balls []Ball
+		Err   error
 	}
 
-	repoList, err := s.repo.ListBalls(ctx, BallFilter{})
-	if err != nil {
-		return fmt.Errorf("repo.ListBalls: %w", err)
+	usbcCh := make(chan usbcResp)
+
+	go func(ch chan usbcResp) {
+		usbcList, err := s.usbcClient.GetApprovedBallList(ctx)
+
+		ch <- usbcResp{
+			Balls: usbcList,
+			Err:   err,
+		}
+	}(usbcCh)
+
+	type repoResp struct {
+		Result ListBallsResult
+		Err    error
+	}
+
+	repoCh := make(chan repoResp)
+
+	go func(ch chan repoResp) {
+		repoList, err := s.repo.ListBalls(ctx, BallFilter{})
+		ch <- repoResp{
+			Result: repoList,
+			Err:    err,
+		}
+	}(repoCh)
+
+	repoResult := <-repoCh
+	if repoResult.Err != nil {
+		return fmt.Errorf("repo.ListBalls: %w", repoResult.Err)
+	}
+
+	usbcResult := <-usbcCh
+	if usbcResult.Err != nil {
+		return fmt.Errorf("ubscClient.GetApprovedBallList: %w", usbcResult.Err)
 	}
 
 	approved := make([]Ball, 0)
-	for _, ball := range usbcList {
-		if !contains(repoList.Balls, ball) {
+	for _, ball := range usbcResult.Balls {
+		if !contains(repoResult.Result.Balls, ball) {
 			logger.Info().Msgf("approved ball: %s %s", ball.Brand, ball.Name)
 			approved = append(approved, ball)
 		}
@@ -59,8 +90,8 @@ func (s service) RefreshBalls(ctx context.Context) error {
 	}
 
 	revoked := make([]Ball, 0)
-	for _, ball := range repoList.Balls {
-		if !contains(usbcList, ball) {
+	for _, ball := range repoResult.Result.Balls {
+		if !contains(usbcResult.Balls, ball) {
 			logger.Info().Msgf("revoked ball: %s %s", ball.Brand, ball.Name)
 			revoked = append(revoked, ball)
 		}
@@ -79,7 +110,7 @@ func (s service) RefreshBalls(ctx context.Context) error {
 		})
 	}
 
-	if err = s.notifier.Notify(ctx, approvalNotifications); err != nil {
+	if err := s.notifier.Notify(ctx, approvalNotifications); err != nil {
 		return fmt.Errorf("notifier.Notify: %w", err)
 	}
 

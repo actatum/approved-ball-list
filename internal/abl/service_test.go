@@ -367,7 +367,7 @@ func Test_service_RefreshBalls(t *testing.T) {
 			wantErr: true,
 			want: expectations{
 				repoAddCalls:        0,
-				repoListCalls:       0,
+				repoListCalls:       1,
 				repoRemoveCalls:     0,
 				notifierNotifyCalls: 0,
 				usbcClientGetCalls:  1,
