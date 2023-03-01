@@ -11,9 +11,9 @@ import (
 
 	"github.com/actatum/approved-ball-list/internal/abl"
 	"github.com/actatum/approved-ball-list/internal/discord"
+	"github.com/actatum/approved-ball-list/internal/gcs"
 	"github.com/actatum/approved-ball-list/internal/mocks"
 	"github.com/actatum/approved-ball-list/internal/sqlite"
-	"github.com/actatum/approved-ball-list/internal/sqlite/gcs"
 	"github.com/actatum/approved-ball-list/internal/usbc"
 	"github.com/rs/zerolog"
 	"github.com/urfave/cli/v2"

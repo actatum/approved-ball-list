@@ -14,9 +14,9 @@ import (
 
 	"github.com/actatum/approved-ball-list/internal/abl"
 	"github.com/actatum/approved-ball-list/internal/discord"
+	"github.com/actatum/approved-ball-list/internal/gcs"
 	"github.com/actatum/approved-ball-list/internal/mocks"
 	"github.com/actatum/approved-ball-list/internal/sqlite"
-	"github.com/actatum/approved-ball-list/internal/sqlite/gcs"
 	"github.com/actatum/approved-ball-list/internal/usbc"
 	"github.com/oklog/run"
 	"github.com/rs/zerolog"
@@ -86,9 +86,11 @@ func Run() error {
 		} else {
 			bm = &mocks.BackupManagerMock{
 				BackupFunc: func(ctx context.Context, file string) error {
+					logger.Info().Msg("calling backup")
 					return nil
 				},
 				RestoreFunc: func(ctx context.Context, file string) error {
+					logger.Info().Msg("calling restore")
 					return nil
 				},
 				CloseFunc: func() error {

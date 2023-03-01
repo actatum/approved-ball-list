@@ -11,9 +11,9 @@ main_only: &main_only
       only: main
 
 orbs:
-  terraform: circleci/terraform@3.1.0
-  gcp-cli: circleci/gcp-cli@2.4.1
-  docker-orb: circleci/docker@2.1.2
+  terraform: circleci/terraform@3.2.0
+  gcp-cli: circleci/gcp-cli@3.0.1
+  docker-orb: circleci/docker@2.2.0
 
 jobs:
   lint:
@@ -85,9 +85,8 @@ jobs:
       image: ubuntu-2004:current
     steps:
       - checkout
-      - gcp-cli/install:
+      - gcp-cli/setup:
           version: 412.0.0
-      - gcp-cli/initialize
       - docker-orb/install-docker
       - run:
           name: create artifact repository
