@@ -17,16 +17,6 @@ module "storage" {
   ]
 }
 
-module "pubsub" {
-  source     = "./modules/pubsub"
-  project    = var.project
-  topic_name = "cron"
-
-  depends_on = [
-    module.services
-  ]
-}
-
 module "cloud_run" {
   source           = "./modules/cloud_run"
   project          = var.project
