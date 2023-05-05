@@ -11,7 +11,7 @@ main_only: &main_only
       only: main
 
 orbs:
-  terraform: circleci/terraform@3.2.0
+  terraform: circleci/terraform@3.2.1
   gcp-cli: circleci/gcp-cli@3.0.1
   docker-orb: circleci/docker@2.2.0
 
@@ -52,8 +52,10 @@ jobs:
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
           echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
-          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
-          echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars
+          # echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars && \
+          echo 'cockroachdb_url = "'$COCKROACHDB_URL'"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/plan:
@@ -72,8 +74,10 @@ jobs:
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
           echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
-          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
-          echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars
+          # echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars && \
+          echo 'cockroachdb_url = "'$COCKROACHDB_URL'"' >> terraform.tfvars
       - terraform/init:
           path: ./terraform
       - terraform/apply:

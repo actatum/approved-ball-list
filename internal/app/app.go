@@ -13,13 +13,16 @@ import (
 	"time"
 
 	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/crdb"
 	"github.com/actatum/approved-ball-list/internal/discord"
-	"github.com/actatum/approved-ball-list/internal/gcs"
 	"github.com/actatum/approved-ball-list/internal/mocks"
-	"github.com/actatum/approved-ball-list/internal/sqlite"
 	"github.com/actatum/approved-ball-list/internal/usbc"
+	"github.com/jmoiron/sqlx"
 	"github.com/oklog/run"
 	"github.com/rs/zerolog"
+
+	// imported for side effects
+	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
 // Channels represents a slice of strings with discord channel id's.
@@ -43,6 +46,7 @@ type config struct {
 	StorageBucket   string
 	DiscordToken    string
 	DiscordChannels Channels
+	CockroachDBURL  string
 }
 
 func newConfig() config {
@@ -52,6 +56,7 @@ func newConfig() config {
 	flag.StringVar(&cfg.Port, "port", lookupEnv("PORT", "8080"), "http server port")
 	flag.StringVar(&cfg.StorageBucket, "storage-bucket", lookupEnv("STORAGE_BUCKET", ""), "gcp storage bucket for backups")
 	flag.StringVar(&cfg.DiscordToken, "discord-token", lookupEnv("DISCORD_TOKEN", ""), "discord bot token")
+	flag.StringVar(&cfg.CockroachDBURL, "crdb-url", lookupEnv("COCKROACHDB_URL", ""), "cockroachdb url")
 	flag.Var(&cfg.DiscordChannels, "discord-channels", "discord channels to notify")
 	flag.Parse()
 
@@ -75,53 +80,28 @@ func Run() error {
 		}
 	}
 
-	var err error
-	var bm sqlite.BackupManager
+	var db *sqlx.DB
 	{
-		if cfg.Env != "local" {
-			bm, err = gcs.NewBackupManager(cfg.StorageBucket)
-			if err != nil {
-				return fmt.Errorf("NewBackupManager: %w", err)
-			}
-		} else {
-			bm = &mocks.BackupManagerMock{
-				BackupFunc: func(ctx context.Context, file string) error {
-					logger.Info().Msg("calling backup")
-					return nil
-				},
-				RestoreFunc: func(ctx context.Context, file string) error {
-					logger.Info().Msg("calling restore")
-					return nil
-				},
-				CloseFunc: func() error {
-					return nil
-				},
-			}
+		var err error
+		db, err = sqlx.Connect("pgx", cfg.CockroachDBURL)
+		if err != nil {
+			return fmt.Errorf("sqlx.Connect: %w", err)
 		}
+		defer db.Close()
 	}
-	defer func() {
-		e := bm.Close()
-		if e != nil {
-			logger.Info().Err(e).Msg("BackupManager.Close")
-		}
-	}()
 
 	var repo abl.Repository
 	{
-		repo, err = sqlite.NewRepository("sqlite.db", bm)
+		var err error
+		repo, err = crdb.NewRepository(db)
 		if err != nil {
 			return fmt.Errorf("NewRepository: %w", err)
 		}
 	}
-	defer func() {
-		e := repo.Close()
-		if e != nil {
-			logger.Info().Err(e).Msg("Repository.Close")
-		}
-	}()
 
 	var notifier abl.Notifier
 	{
+		var err error
 		if cfg.Env != "local" {
 			notifier, err = discord.NewNotifier(cfg.DiscordToken, cfg.DiscordChannels)
 			if err != nil {

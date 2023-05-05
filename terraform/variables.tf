@@ -17,3 +17,7 @@ variable "discord_channels" {
 variable "circle_sha1" {
   default = ""
 }
+
+variable "cockroachdb_url" {
+  default = ""
+}

@@ -1,72 +1,37 @@
-// Package sqlite provides an implementation of the Repository using sqlite as the backing store.
-package sqlite
+// Package crdb provides an implementation of the Repository using cockroachdb as the backing store.
+package crdb
 
 import (
 	"context"
 	"database/sql"
 	"encoding/base64"
 	"fmt"
-	"io"
-	"os"
-	"path/filepath"
 	"strconv"
-	"time"
 
 	sq "github.com/Masterminds/squirrel"
 	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/cockroachdb/cockroach-go/v2/crdb/crdbsqlx"
 	"github.com/jmoiron/sqlx"
 
 	// imported for side effects
-	_ "modernc.org/sqlite"
+	_ "github.com/jackc/pgx/v5/stdlib"
 )
-
-// YYYYMMDD is the storage format for approval dates.
-const YYYYMMDD = "2006-01-02"
 
 // Repository handles storing data in sqlite.
 type Repository struct {
 	db *sqlx.DB
 	sb sq.StatementBuilderType
-
-	backupManager BackupManager
-
-	file string
-
-	io.Closer
 }
 
 // NewRepository returns a new instance of Repository.
-func NewRepository(url string, backupManager BackupManager) (*Repository, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-
-	if url != ":memory:" {
-		if err := os.MkdirAll(filepath.Dir(url), 0700); err != nil {
-			return nil, err
-		}
-
-		err := backupManager.Restore(ctx, url)
-		if err != nil {
-			return nil, fmt.Errorf("backupManager.Restore: %w", err)
-		}
-	}
-	filename := url
-	url += "?_journal=WAL&_timeout=5000&_fk=true"
-
-	db, err := sqlx.ConnectContext(ctx, "sqlite", url)
-	if err != nil {
-		return nil, err
-	}
-
-	if err = runMigrations(db.DB); err != nil {
+func NewRepository(db *sqlx.DB) (*Repository, error) {
+	if err := runMigrations(db.DB); err != nil {
 		return nil, err
 	}
 
 	return &Repository{
-		db:            db,
-		sb:            sq.StatementBuilder.PlaceholderFormat(sq.Question),
-		backupManager: backupManager,
-		file:          filename,
+		db: db,
+		sb: sq.StatementBuilder.PlaceholderFormat(sq.Dollar),
 	}, nil
 }
 
@@ -79,14 +44,14 @@ func (r *Repository) AddBalls(ctx context.Context, balls []abl.Ball) error {
 	batch := make([]ball, 0, len(balls))
 	for _, b := range balls {
 		batch = append(batch, ball{
-			Brand:        b.Brand,
-			Name:         b.Name,
-			ApprovalDate: b.ApprovedAt.Format(YYYYMMDD),
-			ImageURL:     b.ImageURL,
+			Brand:      b.Brand,
+			Name:       b.Name,
+			ApprovedAt: b.ApprovedAt,
+			ImageURL:   b.ImageURL,
 		})
 	}
 
-	return withTx(ctx, r.db, func(tx *sqlx.Tx) error {
+	return crdbsqlx.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sqlx.Tx) error {
 		_, err := tx.NamedExec(insertBallsQuery, batch)
 		if err != nil {
 			return fmt.Errorf("tx.NamedExec: %w", err)
@@ -104,7 +69,7 @@ func (r *Repository) ListBalls(ctx context.Context, filter abl.BallFilter) (abl.
 	}
 
 	var dbBalls []listBallRow
-	err = withTx(ctx, r.db, func(tx *sqlx.Tx) error {
+	err = crdbsqlx.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sqlx.Tx) error {
 		err := tx.Select(&dbBalls, query, args...)
 		if err != nil {
 			return fmt.Errorf("tx.Select: %w", err)
@@ -118,12 +83,11 @@ func (r *Repository) ListBalls(ctx context.Context, filter abl.BallFilter) (abl.
 
 	balls := make([]abl.Ball, 0, len(dbBalls))
 	for _, b := range dbBalls {
-		approvedAt, _ := time.Parse(YYYYMMDD, b.ApprovalDate)
 		balls = append(balls, abl.Ball{
-			ID:         strconv.Itoa(b.ID),
+			ID:         strconv.FormatInt(b.ID, 10),
 			Brand:      b.Brand,
 			Name:       b.Name,
-			ApprovedAt: approvedAt,
+			ApprovedAt: b.ApprovedAt,
 			ImageURL:   b.ImageURL,
 		})
 	}
@@ -156,14 +120,14 @@ func (r *Repository) RemoveBalls(ctx context.Context, balls []abl.Ball) error {
 	batch := make([]ball, 0, len(balls))
 	for _, b := range balls {
 		batch = append(batch, ball{
-			Brand:        b.Brand,
-			Name:         b.Name,
-			ApprovalDate: b.ApprovedAt.Format(YYYYMMDD),
-			ImageURL:     b.ImageURL,
+			Brand:      b.Brand,
+			Name:       b.Name,
+			ApprovedAt: b.ApprovedAt,
+			ImageURL:   b.ImageURL,
 		})
 	}
 
-	return withTx(ctx, r.db, func(tx *sqlx.Tx) error {
+	return crdbsqlx.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sqlx.Tx) error {
 		query := `DELETE FROM balls WHERE (brand, name) IN (`
 		for idx, b := range batch {
 			tuple := fmt.Sprintf("('%s','%s')", b.Brand, b.Name)
@@ -181,44 +145,4 @@ func (r *Repository) RemoveBalls(ctx context.Context, balls []abl.Ball) error {
 
 		return nil
 	})
-}
-
-// Close shuts down the sql db and then backs up the file using the backup manager.
-func (r *Repository) Close() error {
-	if err := r.db.Close(); err != nil {
-		return err
-	}
-
-	if r.file == ":memory:" {
-		return nil
-	}
-
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-
-	return r.backupManager.Backup(ctx, r.file)
-}
-
-func withTx(ctx context.Context, db *sqlx.DB, txFn func(tx *sqlx.Tx) error) (err error) {
-	tx, err := db.BeginTxx(ctx, &sql.TxOptions{})
-	if err != nil {
-		return
-	}
-
-	defer func() {
-		if p := recover(); p != nil {
-			// a panic occurred, rollback and repanic
-			_ = tx.Rollback()
-			panic(p)
-		} else if err != nil {
-			// something went wrong, rollback
-			_ = tx.Rollback()
-		} else {
-			// all good, commit
-			err = tx.Commit()
-		}
-	}()
-
-	err = txFn(tx)
-	return err
 }

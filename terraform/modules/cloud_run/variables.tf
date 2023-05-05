@@ -3,5 +3,6 @@ variable "storage_bucket" {}
 variable "discord_token" {}
 variable "discord_channels" {}
 variable "image_tag" {
-    default = ""
+  default = ""
 }
+variable "cockroachdb_url" {}

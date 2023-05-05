@@ -34,6 +34,7 @@ module "cloud_run" {
   discord_channels = var.discord_channels
   discord_token    = var.discord_token
   image_tag        = var.circle_sha1
+  cockroachdb_url  = var.cockroachdb_url
 
   depends_on = [
     module.services,
@@ -44,7 +45,6 @@ module "cloud_run" {
 module "scheduler" {
   source                 = "./modules/scheduler"
   project                = var.project
-  pubsub_topic           = module.pubsub.topic
   region                 = var.region
   uri                    = "${module.cloud_run.url}/v1/cron"
   cloud_run_service_name = module.cloud_run.name

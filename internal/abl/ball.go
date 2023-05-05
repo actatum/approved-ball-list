@@ -24,7 +24,7 @@ var ActiveBrands = map[string]bool{
 
 // Ball represents a bowling ball.
 type Ball struct {
-	ID         int       `json:"id"`
+	ID         string    `json:"id"`
 	Brand      string    `json:"brand"`
 	Name       string    `json:"name"`
 	ApprovedAt time.Time `json:"approved_at"`

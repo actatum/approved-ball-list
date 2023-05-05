@@ -9,5 +9,4 @@ type Repository interface {
 	AddBalls(ctx context.Context, balls []Ball) error
 	ListBalls(ctx context.Context, filter BallFilter) (ListBallsResult, error)
 	RemoveBalls(ctx context.Context, balls []Ball) error
-	Close() error
 }
