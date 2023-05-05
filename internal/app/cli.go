@@ -19,6 +19,9 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 	"github.com/urfave/cli/v2"
+
+	// imported for side effects
+	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
 // CLI runs the command line interface.
