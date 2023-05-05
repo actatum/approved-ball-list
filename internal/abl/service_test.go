@@ -84,14 +84,14 @@ func Test_service_RefreshBalls(t *testing.T) {
 						return abl.ListBallsResult{
 							Balls: []abl.Ball{
 								{
-									ID:         1,
+									ID:         "1",
 									Brand:      "Storm",
 									Name:       "Super Nova",
 									ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 									ImageURL:   "image",
 								},
 								{
-									ID:         2,
+									ID:         "2",
 									Brand:      "Storm",
 									Name:       "Phaze V",
 									ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -151,14 +151,14 @@ func Test_service_RefreshBalls(t *testing.T) {
 					GetApprovedBallListFunc: func(ctx context.Context) ([]abl.Ball, error) {
 						return []abl.Ball{
 							{
-								ID:         1,
+								ID:         "1",
 								Brand:      "Storm",
 								Name:       "Super Nova",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 								ImageURL:   "image",
 							},
 							{
-								ID:         2,
+								ID:         "2",
 								Brand:      "Storm",
 								Name:       "Phaze V",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -203,14 +203,14 @@ func Test_service_RefreshBalls(t *testing.T) {
 					GetApprovedBallListFunc: func(ctx context.Context) ([]abl.Ball, error) {
 						return []abl.Ball{
 							{
-								ID:         1,
+								ID:         "1",
 								Brand:      "Storm",
 								Name:       "Super Nova",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 								ImageURL:   "image",
 							},
 							{
-								ID:         2,
+								ID:         "2",
 								Brand:      "Storm",
 								Name:       "Phaze V",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -255,14 +255,14 @@ func Test_service_RefreshBalls(t *testing.T) {
 					GetApprovedBallListFunc: func(ctx context.Context) ([]abl.Ball, error) {
 						return []abl.Ball{
 							{
-								ID:         1,
+								ID:         "1",
 								Brand:      "Storm",
 								Name:       "Super Nova",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 								ImageURL:   "image",
 							},
 							{
-								ID:         2,
+								ID:         "2",
 								Brand:      "Storm",
 								Name:       "Phaze V",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -307,14 +307,14 @@ func Test_service_RefreshBalls(t *testing.T) {
 					GetApprovedBallListFunc: func(ctx context.Context) ([]abl.Ball, error) {
 						return []abl.Ball{
 							{
-								ID:         1,
+								ID:         "1",
 								Brand:      "Storm",
 								Name:       "Super Nova",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 								ImageURL:   "image",
 							},
 							{
-								ID:         2,
+								ID:         "2",
 								Brand:      "Storm",
 								Name:       "Phaze V",
 								ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),

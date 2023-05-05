@@ -20,6 +20,7 @@ linters-settings:
     exclude-functions:
       - (io.Closer).Close
       - (io.Reader).Close
+      - (*database/sql.DB).Close
 
 issues:
   exclude-use-default: false

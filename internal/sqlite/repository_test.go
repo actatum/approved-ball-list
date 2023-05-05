@@ -142,7 +142,7 @@ func TestRepository_AddBalls(t *testing.T) {
 				ctx: context.Background(),
 				balls: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -358,21 +358,21 @@ func TestRepository_ListBalls(t *testing.T) {
 				},
 				seedData: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -383,21 +383,21 @@ func TestRepository_ListBalls(t *testing.T) {
 			want: abl.ListBallsResult{
 				Balls: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -430,21 +430,21 @@ func TestRepository_ListBalls(t *testing.T) {
 				},
 				seedData: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -455,7 +455,7 @@ func TestRepository_ListBalls(t *testing.T) {
 			want: abl.ListBallsResult{
 				Balls: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -487,21 +487,21 @@ func TestRepository_ListBalls(t *testing.T) {
 				},
 				seedData: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -512,7 +512,7 @@ func TestRepository_ListBalls(t *testing.T) {
 			want: abl.ListBallsResult{
 				Balls: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -545,21 +545,21 @@ func TestRepository_ListBalls(t *testing.T) {
 				},
 				seedData: []abl.Ball{
 					{
-						ID:         1,
+						ID:         "1",
 						Brand:      "Storm",
 						Name:       "Fate",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
@@ -570,14 +570,14 @@ func TestRepository_ListBalls(t *testing.T) {
 			want: abl.ListBallsResult{
 				Balls: []abl.Ball{
 					{
-						ID:         2,
+						ID:         "2",
 						Brand:      "Ebonite",
 						Name:       "Gamebreaker 2",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
 						ImageURL:   "image",
 					},
 					{
-						ID:         3,
+						ID:         "3",
 						Brand:      "Motiv",
 						Name:       "Sky Raptor",
 						ApprovedAt: time.Now().UTC().Truncate(24 * time.Hour),
