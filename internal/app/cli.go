@@ -12,9 +12,7 @@ import (
 	"github.com/actatum/approved-ball-list/internal/abl"
 	"github.com/actatum/approved-ball-list/internal/crdb"
 	"github.com/actatum/approved-ball-list/internal/discord"
-	"github.com/actatum/approved-ball-list/internal/gcs"
 	"github.com/actatum/approved-ball-list/internal/mocks"
-	"github.com/actatum/approved-ball-list/internal/sqlite"
 	"github.com/actatum/approved-ball-list/internal/usbc"
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
@@ -41,38 +39,9 @@ func CLI(args []string) int {
 		}
 	}
 
-	var err error
-	var bm sqlite.BackupManager
-	{
-		if cfg.Env != "local" {
-			bm, err = gcs.NewBackupManager(cfg.StorageBucket)
-			if err != nil {
-				fmt.Printf("NewBackupManager: %v", err)
-				return 1
-			}
-		} else {
-			bm = &mocks.BackupManagerMock{
-				BackupFunc: func(ctx context.Context, file string) error {
-					return nil
-				},
-				RestoreFunc: func(ctx context.Context, file string) error {
-					return nil
-				},
-				CloseFunc: func() error {
-					return nil
-				},
-			}
-		}
-	}
-	defer func() {
-		e := bm.Close()
-		if e != nil {
-			logger.Info().Err(e).Msg("BackupManager.Close")
-		}
-	}()
-
 	var db *sqlx.DB
 	{
+		var err error
 		db, err = sqlx.Connect("pgx", cfg.CockroachDBURL)
 		if err != nil {
 			fmt.Printf("sqlx.Connect: %v", err)
@@ -83,6 +52,7 @@ func CLI(args []string) int {
 
 	var repo abl.Repository
 	{
+		var err error
 		repo, err = crdb.NewRepository(db)
 		if err != nil {
 			fmt.Printf("NewRepository: %v", err)
@@ -92,6 +62,7 @@ func CLI(args []string) int {
 
 	var notifier abl.Notifier
 	{
+		var err error
 		if cfg.Env != "local" {
 			notifier, err = discord.NewNotifier(cfg.DiscordToken, cfg.DiscordChannels)
 			if err != nil {

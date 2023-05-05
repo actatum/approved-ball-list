@@ -43,7 +43,6 @@ func (c *Channels) Set(value string) error {
 type config struct {
 	Env             string
 	Port            string
-	StorageBucket   string
 	DiscordToken    string
 	DiscordChannels Channels
 	CockroachDBURL  string
@@ -54,7 +53,6 @@ func newConfig() config {
 	cfg.DiscordChannels = strings.Split(lookupEnv("DISCORD_CHANNELS", ""), ",")
 	flag.StringVar(&cfg.Env, "env", lookupEnv("ENV", "local"), "environment service is running in")
 	flag.StringVar(&cfg.Port, "port", lookupEnv("PORT", "8080"), "http server port")
-	flag.StringVar(&cfg.StorageBucket, "storage-bucket", lookupEnv("STORAGE_BUCKET", ""), "gcp storage bucket for backups")
 	flag.StringVar(&cfg.DiscordToken, "discord-token", lookupEnv("DISCORD_TOKEN", ""), "discord bot token")
 	flag.StringVar(&cfg.CockroachDBURL, "crdb-url", lookupEnv("COCKROACHDB_URL", ""), "cockroachdb url")
 	flag.Var(&cfg.DiscordChannels, "discord-channels", "discord channels to notify")

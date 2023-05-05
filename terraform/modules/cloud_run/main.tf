@@ -13,10 +13,6 @@ resource "google_cloud_run_service" "abl" {
           value = "prod"
         }
         env {
-          name  = "STORAGE_BUCKET"
-          value = var.storage_bucket
-        }
-        env {
           name  = "DISCORD_TOKEN"
           value = var.discord_token
         }
