@@ -64,7 +64,7 @@ func listBallsQuery(
 	}
 
 	q = q.OrderBy(
-		"approved_at DESC",
+		"id DESC",
 	)
 	if filter.PageSize > 0 {
 		q = q.Limit(
