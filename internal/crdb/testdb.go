@@ -2,19 +2,19 @@ package crdb
 
 import (
 	"context"
+	"database/sql"
 	"log"
 	"net/url"
 	"os"
 	"testing"
 	"time"
 
-	"github.com/jmoiron/sqlx"
 	"github.com/ory/dockertest/v3"
 	"github.com/ory/dockertest/v3/docker"
 )
 
 // StartTestDB starts a cockroachdb container for use in testing.
-func StartTestDB(tb testing.TB, logsEnabled bool) (db *sqlx.DB, cleanup func()) {
+func StartTestDB(tb testing.TB, logsEnabled bool) (db *sql.DB, cleanup func()) {
 	tb.Helper()
 
 	crdbURL := &url.URL{
@@ -62,7 +62,7 @@ func StartTestDB(tb testing.TB, logsEnabled bool) (db *sqlx.DB, cleanup func()) 
 
 	pool.MaxWait = 15 * time.Second
 	err = pool.Retry(func() error {
-		db, err = sqlx.Connect("pgx", crdbURL.String())
+		db, err = sql.Open("pgx", crdbURL.String())
 		if err != nil {
 			return err
 		}
@@ -73,7 +73,7 @@ func StartTestDB(tb testing.TB, logsEnabled bool) (db *sqlx.DB, cleanup func()) 
 		tb.Fatalf("could not connect to cockroachdb container: %v", err)
 	}
 
-	if err = runMigrations(db.DB); err != nil {
+	if err = runMigrations(db); err != nil {
 		tb.Fatalf("error running migrations: %v", err)
 	}
 

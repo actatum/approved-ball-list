@@ -13,7 +13,7 @@ import (
 //go:embed migrations/*.sql
 var migrations embed.FS
 
-const migrationVersion = 1
+const migrationVersion = 2
 
 func runMigrations(db *sql.DB) error {
 	source, err := iofs.New(migrations, "migrations")

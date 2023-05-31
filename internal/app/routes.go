@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/balls"
 
 	"github.com/actatum/errs/httperr"
 	"github.com/go-chi/chi/v5"
@@ -14,9 +14,9 @@ import (
 )
 
 type handler struct {
-	svc    abl.Service
 	logger *zerolog.Logger
 	cfg    config
+	svc    balls.Service
 }
 
 type envelope map[string]any
@@ -56,7 +56,7 @@ func (h *handler) handleHealth() http.HandlerFunc {
 
 func (h *handler) handleCronJob() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		err := h.svc.RefreshBalls(r.Context())
+		err := h.svc.CheckForNewlyApprovedBalls(r.Context())
 		if err != nil {
 			zerolog.Ctx(r.Context()).Error().Err(err).Send()
 			// sentry it?

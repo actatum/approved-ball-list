@@ -6,21 +6,21 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/balls"
 	"github.com/rs/zerolog"
-	"golang.org/x/sync/errgroup"
 )
 
 const layoutUS = "January 2, 2006"
 
 const ballListURL = "https://bowl.com/api/approvedballs?brandName="
+const noImageURL = "https://images.bowl.com/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg"
 
 var monthMap = map[string]int{
 	"Jan":       1,
@@ -80,29 +80,59 @@ func NewClient(cfg *Config) *Client {
 	}
 }
 
-// GetApprovedBallList retrieves the current approved ball list from the usbc xml api
-func (c *Client) GetApprovedBallList(ctx context.Context) ([]abl.Ball, error) {
-	ch := make(chan []abl.Ball, len(abl.ActiveBrands))
-	g, gCtx := errgroup.WithContext(ctx)
+// ListBalls lists balls from the USBC approved ball list by brand.
+func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball, error) {
+	brandKey := base64.URLEncoding.EncodeToString([]byte(brand))
+	r, err := http.NewRequestWithContext(ctx, "GET", ballListURL+brandKey, nil)
+	if err != nil {
+		return nil, fmt.Errorf("creating http request: %w", err)
+	}
 
-	for brand := range abl.ActiveBrands {
-		b := brand
-		g.Go(func() error {
-			return c.getBallsByBrand(gCtx, base64.StdEncoding.EncodeToString([]byte(b)), ch)
+	resp, err := c.client.Do(r)
+	if err != nil {
+		return nil, fmt.Errorf("making http request: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("received status: %d", resp.StatusCode)
+	}
+
+	var items []ball
+	if err := json.NewDecoder(resp.Body).Decode(&items); err != nil {
+		return nil, fmt.Errorf("decoding response: %w", err)
+	}
+
+	result := make([]balls.Ball, 0, len(items))
+	for _, i := range items {
+		i.Brand = strings.TrimSpace(i.Brand)
+		i.Name = strings.TrimSpace(i.Name)
+		i.ImageURL = strings.TrimSpace(i.ImageURL)
+		i.DateApproved = strings.TrimSpace(i.DateApproved)
+
+		var approvedAt time.Time
+		approvedAt, err = parseDate(i.DateApproved)
+		if err != nil {
+			return nil, fmt.Errorf("parsing date: %w", err)
+		}
+
+		if strings.Contains(i.ImageURL, "getmedia") {
+			i.ImageURL = fixImageURL(i.ImageURL)
+		}
+
+		parsedURL, err := url.Parse(i.ImageURL)
+		if err != nil {
+			parsedURL, _ = url.Parse(noImageURL)
+		}
+		result = append(result, balls.Ball{
+			Brand:        balls.Brand(i.Brand),
+			Name:         i.Name,
+			ApprovalDate: approvedAt,
+			ImageURL:     parsedURL,
 		})
 	}
 
-	var balls []abl.Ball
-	for i := 0; i < len(abl.ActiveBrands); i++ {
-		b := <-ch
-		balls = append(balls, b...)
-	}
-
-	if err := g.Wait(); err != nil {
-		return nil, err
-	}
-
-	return balls, nil
+	return result, nil
 }
 
 // Close shuts down idle connections
@@ -110,65 +140,7 @@ func (c *Client) Close() {
 	c.client.CloseIdleConnections()
 }
 
-func (c *Client) getBallsByBrand(ctx context.Context, brand string, result chan<- []abl.Ball) error {
-	req, err := http.NewRequestWithContext(ctx, "GET", ballListURL+brand, nil)
-	if err != nil {
-		return fmt.Errorf("http.NewRequestWithContext: %w", err)
-	}
-
-	resp, err := c.client.Do(req)
-	if err != nil {
-		return fmt.Errorf("client.Do: %w", err)
-	}
-	defer func() {
-		closeErr := resp.Body.Close()
-		if closeErr != nil {
-			c.logger.Warn().Err(closeErr).Msg("error closing response body")
-		}
-	}()
-
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("status: %s", resp.Status)
-	}
-
-	data, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return fmt.Errorf("io.ReadAll: %w", err)
-	}
-
-	var list []ball
-	err = json.Unmarshal(data, &list)
-	if err != nil {
-		return fmt.Errorf("json.Unmarshal: %w", err)
-	}
-
-	balls := filterBrands(list)
-
-	res := make([]abl.Ball, 0, len(balls))
-	for i := range balls {
-		var approvedAt time.Time
-		approvedAt, err = parseDate(balls[i].DateApproved)
-		if err != nil {
-			return err
-		}
-
-		if strings.Contains(balls[i].ImageURL, "getmedia") {
-			balls[i].ImageURL = fixImageURL(balls[i].ImageURL)
-		}
-
-		res = append(res, abl.Ball{
-			Brand:      balls[i].Brand,
-			Name:       balls[i].Name,
-			ApprovedAt: approvedAt,
-			ImageURL:   balls[i].ImageURL,
-		})
-	}
-
-	result <- res
-	return nil
-}
-
-func (c *Client) writeToJSONFile(balls []abl.Ball) error {
+func (c *Client) writeToJSONFile(balls []balls.Ball) error {
 	data, err := json.MarshalIndent(balls, "", "  ")
 	if err != nil {
 		return fmt.Errorf("json.MarshalIndent: %w", err)
@@ -192,18 +164,6 @@ func (c *Client) writeToJSONFile(balls []abl.Ball) error {
 	}()
 
 	return nil
-}
-
-func filterBrands(balls []ball) []ball {
-	filtered := make([]ball, 0)
-
-	for _, b := range balls {
-		if _, ok := abl.ActiveBrands[b.Brand]; ok {
-			filtered = append(filtered, b)
-		}
-	}
-
-	return filtered
 }
 
 func fixImageURL(dirty string) string {

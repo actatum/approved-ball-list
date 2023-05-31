@@ -4,9 +4,8 @@ package discord
 import (
 	"context"
 	"fmt"
-	"strings"
 
-	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/balls"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -36,40 +35,26 @@ func (n *Notifier) Close() error {
 	return n.dg.Close()
 }
 
-// Notify sends notifications to the configured channels.
-func (n *Notifier) Notify(ctx context.Context, notifications []abl.Notification) error {
-	if len(notifications) == 0 {
+// SendNotification sends notifications to discord.
+func (n *Notifier) SendNotification(ctx context.Context, approvedBalls []balls.Ball) error {
+	if len(approvedBalls) == 0 {
 		return nil
 	}
 
-	embeds := make([]*discordgo.MessageEmbed, 0, len(notifications))
-	for _, notif := range notifications {
-		e := &discordgo.MessageEmbed{
+	embeds := make([]*discordgo.MessageEmbed, 0, len(approvedBalls))
+	for _, b := range approvedBalls {
+		embeds = append(embeds, &discordgo.MessageEmbed{
 			Type:  discordgo.EmbedTypeImage,
-			Title: fmt.Sprintf("%s %s", notif.Ball.Brand, notif.Ball.Name),
+			Title: fmt.Sprintf("%s %s", b.Brand, b.Name),
 			Image: &discordgo.MessageEmbedImage{
-				URL: notif.Ball.ImageURL,
+				URL: b.ImageURL.String(),
 			},
-		}
-
-		embeds = append(embeds, e)
+		})
 	}
 
 	for _, id := range n.channels {
-		// msgType := notifications[0].Type
-		// caser := cases.Title(language.AmericanEnglish)
-		// _, err := n.dg.ChannelMessageSend(
-		// 	id,
-		// 	fmt.Sprintf("%s Balls: %s", caser.String(string(msgType)), time.Now().Format(layoutUS)),
-		// )
-		// if err != nil {
-		// 	return fmt.Errorf("dg.ChannelMessageSend: %w", err)
-		// }
-		_, err := n.dg.ChannelMessageSendEmbeds(id, embeds)
-		if err != nil {
-			if !strings.Contains(err.Error(), "405") {
-				return fmt.Errorf("dg.ChannelMessageSendEmbeds: %w", err)
-			}
+		if _, err := n.dg.ChannelMessageSendEmbeds(id, embeds); err != nil {
+			return fmt.Errorf("sending embeds: %w", err)
 		}
 	}
 
