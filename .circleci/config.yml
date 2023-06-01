@@ -12,19 +12,19 @@ main_only: &main_only
 
 orbs:
   terraform: circleci/terraform@3.2.1
-  gcp-cli: circleci/gcp-cli@3.0.1
+  gcp-cli: circleci/gcp-cli@3.1.0
   docker-orb: circleci/docker@2.2.0
   go: circleci/go@1.7.3
 
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.19.3
+      - image: cimg/go:1.20.4
     resource_class: medium
     steps:
       - checkout
       - run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.51.1
           golangci-lint --version
           make lint
       - terraform/install:
@@ -40,7 +40,7 @@ jobs:
     steps:
       - checkout
       - go/install:
-          version: '1.19'
+          version: '1.20.4'
       - go/mod-download-cached
       - run: make test
   

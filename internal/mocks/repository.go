@@ -7,214 +7,77 @@ import (
 	"context"
 	"sync"
 
-	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/balls"
 )
 
-// Ensure, that RepositoryMock does implement abl.Repository.
+// Ensure, that RepositoryMock does implement balls.Repository.
 // If this is not the case, regenerate this file with moq.
-var _ abl.Repository = &RepositoryMock{}
+var _ balls.Repository = &RepositoryMock{}
 
-// RepositoryMock is a mock implementation of abl.Repository.
+// RepositoryMock is a mock implementation of balls.Repository.
 //
 //	func TestSomethingThatUsesRepository(t *testing.T) {
 //
-//		// make and configure a mocked abl.Repository
+//		// make and configure a mocked balls.Repository
 //		mockedRepository := &RepositoryMock{
-//			AddBallsFunc: func(ctx context.Context, balls []abl.Ball) error {
-//				panic("mock out the AddBalls method")
-//			},
-//			CloseFunc: func() error {
-//				panic("mock out the Close method")
-//			},
-//			ListBallsFunc: func(ctx context.Context, filter abl.BallFilter) (abl.ListBallsResult, error) {
-//				panic("mock out the ListBalls method")
-//			},
-//			RemoveBallsFunc: func(ctx context.Context, balls []abl.Ball) error {
-//				panic("mock out the RemoveBalls method")
+//			AddFunc: func(ctx context.Context, ballsMoqParam ...balls.Ball) ([]balls.Ball, error) {
+//				panic("mock out the Add method")
 //			},
 //		}
 //
-//		// use mockedRepository in code that requires abl.Repository
+//		// use mockedRepository in code that requires balls.Repository
 //		// and then make assertions.
 //
 //	}
 type RepositoryMock struct {
-	// AddBallsFunc mocks the AddBalls method.
-	AddBallsFunc func(ctx context.Context, balls []abl.Ball) error
-
-	// CloseFunc mocks the Close method.
-	CloseFunc func() error
-
-	// ListBallsFunc mocks the ListBalls method.
-	ListBallsFunc func(ctx context.Context, filter abl.BallFilter) (abl.ListBallsResult, error)
-
-	// RemoveBallsFunc mocks the RemoveBalls method.
-	RemoveBallsFunc func(ctx context.Context, balls []abl.Ball) error
+	// AddFunc mocks the Add method.
+	AddFunc func(ctx context.Context, ballsMoqParam ...balls.Ball) ([]balls.Ball, error)
 
 	// calls tracks calls to the methods.
 	calls struct {
-		// AddBalls holds details about calls to the AddBalls method.
-		AddBalls []struct {
+		// Add holds details about calls to the Add method.
+		Add []struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
-			// Balls is the balls argument value.
-			Balls []abl.Ball
-		}
-		// Close holds details about calls to the Close method.
-		Close []struct {
-		}
-		// ListBalls holds details about calls to the ListBalls method.
-		ListBalls []struct {
-			// Ctx is the ctx argument value.
-			Ctx context.Context
-			// Filter is the filter argument value.
-			Filter abl.BallFilter
-		}
-		// RemoveBalls holds details about calls to the RemoveBalls method.
-		RemoveBalls []struct {
-			// Ctx is the ctx argument value.
-			Ctx context.Context
-			// Balls is the balls argument value.
-			Balls []abl.Ball
+			// BallsMoqParam is the ballsMoqParam argument value.
+			BallsMoqParam []balls.Ball
 		}
 	}
-	lockAddBalls    sync.RWMutex
-	lockClose       sync.RWMutex
-	lockListBalls   sync.RWMutex
-	lockRemoveBalls sync.RWMutex
+	lockAdd sync.RWMutex
 }
 
-// AddBalls calls AddBallsFunc.
-func (mock *RepositoryMock) AddBalls(ctx context.Context, balls []abl.Ball) error {
-	if mock.AddBallsFunc == nil {
-		panic("RepositoryMock.AddBallsFunc: method is nil but Repository.AddBalls was just called")
+// Add calls AddFunc.
+func (mock *RepositoryMock) Add(ctx context.Context, ballsMoqParam ...balls.Ball) ([]balls.Ball, error) {
+	if mock.AddFunc == nil {
+		panic("RepositoryMock.AddFunc: method is nil but Repository.Add was just called")
 	}
 	callInfo := struct {
-		Ctx   context.Context
-		Balls []abl.Ball
+		Ctx           context.Context
+		BallsMoqParam []balls.Ball
 	}{
-		Ctx:   ctx,
-		Balls: balls,
+		Ctx:           ctx,
+		BallsMoqParam: ballsMoqParam,
 	}
-	mock.lockAddBalls.Lock()
-	mock.calls.AddBalls = append(mock.calls.AddBalls, callInfo)
-	mock.lockAddBalls.Unlock()
-	return mock.AddBallsFunc(ctx, balls)
+	mock.lockAdd.Lock()
+	mock.calls.Add = append(mock.calls.Add, callInfo)
+	mock.lockAdd.Unlock()
+	return mock.AddFunc(ctx, ballsMoqParam...)
 }
 
-// AddBallsCalls gets all the calls that were made to AddBalls.
+// AddCalls gets all the calls that were made to Add.
 // Check the length with:
 //
-//	len(mockedRepository.AddBallsCalls())
-func (mock *RepositoryMock) AddBallsCalls() []struct {
-	Ctx   context.Context
-	Balls []abl.Ball
+//	len(mockedRepository.AddCalls())
+func (mock *RepositoryMock) AddCalls() []struct {
+	Ctx           context.Context
+	BallsMoqParam []balls.Ball
 } {
 	var calls []struct {
-		Ctx   context.Context
-		Balls []abl.Ball
+		Ctx           context.Context
+		BallsMoqParam []balls.Ball
 	}
-	mock.lockAddBalls.RLock()
-	calls = mock.calls.AddBalls
-	mock.lockAddBalls.RUnlock()
-	return calls
-}
-
-// Close calls CloseFunc.
-func (mock *RepositoryMock) Close() error {
-	if mock.CloseFunc == nil {
-		panic("RepositoryMock.CloseFunc: method is nil but Repository.Close was just called")
-	}
-	callInfo := struct {
-	}{}
-	mock.lockClose.Lock()
-	mock.calls.Close = append(mock.calls.Close, callInfo)
-	mock.lockClose.Unlock()
-	return mock.CloseFunc()
-}
-
-// CloseCalls gets all the calls that were made to Close.
-// Check the length with:
-//
-//	len(mockedRepository.CloseCalls())
-func (mock *RepositoryMock) CloseCalls() []struct {
-} {
-	var calls []struct {
-	}
-	mock.lockClose.RLock()
-	calls = mock.calls.Close
-	mock.lockClose.RUnlock()
-	return calls
-}
-
-// ListBalls calls ListBallsFunc.
-func (mock *RepositoryMock) ListBalls(ctx context.Context, filter abl.BallFilter) (abl.ListBallsResult, error) {
-	if mock.ListBallsFunc == nil {
-		panic("RepositoryMock.ListBallsFunc: method is nil but Repository.ListBalls was just called")
-	}
-	callInfo := struct {
-		Ctx    context.Context
-		Filter abl.BallFilter
-	}{
-		Ctx:    ctx,
-		Filter: filter,
-	}
-	mock.lockListBalls.Lock()
-	mock.calls.ListBalls = append(mock.calls.ListBalls, callInfo)
-	mock.lockListBalls.Unlock()
-	return mock.ListBallsFunc(ctx, filter)
-}
-
-// ListBallsCalls gets all the calls that were made to ListBalls.
-// Check the length with:
-//
-//	len(mockedRepository.ListBallsCalls())
-func (mock *RepositoryMock) ListBallsCalls() []struct {
-	Ctx    context.Context
-	Filter abl.BallFilter
-} {
-	var calls []struct {
-		Ctx    context.Context
-		Filter abl.BallFilter
-	}
-	mock.lockListBalls.RLock()
-	calls = mock.calls.ListBalls
-	mock.lockListBalls.RUnlock()
-	return calls
-}
-
-// RemoveBalls calls RemoveBallsFunc.
-func (mock *RepositoryMock) RemoveBalls(ctx context.Context, balls []abl.Ball) error {
-	if mock.RemoveBallsFunc == nil {
-		panic("RepositoryMock.RemoveBallsFunc: method is nil but Repository.RemoveBalls was just called")
-	}
-	callInfo := struct {
-		Ctx   context.Context
-		Balls []abl.Ball
-	}{
-		Ctx:   ctx,
-		Balls: balls,
-	}
-	mock.lockRemoveBalls.Lock()
-	mock.calls.RemoveBalls = append(mock.calls.RemoveBalls, callInfo)
-	mock.lockRemoveBalls.Unlock()
-	return mock.RemoveBallsFunc(ctx, balls)
-}
-
-// RemoveBallsCalls gets all the calls that were made to RemoveBalls.
-// Check the length with:
-//
-//	len(mockedRepository.RemoveBallsCalls())
-func (mock *RepositoryMock) RemoveBallsCalls() []struct {
-	Ctx   context.Context
-	Balls []abl.Ball
-} {
-	var calls []struct {
-		Ctx   context.Context
-		Balls []abl.Ball
-	}
-	mock.lockRemoveBalls.RLock()
-	calls = mock.calls.RemoveBalls
-	mock.lockRemoveBalls.RUnlock()
+	mock.lockAdd.RLock()
+	calls = mock.calls.Add
+	mock.lockAdd.RUnlock()
 	return calls
 }

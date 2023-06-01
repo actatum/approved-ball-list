@@ -1,0 +1,8 @@
+BEGIN;
+
+ALTER TABLE balls
+DROP CONSTRAINT unique_brand_name;
+
+-- DROP INDEX CONCURRENTLY brand_name;
+
+COMMIT;

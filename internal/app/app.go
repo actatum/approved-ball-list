@@ -3,6 +3,7 @@ package app
 
 import (
 	"context"
+	"database/sql"
 	"flag"
 	"fmt"
 	"net/http"
@@ -12,12 +13,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/actatum/approved-ball-list/internal/abl"
+	"github.com/actatum/approved-ball-list/internal/balls"
 	"github.com/actatum/approved-ball-list/internal/crdb"
 	"github.com/actatum/approved-ball-list/internal/discord"
 	"github.com/actatum/approved-ball-list/internal/mocks"
 	"github.com/actatum/approved-ball-list/internal/usbc"
-	"github.com/jmoiron/sqlx"
 	"github.com/oklog/run"
 	"github.com/rs/zerolog"
 
@@ -78,17 +78,17 @@ func Run() error {
 		}
 	}
 
-	var db *sqlx.DB
+	var db *sql.DB
 	{
 		var err error
-		db, err = sqlx.Connect("pgx", cfg.CockroachDBURL)
+		db, err = sql.Open("pgx", cfg.CockroachDBURL)
 		if err != nil {
-			return fmt.Errorf("sqlx.Connect: %w", err)
+			return fmt.Errorf("connecting to database: %w", err)
 		}
 		defer db.Close()
 	}
 
-	var repo abl.Repository
+	var repo balls.Repository
 	{
 		var err error
 		repo, err = crdb.NewRepository(db)
@@ -97,42 +97,41 @@ func Run() error {
 		}
 	}
 
-	var notifier abl.Notifier
+	var notificationService balls.NotificationService
 	{
-		var err error
 		if cfg.Env != "local" {
-			notifier, err = discord.NewNotifier(cfg.DiscordToken, cfg.DiscordChannels)
+			discordNotificationService, err := discord.NewNotifier(cfg.DiscordToken, cfg.DiscordChannels)
 			if err != nil {
 				return fmt.Errorf("NewNotifier: %w", err)
 			}
+			notificationService = discordNotificationService
+			defer func() {
+				e := discordNotificationService.Close()
+				if e != nil {
+					logger.Info().Err(e).Msg("Notifier.Close")
+				}
+			}()
 		} else {
-			notifier = &mocks.NotifierMock{
-				NotifyFunc: func(ctx context.Context, notifications []abl.Notification) error {
-					return nil
-				},
-				CloseFunc: func() error {
+			notificationService = &mocks.NotificationServiceMock{
+				SendNotificationFunc: func(ctx context.Context, approvedBalls []balls.Ball) error {
 					return nil
 				},
 			}
 		}
 	}
-	defer func() {
-		e := notifier.Close()
-		if e != nil {
-			logger.Info().Err(e).Msg("Notifier.Close")
-		}
-	}()
 
-	var usbcClient abl.USBCClient
+	var usbcClient balls.USBCService
 	{
-		usbcClient = usbc.NewClient(&usbc.Config{
+		client := usbc.NewClient(&usbc.Config{
 			Logger:     nil,
 			HTTPClient: &http.Client{},
 		})
-	}
-	defer usbcClient.Close()
+		defer client.Close()
 
-	svc := abl.NewService(repo, notifier, usbcClient)
+		usbcClient = client
+	}
+
+	svc := balls.NewService(repo, usbcClient, notificationService)
 
 	h := &handler{
 		svc:    svc,
@@ -144,8 +143,8 @@ func Run() error {
 		Addr:         fmt.Sprintf(":%s", h.cfg.Port),
 		Handler:      h.routes(),
 		IdleTimeout:  time.Minute,
-		ReadTimeout:  10 * time.Second,
-		WriteTimeout: 30 * time.Second,
+		ReadTimeout:  60 * time.Second,
+		WriteTimeout: 60 * time.Second,
 	}
 
 	var g run.Group
