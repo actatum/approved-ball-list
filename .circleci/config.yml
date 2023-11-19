@@ -12,14 +12,14 @@ main_only: &main_only
 
 orbs:
   terraform: circleci/terraform@3.2.1
-  gcp-cli: circleci/gcp-cli@3.1.0
-  docker-orb: circleci/docker@2.2.0
-  go: circleci/go@1.7.3
+  gcp-cli: circleci/gcp-cli@3.1.1
+  docker-orb: circleci/docker@2.4.0
+  go: circleci/go@1.9.0
 
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.20.4
+      - image: cimg/go:1.21.4
     resource_class: medium
     steps:
       - checkout
@@ -40,7 +40,7 @@ jobs:
     steps:
       - checkout
       - go/install:
-          version: '1.20.4'
+          version: '1.21.4'
       - go/mod-download-cached
       - run: make test
   
