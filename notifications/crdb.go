@@ -44,7 +44,7 @@ func (r *CRDBRepository) StoreTarget(ctx context.Context, target Target) error {
 	})
 }
 
-func (r *CRDBRepository) FindAll(ctx context.Context) ([]Target, error) {
+func (r *CRDBRepository) FindAllTargets(ctx context.Context) ([]Target, error) {
 	targets := make([]Target, 0)
 	err := crdb.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sql.Tx) error {
 		rows, err := tx.QueryContext(ctx, `SELECT id, created_at, updated_at, type, destination FROM notification_targets`)

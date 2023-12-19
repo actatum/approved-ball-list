@@ -27,6 +27,18 @@ type Notification struct {
 	ID      string
 	State   State
 	Content []balls.Ball
+	Target  Target
+
+	SentAt time.Time
+}
+
+func NewNotification(id string, content []balls.Ball, target Target) Notification {
+	return Notification{
+		ID:      id,
+		State:   StatePending,
+		Content: content,
+		Target:  target,
+	}
 }
 
 type Target struct {
@@ -52,7 +64,8 @@ func NewTarget(id string, targetType TargetType, destination string) Target {
 
 type Repository interface {
 	StoreTarget(ctx context.Context, target Target) error
-	FindAll(ctx context.Context) ([]Target, error)
+	FindAllTargets(ctx context.Context) ([]Target, error)
+	Store(ctx context.Context, notifications []Notification) error
 }
 
 type DuplicateTargetError struct {

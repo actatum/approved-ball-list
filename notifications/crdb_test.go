@@ -105,7 +105,7 @@ func TestCRDBRepository_StoreTarget(t *testing.T) {
 	}
 }
 
-func TestCRDBRepository_FindAll(t *testing.T) {
+func TestCRDBRepository_FindAllTargets(t *testing.T) {
 	t.Parallel()
 
 	db, close := crdbtest.StartTestContainer(t)
@@ -163,11 +163,11 @@ func TestCRDBRepository_FindAll(t *testing.T) {
 			r := &CRDBRepository{
 				db: db,
 			}
-			got, err := r.FindAll(tt.args.ctx)
-			if !tt.wantErr(t, err, fmt.Sprintf("FindAll(%v)", tt.args.ctx)) {
+			got, err := r.FindAllTargets(tt.args.ctx)
+			if !tt.wantErr(t, err, fmt.Sprintf("FindAllTargets(%v)", tt.args.ctx)) {
 				return
 			}
-			assert.Equalf(t, tt.want, got, "FindAll(%v)", tt.args.ctx)
+			assert.Equalf(t, tt.want, got, "FindAllTargets(%v)", tt.args.ctx)
 		})
 	}
 }
