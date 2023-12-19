@@ -19,3 +19,12 @@ build-image:
 
 push-image:
 	docker push ${GOOGLE_COMPUTE_REGION}-docker.pkg.dev/${GOOGLE_PROJECT_ID}/abl/abl --all-tags
+
+crdb-dev-db:
+	docker run -d \
+	--env COCKROACH_DATABASE=abl \
+	--env COCKROACH_USER=abl \
+	--env COCKROACH_PASSWORD=password \
+	--name=crdb-migrate \
+	-p 26257:26257 \
+	cockroachdb/cockroach:v23.1.13 start-single-node
