@@ -1,4 +1,5 @@
-h1:4L90cSeSdKvaYcjjD/5Yxwz26V1vhjfzjmmvYPrLWc4=
+h1:tYfUNsGFv80TPayl5H2WUK9EZKRjbBqF5rqM3vgu3nw=
 001_initial_setup.sql h1:FqFxbv6M7DWdxA14Hp66L7HGNI1/4T99Zb/gBBYY/5k=
 002_unique_constraint_brand_name.sql h1:2zb9DwVkpucJTXnO8qp1Jww440vflZ3bAxK9krAS2+0=
 20231219055011_notification_targets.sql h1:7hgvxHuZQONGhqw0nET2KBKF62f+T1iV57ijDGJzDEA=
+20231219201717_notifications.sql h1:5yRIOBeJvUulaGK1i4nZNmdRXF16YTNF8wS8LU58Fi0=

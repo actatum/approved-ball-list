@@ -69,6 +69,50 @@ table "notification_targets" {
   }
 }
 
+enum "notification_state" {
+  schema = schema.public
+  values = ["pending", "complete", "errored"]
+}
+
+table "notifications" {
+  schema = schema.public
+  column "id" {
+    null = false
+    type = uuid
+  }
+  column "state" {
+    null = false
+    type = enum.notification_state
+  }
+  column "ball_id" {
+    null = false
+    type = bigint
+  }
+  column "target_id" {
+    null = false
+    type = uuid
+  }
+  column "sent_at" {
+    null = true
+    type = timestamptz
+  }
+  primary_key  {
+    columns = [column.id]
+  }
+  foreign_key "target_id" {
+    columns = [column.target_id]
+    ref_columns = [table.notification_targets.column.id]
+    on_update = NO_ACTION
+    on_delete = NO_ACTION
+  }
+  foreign_key "ball_id" {
+    columns = [column.ball_id]
+    ref_columns = [table.balls.column.id]
+    on_update = NO_ACTION
+    on_delete = NO_ACTION
+  }
+}
+
 // table "schema_lock" {
 //   schema = schema.public
 //   column "lock_id" {

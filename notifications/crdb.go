@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"strconv"
 	"strings"
 
 	"github.com/cockroachdb/cockroach-go/v2/crdb"
@@ -73,4 +74,26 @@ func (r *CRDBRepository) FindAllTargets(ctx context.Context) ([]Target, error) {
 	}
 
 	return targets, nil
+}
+
+func (r *CRDBRepository) Store(ctx context.Context, notifications []Notification) error {
+	return crdb.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sql.Tx) error {
+		for _, notif := range notifications {
+			ballID, err := strconv.ParseInt(notif.Content[0].ID, 10, 64)
+			if err != nil {
+				return err
+			}
+
+			_, err = tx.ExecContext(
+				ctx,
+				`INSERT INTO notifications (id, state, ball_id, target_id) VALUES ($1, $2, $3, $4)`,
+				notif.ID, notif.State, ballID, notif.Target.ID,
+			)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
+	})
 }
