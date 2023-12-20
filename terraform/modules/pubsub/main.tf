@@ -6,7 +6,7 @@ module "pubsub" {
   project_id = var.project
   push_subscriptions = [
     {
-      name                  = var.name
+      name                  = "abl_sub"
       push_endpoint         = var.endpoint
       max_delivery_attempts = 5
       maximum_backoff       = "600s"
