@@ -1,3 +1,7 @@
+resource "" "name" {
+
+}
+
 resource "google_eventarc_trigger" "default" {
   name     = var.name
   location = var.region

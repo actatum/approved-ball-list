@@ -10,7 +10,7 @@ module "pubsub" {
       push_endpoint         = var.endpoint
       max_delivery_attempts = 5
       maximum_backoff       = "600s"
-      dead_letter_topic     = module.dlq.outputs.topic
+      dead_letter_topic     = module.dlq.topic
     }
   ]
 }
