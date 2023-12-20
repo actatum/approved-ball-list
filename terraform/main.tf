@@ -43,3 +43,15 @@ module "scheduler" {
     module.cloud_run,
   ]
 }
+
+module "pubsub" {
+  source   = "./modules/pubsub"
+  project  = var.project
+  region   = var.region
+  endpoint = "${module.cloud_run.url}/v1/stuff"
+
+  depends_on = [
+    module.services,
+    module.cloud_run,
+  ]
+}
