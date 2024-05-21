@@ -56,7 +56,7 @@ jobs:
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
           echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
-          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID,$BIDDLE_CHANNEL_ID'"' >> terraform.tfvars && \
           echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars && \
           echo 'cockroachdb_url = "'$COCKROACHDB_URL'"' >> terraform.tfvars
       - terraform/init:
@@ -77,7 +77,7 @@ jobs:
           echo 'project = "'$GCP_PROJECT'"' >> terraform.tfvars && \
           echo 'region = "us-central1"' >> terraform.tfvars && \
           echo 'discord_token = "'$DISCORD_TOKEN'"' >> terraform.tfvars && \
-          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID'"' >> terraform.tfvars && \
+          echo 'discord_channels = "'$PERSONAL_CHANNEL_ID,$USBC_APPROVED_BALL_LIST_CHANNEL_ID,$BIDDLE_CHANNEL_ID'"' >> terraform.tfvars && \
           echo 'circle_sha1 = "'$CIRCLE_SHA1'"' >> terraform.tfvars && \
           echo 'cockroachdb_url = "'$COCKROACHDB_URL'"' >> terraform.tfvars
       - terraform/init:
