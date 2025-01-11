@@ -19,7 +19,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.21.4
+      - image: cimg/go:1.23.4
     resource_class: medium
     steps:
       - checkout
@@ -40,7 +40,7 @@ jobs:
     steps:
       - checkout
       - go/install:
-          version: '1.21.4'
+          version: '1.23.4'
       - go/mod-download-cached
       - run: make test
   

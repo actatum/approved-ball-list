@@ -1,6 +1,6 @@
 module github.com/actatum/approved-ball-list
 
-go 1.21.4
+go 1.23.4
 
 require (
 	cloud.google.com/go/logging v1.10.0
