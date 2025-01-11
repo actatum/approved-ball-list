@@ -61,7 +61,7 @@ func TestAddBalls(t *testing.T) {
 		}
 
 		if diff := cmp.Diff(want, got, cmpopts.EquateApproxTime(time.Second)); diff != "" {
-			t.Errorf(diff)
+			t.Error(diff)
 		}
 	})
 

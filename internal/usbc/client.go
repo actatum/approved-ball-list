@@ -19,8 +19,10 @@ import (
 
 const layoutUS = "January 2, 2006"
 
-const ballListURL = "https://bowl.com/api/approvedballs?brandName="
-const noImageURL = "https://images.bowl.com/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg"
+const (
+	ballListURL = "https://bowl.com/api/approvedballs?brandName="
+	noImageURL  = "https://images.bowl.com/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg"
+)
 
 var monthMap = map[string]int{
 	"Jan":       1,
@@ -217,7 +219,7 @@ func parseDate(date string) (time.Time, error) {
 		}
 
 		return time.Date(2000, time.Month(month), 0, 0, 0, 0, 0, time.UTC), nil
-	} else {
-		return time.Time{}, fmt.Errorf("unexpected date format: %s", date)
 	}
+
+	return time.Time{}, fmt.Errorf("unexpected date format: %s", date)
 }

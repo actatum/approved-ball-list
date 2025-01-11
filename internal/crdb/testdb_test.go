@@ -7,8 +7,8 @@ func TestStartTestDB(t *testing.T) {
 		t.Skip("skipping integration test")
 	}
 
-	db, close := StartTestDB(t, false)
-	t.Cleanup(close)
+	db, cleanup := StartTestDB(t, false)
+	t.Cleanup(cleanup)
 
 	if db == nil {
 		t.Errorf("db should not be nil")
