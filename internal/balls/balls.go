@@ -26,6 +26,7 @@ const (
 	Columbia300 Brand = "Columbia"
 	DV8         Brand = "DV8"
 	Ebonite     Brand = "Ebonite"
+	Hammer      Brand = "Hammer"
 	Motiv       Brand = "Motiv"
 	Radical     Brand = "Radical"
 	RotoGrip    Brand = "Roto Grip"
@@ -41,6 +42,7 @@ var allBrands = []Brand{
 	Columbia300,
 	DV8,
 	Ebonite,
+	Hammer,
 	Motiv,
 	Radical,
 	RotoGrip,
