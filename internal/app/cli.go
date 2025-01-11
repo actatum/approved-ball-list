@@ -75,7 +75,7 @@ func CLI(args []string) int {
 			}()
 		} else {
 			notificationService = &mocks.NotificationServiceMock{
-				SendNotificationFunc: func(ctx context.Context, approvedBalls []balls.Ball) error {
+				SendNotificationFunc: func(_ context.Context, _ []balls.Ball) error {
 					return nil
 				},
 			}

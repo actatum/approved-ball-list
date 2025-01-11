@@ -36,7 +36,7 @@ func (n *Notifier) Close() error {
 }
 
 // SendNotification sends notifications to discord.
-func (n *Notifier) SendNotification(ctx context.Context, approvedBalls []balls.Ball) error {
+func (n *Notifier) SendNotification(_ context.Context, approvedBalls []balls.Ball) error {
 	if len(approvedBalls) == 0 {
 		return nil
 	}

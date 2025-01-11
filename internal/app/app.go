@@ -113,7 +113,7 @@ func Run() error {
 			}()
 		} else {
 			notificationService = &mocks.NotificationServiceMock{
-				SendNotificationFunc: func(ctx context.Context, approvedBalls []balls.Ball) error {
+				SendNotificationFunc: func(_ context.Context, _ []balls.Ball) error {
 					return nil
 				},
 			}
@@ -153,11 +153,11 @@ func Run() error {
 		g.Add(func() error {
 			h.logger.Info().Msgf("👋 HTTP server listening on :%s", h.cfg.Port)
 			return srv.ListenAndServe()
-		}, func(err error) {
+		}, func(_ error) {
 			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 			defer cancel()
-			if err := srv.Shutdown(ctx); err != nil {
-				h.logger.Error().Err(err).Msg("failed to shutdown HTTP server")
+			if shutdownErr := srv.Shutdown(ctx); shutdownErr != nil {
+				h.logger.Error().Err(shutdownErr).Msg("failed to shutdown HTTP server")
 			}
 		})
 	}

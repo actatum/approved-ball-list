@@ -19,12 +19,12 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/go:1.21.4
+      - image: cimg/go:1.23.4
     resource_class: medium
     steps:
       - checkout
       - run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.51.1
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.62.2
           golangci-lint --version
           make lint
       - terraform/install:
@@ -40,7 +40,7 @@ jobs:
     steps:
       - checkout
       - go/install:
-          version: '1.21.4'
+          version: '1.23.4'
       - go/mod-download-cached
       - run: make test
   
