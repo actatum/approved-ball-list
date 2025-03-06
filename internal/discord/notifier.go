@@ -52,11 +52,28 @@ func (n *Notifier) SendNotification(_ context.Context, approvedBalls []balls.Bal
 		})
 	}
 
+	batches := batchSlice(embeds, 3)
+
 	for _, id := range n.channels {
-		if _, err := n.dg.ChannelMessageSendEmbeds(id, embeds); err != nil {
-			return fmt.Errorf("sending embeds: %w", err)
+		for _, batch := range batches {
+			if _, err := n.dg.ChannelMessageSendEmbeds(id, batch); err != nil {
+				return fmt.Errorf("sending embeds: %w", err)
+			}
 		}
 	}
 
 	return nil
+}
+
+func batchSlice[T any](sl []T, batchSize int) [][]T {
+	batches := make([][]T, 0)
+	for i := 0; i < len(sl); i += batchSize {
+		end := i + batchSize
+		if end > len(sl) {
+			end = len(sl)
+		}
+		batches = append(batches, sl[i:end])
+	}
+
+	return batches
 }
