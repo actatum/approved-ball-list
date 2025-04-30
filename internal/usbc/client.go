@@ -180,13 +180,15 @@ func fixImageURL(dirty string) string {
 func parseDate(date string) (time.Time, error) {
 	date = strings.ReplaceAll(date, "'", "") // Remove apostrophes
 
-	if strings.Contains(date, ",") {
+	switch {
+	case strings.Contains(date, ","):
 		t, err := time.Parse(layoutUS, date)
 		if err != nil {
 			return time.Time{}, fmt.Errorf("time.Parse: %w", err)
 		}
 		return t, err
-	} else if strings.Contains(date, "-") {
+
+	case strings.Contains("date", "-"):
 		sp := strings.Split(strings.TrimSpace(date), "-")
 		if len(sp) != 2 {
 			return time.Time{}, fmt.Errorf("invalid month-year combo")
@@ -214,7 +216,8 @@ func parseDate(date string) (time.Time, error) {
 		}
 
 		return time.Date(yr, time.Month(month), 0, 0, 0, 0, 0, time.UTC), nil
-	} else if strings.Contains(date, "00") {
+
+	case strings.Contains(date, "00"):
 		date = strings.ReplaceAll(date, "00", "")
 
 		month, ok := monthMap[strings.TrimSpace(date)]
@@ -223,7 +226,8 @@ func parseDate(date string) (time.Time, error) {
 		}
 
 		return time.Date(2000, time.Month(month), 0, 0, 0, 0, 0, time.UTC), nil
-	}
 
-	return time.Time{}, fmt.Errorf("unexpected date format: %s", date)
+	default:
+		return time.Time{}, fmt.Errorf("unexpected date format: %s", date)
+	}
 }
