@@ -107,6 +107,10 @@ func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball
 
 	result := make([]balls.Ball, 0, len(items))
 	for _, i := range items {
+		if i.Name == "" || i.DateApproved == "" {
+			continue
+		}
+
 		i.Brand = strings.TrimSpace(i.Brand)
 		i.Name = strings.TrimSpace(i.Name)
 		i.ImageURL = strings.TrimSpace(i.ImageURL)
@@ -115,7 +119,7 @@ func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball
 		var approvedAt time.Time
 		approvedAt, err = parseDate(i.DateApproved)
 		if err != nil {
-			return nil, fmt.Errorf("parsing date: %w", err)
+			return nil, fmt.Errorf("parsing date: %s: %w", i.DateApproved, err)
 		}
 
 		if strings.Contains(i.ImageURL, "getmedia") {
