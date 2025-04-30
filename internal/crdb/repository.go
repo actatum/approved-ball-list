@@ -46,7 +46,7 @@ func (r *Repository) Add(ctx context.Context, items ...balls.Ball) ([]balls.Ball
 	var added []balls.Ball
 	err := crdb.ExecuteTx(ctx, r.db, &sql.TxOptions{}, func(tx *sql.Tx) error {
 		for _, b := range items {
-			row := tx.QueryRowContext(ctx, `SELECT COUNT(*) FROM balls WHERE brand = $1 AND name = $2`, b.Brand, b.Name)
+			row := tx.QueryRowContext(ctx, `SELECT COUNT(*) FROM balls WHERE brand = $1 AND name = $2 AND approved_at = $3`, b.Brand, b.Name, b.ApprovalDate)
 			var cnt int
 			if err := row.Scan(&cnt); err != nil {
 				return fmt.Errorf("scanning count: %w", err)

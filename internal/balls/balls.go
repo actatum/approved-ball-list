@@ -110,7 +110,7 @@ func (s service) CheckForNewlyApprovedBalls(ctx context.Context) error {
 	jobs := make(chan Brand, numJobs)
 	results := make(chan jobResult, numJobs)
 
-	for w := 0; w < 6; w++ {
+	for w := 0; w < 7; w++ {
 		go s.checkForNewlyApprovedBalls(ctx, jobs, results)
 	}
 
