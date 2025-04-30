@@ -71,7 +71,7 @@ func TestAddBalls(t *testing.T) {
 			ID:           1,
 			Brand:        "Storm",
 			Name:         "Phaze II",
-			ApprovalDate: time.Now(),
+			ApprovalDate: time.Now().Truncate(24 * time.Hour),
 			ImageURL:     &url.URL{},
 		})
 
@@ -80,7 +80,7 @@ func TestAddBalls(t *testing.T) {
 				ID:           1,
 				Brand:        "Storm",
 				Name:         "Phaze II",
-				ApprovalDate: time.Now(),
+				ApprovalDate: time.Now().Truncate(24 * time.Hour),
 				ImageURL:     &url.URL{},
 			},
 		}
