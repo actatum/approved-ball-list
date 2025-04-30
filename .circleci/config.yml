@@ -14,7 +14,7 @@ orbs:
   terraform: circleci/terraform@3.2.1
   gcp-cli: circleci/gcp-cli@3.1.1
   docker-orb: circleci/docker@2.4.0
-  go: circleci/go@3.0.2
+  go: circleci/go@1.9.0
 
 jobs:
   lint:
