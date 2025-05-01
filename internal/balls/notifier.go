@@ -74,9 +74,10 @@ type LocalNotifier struct{}
 func (n LocalNotifier) Notify(_ context.Context, approvedBalls []Ball) error {
 	if len(approvedBalls) == 0 {
 		fmt.Println("NOTIFIER: no approved balls to notify")
+		return nil
 	}
 
-	fmt.Println("NOTIFIER")
+	fmt.Println("NOTIFIER:")
 	for _, ball := range approvedBalls {
 		fmt.Printf("NEWLY APPROVED BALL: %s %s", ball.Brand, ball.Name)
 	}

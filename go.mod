@@ -4,7 +4,6 @@ go 1.24
 
 require (
 	cloud.google.com/go/logging v1.10.0
-	github.com/actatum/errs v0.0.0-20230427142402-f60a0b16b677
 	github.com/bwmarrin/discordgo v0.28.1
 	github.com/go-chi/chi/v5 v5.0.12
 	github.com/go-chi/render v1.0.3
@@ -15,7 +14,6 @@ require (
 	github.com/matryer/moq v0.2.7
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/pkg/errors v0.9.1
-	github.com/rs/zerolog v1.32.0
 )
 
 require (
@@ -55,8 +53,6 @@ require (
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/lib/pq v1.10.9 // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/moby/docker-image-spec v1.3.1 // indirect
 	github.com/moby/sys/user v0.3.0 // indirect

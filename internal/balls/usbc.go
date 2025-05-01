@@ -181,7 +181,7 @@ func parseDate(date string) (time.Time, error) {
 		}
 		return t, err
 
-	case strings.Contains("date", "-"):
+	case strings.Contains(date, "-"):
 		sp := strings.Split(strings.TrimSpace(date), "-")
 		if len(sp) != 2 {
 			return time.Time{}, fmt.Errorf("invalid month-year combo")

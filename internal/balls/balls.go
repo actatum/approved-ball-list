@@ -9,8 +9,6 @@ import (
 	"net/url"
 	"slices"
 	"time"
-
-	"github.com/rs/zerolog"
 )
 
 type Service interface {
@@ -138,10 +136,10 @@ func (s service) CheckForNewlyApprovedBalls(ctx context.Context) error {
 		}
 	}
 	if err != nil {
-		zerolog.Ctx(ctx).Error().Err(err).Msg("error checking for approved balls")
+		s.logger.ErrorContext(ctx, "error checking for approved balls", slog.Any("error", err))
 	}
 
-	zerolog.Ctx(ctx).Info().Msgf("%d newly approved balls", len(approved))
+	s.logger.InfoContext(ctx, fmt.Sprintf("%d newly approved balls", len(approved)))
 
 	if err := s.notifier.Notify(ctx, approved); err != nil {
 		return fmt.Errorf("notifying: %w", err)
@@ -155,6 +153,7 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 		s.logger.InfoContext(ctx, fmt.Sprintf("listing balls from %s", brand))
 		balls, err := s.usbcSerivce.ListBalls(ctx, brand)
 		if err != nil {
+			fmt.Println("ERROR", err)
 			results <- jobResult{
 				Err: fmt.Errorf("checking usbc list for brand %s: %w", brand, err),
 			}
