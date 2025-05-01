@@ -1,10 +1,9 @@
-// Package discord provides an implementation of the Notifier interface using discord as the notification medium.
-package discord
+package balls
 
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/google/go-cmp/cmp"
 )
 
 func Test_batchSlice(t *testing.T) {
@@ -19,6 +18,9 @@ func Test_batchSlice(t *testing.T) {
 		}
 
 		got := batchSlice(list, batchSize)
-		assert.Equal(t, expected, got)
+		diff := cmp.Diff(got, expected)
+		if diff != "" {
+			t.Fatalf("(-got, +want):\n%s", diff)
+		}
 	})
 }

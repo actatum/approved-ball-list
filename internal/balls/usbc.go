@@ -1,21 +1,25 @@
-// Package usbc provides an implementation of the USBCClient using the USBC json API.
-package usbc
+package balls
 
 import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"log/slog"
 	"net/http"
 	"net/url"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/actatum/approved-ball-list/internal/balls"
-	"github.com/rs/zerolog"
 )
+
+// USBCService interacts with the USBC approved ball list api.
+//
+//go:generate moq -fmt goimports -out usbc_service_moq_test.go . USBCService
+type USBCService interface {
+	ListBalls(ctx context.Context, brand Brand) ([]Ball, error)
+}
 
 const layoutUS = "January 2, 2006"
 
@@ -51,46 +55,40 @@ var monthMap = map[string]int{
 	"December":  12,
 }
 
-type ball struct {
+type usbcBall struct {
 	Brand        string `json:"brandName"`
 	Name         string `json:"name"`
 	DateApproved string `json:"dateApproved"`
 	ImageURL     string `json:"image"`
 }
 
-// Client handles interfacing with the usbc approved ball list xml api
-type Client struct {
+// HTTPUSBCService handles interfacing with the usbc approved ball list json api
+type HTTPUSBCService struct {
 	client *http.Client
-	logger *zerolog.Logger
+	logger *slog.Logger
 }
 
-// Config is the configuration for the usbc api client
-type Config struct {
-	Logger     *zerolog.Logger
-	HTTPClient *http.Client
-}
-
-// NewClient returns a new usbc api client
-func NewClient(cfg *Config) *Client {
-	if cfg.HTTPClient == nil {
-		cfg.HTTPClient = &http.Client{}
+// NewHTTPUSBCService returns a new usbc service that interfaces using json over http.
+func NewHTTPUSBCService(client *http.Client, logger *slog.Logger) *HTTPUSBCService {
+	if client == nil {
+		client = &http.Client{}
 	}
-	cfg.HTTPClient.Timeout = 10 * time.Second
-	return &Client{
-		client: cfg.HTTPClient,
-		logger: cfg.Logger,
+	client.Timeout = 10 * time.Second
+	return &HTTPUSBCService{
+		client: client,
+		logger: logger,
 	}
 }
 
 // ListBalls lists balls from the USBC approved ball list by brand.
-func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball, error) {
+func (s *HTTPUSBCService) ListBalls(ctx context.Context, brand Brand) ([]Ball, error) {
 	brandKey := base64.URLEncoding.EncodeToString([]byte(brand))
 	r, err := http.NewRequestWithContext(ctx, "GET", ballListURL+brandKey, nil)
 	if err != nil {
 		return nil, fmt.Errorf("creating http request: %w", err)
 	}
 
-	resp, err := c.client.Do(r)
+	resp, err := s.client.Do(r)
 	if err != nil {
 		return nil, fmt.Errorf("making http request: %w", err)
 	}
@@ -100,12 +98,12 @@ func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball
 		return nil, fmt.Errorf("received status: %d", resp.StatusCode)
 	}
 
-	var items []ball
+	var items []usbcBall
 	if err := json.NewDecoder(resp.Body).Decode(&items); err != nil {
 		return nil, fmt.Errorf("decoding response: %w", err)
 	}
 
-	result := make([]balls.Ball, 0, len(items))
+	result := make([]Ball, 0, len(items))
 	for _, i := range items {
 		if i.Name == "" || i.DateApproved == "" {
 			continue
@@ -130,8 +128,8 @@ func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball
 		if err != nil {
 			parsedURL, _ = url.Parse(noImageURL)
 		}
-		result = append(result, balls.Ball{
-			Brand:        balls.Brand(i.Brand),
+		result = append(result, Ball{
+			Brand:        Brand(i.Brand),
 			Name:         i.Name,
 			ApprovalDate: approvedAt,
 			ImageURL:     parsedURL,
@@ -141,12 +139,7 @@ func (c *Client) ListBalls(ctx context.Context, brand balls.Brand) ([]balls.Ball
 	return result, nil
 }
 
-// Close shuts down idle connections
-func (c *Client) Close() {
-	c.client.CloseIdleConnections()
-}
-
-func (c *Client) writeToJSONFile(balls []balls.Ball) error {
+func (s *HTTPUSBCService) writeToJSONFile(balls []Ball) error {
 	data, err := json.MarshalIndent(balls, "", "  ")
 	if err != nil {
 		return fmt.Errorf("json.MarshalIndent: %w", err)
@@ -165,7 +158,7 @@ func (c *Client) writeToJSONFile(balls []balls.Ball) error {
 	defer func() {
 		fileErr := file.Close()
 		if fileErr != nil {
-			c.logger.Warn().Err(fileErr).Msg("error closing filer")
+			s.logger.Warn("error closing file", slog.Any("error", fileErr))
 		}
 	}()
 
@@ -188,7 +181,7 @@ func parseDate(date string) (time.Time, error) {
 		}
 		return t, err
 
-	case strings.Contains("date", "-"):
+	case strings.Contains(date, "-"):
 		sp := strings.Split(strings.TrimSpace(date), "-")
 		if len(sp) != 2 {
 			return time.Time{}, fmt.Errorf("invalid month-year combo")

@@ -5,15 +5,41 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log/slog"
 	"net/url"
+	"slices"
 	"time"
-
-	"github.com/rs/zerolog"
 )
 
-//go:generate moq -out ../mocks/notification_service.go -pkg mocks -fmt goimports . NotificationService
-//go:generate moq -out ../mocks/repository.go -pkg mocks -fmt goimports . Repository
-//go:generate moq -out ../mocks/usbc_service.go -pkg mocks -fmt goimports . USBCService
+type Service interface {
+	// CheckForNewlyApprovedBalls checks to see if any new balls are on the USBC approved ball list.
+	CheckForNewlyApprovedBalls(ctx context.Context) error
+}
+
+// Ball represents a bowling ball.
+type Ball struct {
+	ID           int
+	Brand        Brand
+	Name         string
+	ApprovalDate time.Time
+	ImageURL     *url.URL
+}
+
+func BallsEqual(b1 Ball, b2 Ball) bool {
+	if b1.Brand != b2.Brand {
+		return false
+	}
+
+	if b1.Name != b2.Name {
+		return false
+	}
+
+	if !b1.ApprovalDate.Equal(b2.ApprovalDate) {
+		return false
+	}
+
+	return true
+}
 
 // Brand is a brand that makes bowling equipment.
 type Brand string
@@ -51,52 +77,31 @@ var allBrands = []Brand{
 	Track,
 }
 
-// Ball represents a bowling ball.
-type Ball struct {
-	ID           int
-	Brand        Brand
-	Name         string
-	ApprovalDate time.Time
-	ImageURL     *url.URL
-}
-
-// USBCService interacts with the USBC approved ball list.
-type USBCService interface {
-	ListBalls(ctx context.Context, brand Brand) ([]Ball, error)
-}
-
-// NotificationService handles sending notifications.
-type NotificationService interface {
-	SendNotification(ctx context.Context, approvedBalls []Ball) error
-}
-
-// Repository interacts with the persistence for the service.
-type Repository interface {
-	Add(ctx context.Context, balls ...Ball) ([]Ball, error)
-}
-
-// Service handles business logic.
-type Service interface {
-	// CheckForNewlyApprovedBalls checks to see if any new balls are on the USBC approved ball list.
-	CheckForNewlyApprovedBalls(ctx context.Context) error
+type BallFilter struct {
+	Brand        *Brand
+	Name         *string
+	ApprovalDate *time.Time
 }
 
 type service struct {
-	repo                Repository
-	usbcSerivce         USBCService
-	notificationService NotificationService
+	logger      *slog.Logger
+	store       Store
+	usbcSerivce USBCService
+	notifier    Notifier
 }
 
 // NewService returns a new service.
 func NewService(
-	repo Repository,
+	logger *slog.Logger,
+	store Store,
 	ubscService USBCService,
-	notificationService NotificationService,
+	notifier Notifier,
 ) Service {
 	return service{
-		repo:                repo,
-		usbcSerivce:         ubscService,
-		notificationService: notificationService,
+		logger:      logger,
+		store:       store,
+		usbcSerivce: ubscService,
+		notifier:    notifier,
 	}
 }
 
@@ -131,41 +136,66 @@ func (s service) CheckForNewlyApprovedBalls(ctx context.Context) error {
 		}
 	}
 	if err != nil {
-		zerolog.Ctx(ctx).Error().Err(err).Msg("error checking for approved balls")
+		s.logger.ErrorContext(ctx, "error checking for approved balls", slog.Any("error", err))
 	}
 
-	zerolog.Ctx(ctx).Info().Msgf("%d newly approved balls", len(approved))
+	s.logger.InfoContext(ctx, fmt.Sprintf("%d newly approved balls", len(approved)))
 
-	if err := s.notificationService.SendNotification(ctx, approved); err != nil {
-		return fmt.Errorf("sending notification: %w", err)
+	if err := s.notifier.Notify(ctx, approved); err != nil {
+		return fmt.Errorf("notifying: %w", err)
 	}
 
 	return nil
 }
 
 func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Brand, results chan<- jobResult) {
-	for j := range jobs {
-		zerolog.Ctx(ctx).Info().Msgf("listing balls from %s", j)
-		balls, err := s.usbcSerivce.ListBalls(ctx, j)
+	for brand := range jobs {
+		s.logger.InfoContext(ctx, fmt.Sprintf("listing balls from %s", brand))
+		balls, err := s.usbcSerivce.ListBalls(ctx, brand)
 		if err != nil {
 			results <- jobResult{
-				Err: fmt.Errorf("checking usbc list: %w", err),
+				Err: fmt.Errorf("checking usbc list for brand %s: %w", brand, err),
 			}
+			continue
 		}
 
 		if len(balls) == 0 {
 			continue
 		}
 
-		added, err := s.repo.Add(ctx, balls...)
+		brandBalls, err := s.store.GetAllBalls(ctx, BallFilter{
+			Brand: &brand,
+		})
 		if err != nil {
 			results <- jobResult{
-				Err: fmt.Errorf("adding balls to repo: %w", err),
+				Err: fmt.Errorf("retrieving balls for brand %s from store: %w", brand, err),
 			}
+			continue
+		}
+
+		if len(balls) <= len(brandBalls) {
+			results <- jobResult{
+				Balls: nil,
+			}
+			continue
+		}
+
+		approved := make([]Ball, 0)
+		for _, ballToRemove := range brandBalls {
+			approved = slices.DeleteFunc[[]Ball, Ball](balls, func(ball Ball) bool {
+				return BallsEqual(ballToRemove, ball)
+			})
+		}
+
+		if err = s.store.AddBalls(ctx, approved); err != nil {
+			results <- jobResult{
+				Err: fmt.Errorf("adding balls to store: %w", err),
+			}
+			continue
 		}
 
 		results <- jobResult{
-			Balls: added,
+			Balls: approved,
 		}
 	}
 }
