@@ -30,7 +30,7 @@ func main() {
 	flag.Var(&discordChannels, "discord-channels", "discord channels to notify")
 	flag.Parse()
 
-	logger := log.NewLogger(os.Stderr, log.WithFmtLog())
+	logger := log.NewLogger(os.Stderr)
 
 	var db *pgxpool.Pool
 	{
