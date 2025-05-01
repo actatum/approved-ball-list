@@ -153,7 +153,6 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 		s.logger.InfoContext(ctx, fmt.Sprintf("listing balls from %s", brand))
 		balls, err := s.usbcSerivce.ListBalls(ctx, brand)
 		if err != nil {
-			fmt.Println("ERROR", err)
 			results <- jobResult{
 				Err: fmt.Errorf("checking usbc list for brand %s: %w", brand, err),
 			}
