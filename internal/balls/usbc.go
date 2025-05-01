@@ -139,11 +139,6 @@ func (s *HTTPUSBCService) ListBalls(ctx context.Context, brand Brand) ([]Ball, e
 	return result, nil
 }
 
-// Close shuts down idle connections
-func (s *HTTPUSBCService) Close() {
-	s.client.CloseIdleConnections()
-}
-
 func (s *HTTPUSBCService) writeToJSONFile(balls []Ball) error {
 	data, err := json.MarshalIndent(balls, "", "  ")
 	if err != nil {

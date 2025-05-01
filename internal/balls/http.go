@@ -82,7 +82,7 @@ func requestLogger(logger *slog.Logger) func(next http.Handler) http.Handler {
 				logger.LogAttrs(r.Context(), lvl, "", attrs...)
 			}(time.Now())
 
-			next.ServeHTTP(w, r)
+			next.ServeHTTP(ww, r)
 		})
 	}
 }

@@ -9,39 +9,6 @@ import (
 	"time"
 )
 
-func Test_service_CheckForNewlyApprovedBalls(t *testing.T) {
-	type fields struct {
-		logger      *slog.Logger
-		store       Store
-		usbcSerivce USBCService
-		notifier    Notifier
-	}
-	type args struct {
-		ctx context.Context
-	}
-	tests := []struct {
-		name    string
-		fields  fields
-		args    args
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			s := service{
-				logger:      tt.fields.logger,
-				store:       tt.fields.store,
-				usbcSerivce: tt.fields.usbcSerivce,
-				notifier:    tt.fields.notifier,
-			}
-			if err := s.CheckForNewlyApprovedBalls(tt.args.ctx); (err != nil) != tt.wantErr {
-				t.Errorf("service.CheckForNewlyApprovedBalls() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
-	}
-}
-
 func Test_service_checkForNewlyApprovedBalls(t *testing.T) {
 	t.Run("no newly approved balls", func(t *testing.T) {
 		now := time.Now()
