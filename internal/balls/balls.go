@@ -11,6 +11,20 @@ import (
 	"github.com/rs/zerolog"
 )
 
+type Service interface {
+	// CheckForNewlyApprovedBalls checks to see if any new balls are on the USBC approved ball list.
+	CheckForNewlyApprovedBalls(ctx context.Context) error
+}
+
+// Ball represents a bowling ball.
+type Ball struct {
+	ID           int
+	Brand        Brand
+	Name         string
+	ApprovalDate time.Time
+	ImageURL     *url.URL
+}
+
 //go:generate moq -out ../mocks/notification_service.go -pkg mocks -fmt goimports . NotificationService
 //go:generate moq -out ../mocks/repository.go -pkg mocks -fmt goimports . Repository
 //go:generate moq -out ../mocks/usbc_service.go -pkg mocks -fmt goimports . USBCService
@@ -51,13 +65,10 @@ var allBrands = []Brand{
 	Track,
 }
 
-// Ball represents a bowling ball.
-type Ball struct {
-	ID           int
-	Brand        Brand
-	Name         string
-	ApprovalDate time.Time
-	ImageURL     *url.URL
+type BallFilter struct {
+	Brand        *Brand
+	Name         *string
+	ApprovalDate *time.Time
 }
 
 // USBCService interacts with the USBC approved ball list.
@@ -73,12 +84,6 @@ type NotificationService interface {
 // Repository interacts with the persistence for the service.
 type Repository interface {
 	Add(ctx context.Context, balls ...Ball) ([]Ball, error)
-}
-
-// Service handles business logic.
-type Service interface {
-	// CheckForNewlyApprovedBalls checks to see if any new balls are on the USBC approved ball list.
-	CheckForNewlyApprovedBalls(ctx context.Context) error
 }
 
 type service struct {
