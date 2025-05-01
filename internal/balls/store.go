@@ -10,6 +10,9 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
+// Store interfaces with the services's persistence.
+//
+//go:generate moq -fmt goimports -out store_moq_test.go . Store
 type Store interface {
 	AddBalls(ctx context.Context, balls []Ball) error
 	GetAllBalls(ctx context.Context, filter BallFilter) ([]Ball, error)

@@ -23,6 +23,15 @@ linters:
         - (io.Closer).Close
         - (io.Reader).Close
         - (*database/sql.DB).Close
+        - (*github.com/bwmarrin/discordgo.Session).Close
+        - (github.com/jackc/pgx/v5.Tx).Rollback
+    gocritic:
+      disabled-checks:
+        - exitAfterDefer 
+    revive:
+      rules:
+        - name: unused-parameter
+          exclude: ["**/*_test.go"]
 
 issues:
   max-issues-per-linter: 0
