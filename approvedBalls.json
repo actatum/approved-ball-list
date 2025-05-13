@@ -1,0 +1,6538 @@
+[
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "** Mako Attack Red/Black/Magenta (Under 13 Lb. Only)",
+    "ApprovalDate": "2019-09-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/__MakoAttackRed_Black_Magenta(Under13Lb.Only).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/__MakoAttackRed_Black_Magenta(Under13Lb.Only).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "100P",
+    "ApprovalDate": "2011-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track100P.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "300A",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/300A.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "300C",
+    "ApprovalDate": "2010-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track300C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "300C Solid",
+    "ApprovalDate": "2013-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/300CSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "300T",
+    "ApprovalDate": "2011-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track300T.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "400A Special Edition",
+    "ApprovalDate": "2013-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/400ASpecialEdition.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "405A",
+    "ApprovalDate": "2012-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/405A.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "405C",
+    "ApprovalDate": "2010-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track405C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "407C",
+    "ApprovalDate": "2011-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track407C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "408A",
+    "ApprovalDate": "2011-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track-408A_300.png",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "408A/C",
+    "ApprovalDate": "2013-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/408A_C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "408C",
+    "ApprovalDate": "2010-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track408C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "408C Encore",
+    "ApprovalDate": "2010-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track408CEncore.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "408C Triple Crown",
+    "ApprovalDate": "2012-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/408CTripleCrown.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "502A",
+    "ApprovalDate": "2011-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track502A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "503A",
+    "ApprovalDate": "2013-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/503A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "503C",
+    "ApprovalDate": "2011-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track503C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "503T",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/503T.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "505A",
+    "ApprovalDate": "2009-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "505C",
+    "ApprovalDate": "2009-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track505c.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "505C Special Edition",
+    "ApprovalDate": "2012-02-29T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/505CSpecialEdition.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "505C²",
+    "ApprovalDate": "2013-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/505C².JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/505C².JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "505T",
+    "ApprovalDate": "2010-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track505T.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "508A",
+    "ApprovalDate": "2011-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track508A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "607A Special Edition",
+    "ApprovalDate": "2010-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track607ASE.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "706A",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/706A.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "706C/A",
+    "ApprovalDate": "2013-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/706C_A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "706T",
+    "ApprovalDate": "2013-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/706T.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "714C",
+    "ApprovalDate": "2012-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/714C.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "715A",
+    "ApprovalDate": "2009-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "715C",
+    "ApprovalDate": "2009-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track715C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "715T",
+    "ApprovalDate": "2010-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track715T.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "716C",
+    "ApprovalDate": "2011-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track716C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "716T",
+    "ApprovalDate": "2011-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track716T.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "718A",
+    "ApprovalDate": "2010-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track718A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "718A (Orange Pin)",
+    "ApprovalDate": "2011-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track718A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "811A Special Edition",
+    "ApprovalDate": "2011-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track-811A-Special-Edition-200.png",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "811C/T",
+    "ApprovalDate": "2012-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/811C_T.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "811C/T Solid",
+    "ApprovalDate": "2013-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/811C_TSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "812T",
+    "ApprovalDate": "2012-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/812T.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "910A",
+    "ApprovalDate": "2013-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/910A.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "911T",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/911T.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "912T",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/912T.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "916 All Terrain",
+    "ApprovalDate": "2010-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track916AllTerrain.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "916AT Teal/Purple/Burgundy",
+    "ApprovalDate": "2011-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track916ATTealPurpleBurgundy.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "919C",
+    "ApprovalDate": "2011-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Track919C.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "920A",
+    "ApprovalDate": "2009-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "920T",
+    "ApprovalDate": "2010-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "930T",
+    "ApprovalDate": "2009-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "ABS K.O Punch Pro",
+    "ApprovalDate": "1999-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Alias",
+    "ApprovalDate": "2018-01-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Alias.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Alias Xpress",
+    "ApprovalDate": "2018-06-05T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/AliasXpress.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Animal",
+    "ApprovalDate": "2003-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Animal Untamed",
+    "ApprovalDate": "2004-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Archetype",
+    "ApprovalDate": "2023-01-24T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/d221ca74-b6f3-4501-bda6-0baa8b238ad7/Track-Archetype.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Archetype Hybrid",
+    "ApprovalDate": "2024-02-05T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/9a38dc70-7602-4c4c-b5f0-115cb8c284a8/Track-Archetype-Hybrid-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Archetype Red-Blue",
+    "ApprovalDate": "2023-08-01T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/3afe9085-8e6c-48ce-8fc7-400882b75600/Track-Archetype-Red-Blue.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Archetype Rose-Sea",
+    "ApprovalDate": "2024-10-08T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/ab41a711-8aa6-4287-82e5-43b0e909e5f4/Track-Archetype-Rose-Sea.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Arsenal",
+    "ApprovalDate": "2005-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Arsenal Aggressive",
+    "ApprovalDate": "2004-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Arsenal Artillery",
+    "ApprovalDate": "2006-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Arsenal Reactive",
+    "ApprovalDate": "2005-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Assassin",
+    "ApprovalDate": "2000-02-29T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Avenger",
+    "ApprovalDate": "2000-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Blue Heat",
+    "ApprovalDate": "2005-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Boxing Glove",
+    "ApprovalDate": "2000-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Code Red Special Edition",
+    "ApprovalDate": "1998-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Crash",
+    "ApprovalDate": "2004-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Criterion",
+    "ApprovalDate": "2024-10-08T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/a274e6a9-bf0b-4037-be54-a052e420f7ae/Track-Criterion-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Criterion Hybrid",
+    "ApprovalDate": "2025-02-04T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/d2c0d254-4a5a-466b-b7ff-ea030d97ee30/Track-Criterion-Hybrid-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Critical Mass \"code red\"",
+    "ApprovalDate": "1994-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Critical Mass (Black/Smoke)",
+    "ApprovalDate": "2018-05-22T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/CriticalMass.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Critical Mass (Purple)",
+    "ApprovalDate": "1993-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Crunch",
+    "ApprovalDate": "2003-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Crunch Time",
+    "ApprovalDate": "2003-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Cyborg",
+    "ApprovalDate": "2016-06-16T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Cyborg.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Cyborg (Yellow Pin)",
+    "ApprovalDate": "2016-06-16T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Cyborg(YellowPin).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Cyborg(YellowPin).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Cyborg Pearl",
+    "ApprovalDate": "2016-09-22T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/CyborgPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Cypher",
+    "ApprovalDate": "2024-04-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/90c2d73c-db56-4759-8ec4-918fd268c669/Track-Cypher-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Cypher Pearl",
+    "ApprovalDate": "2025-04-01T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/e664284a-cd6a-490c-9516-4d3b02a606eb/Track-Cypher-Pearl-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Darkside",
+    "ApprovalDate": "2003-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Desert Heat",
+    "ApprovalDate": "2005-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Domino",
+    "ApprovalDate": "2007-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Dry Heat",
+    "ApprovalDate": "2003-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Elite Remix",
+    "ApprovalDate": "2005-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Elite Revival",
+    "ApprovalDate": "2004-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "EMB",
+    "ApprovalDate": "2001-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "EMB Pearl",
+    "ApprovalDate": "2001-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "EMB XF",
+    "ApprovalDate": "2001-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Enforcer",
+    "ApprovalDate": "1999-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Equation",
+    "ApprovalDate": "2006-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Equation (Gold)",
+    "ApprovalDate": "2014-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Equation(Gold).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Equation(Gold).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Equation 2",
+    "ApprovalDate": "2006-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "EZ Money",
+    "ApprovalDate": "2002-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Flaming T Spare Ball",
+    "ApprovalDate": "2006-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Flare (Copper)",
+    "ApprovalDate": "1995-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Freak",
+    "ApprovalDate": "2002-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Freak Out",
+    "ApprovalDate": "2002-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Freak Out Blue/Red/Silver",
+    "ApprovalDate": "2015-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/FreakOutBlue_Red_Silver.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Freak-A-Zoid",
+    "ApprovalDate": "2004-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Havoc",
+    "ApprovalDate": "2003-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat 2 Pearl",
+    "ApprovalDate": "2001-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Black/Purple/Silver",
+    "ApprovalDate": "2011-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackHeatPurpleBlackSilver.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Black/Purple/Silver (Orange Pin)",
+    "ApprovalDate": "2012-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatBlack_Purple_Silver(OrangePin).jpg",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatBlack_Purple_Silver(OrangePin).jpg",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Blast",
+    "ApprovalDate": "2005-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Burgundy",
+    "ApprovalDate": "2005-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Lava",
+    "ApprovalDate": "2019-06-11T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatLava.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Maroon Pearl",
+    "ApprovalDate": "2015-11-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatMaroonPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Ultraviolet",
+    "ApprovalDate": "2021-10-12T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatUltraviolet.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat Wave",
+    "ApprovalDate": "2006-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat X-Treme",
+    "ApprovalDate": "2016-06-16T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatX-treme.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Heat X-Treme (Polished)",
+    "ApprovalDate": "2016-07-12T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatX-Treme(Polished).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HeatX-Treme(Polished).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hex Darkside",
+    "ApprovalDate": "2003-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hex-Plosion",
+    "ApprovalDate": "2004-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hex-Treme",
+    "ApprovalDate": "2002-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hx05",
+    "ApprovalDate": "2013-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HX05.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hx10",
+    "ApprovalDate": "2014-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/HX10.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Hx16",
+    "ApprovalDate": "2014-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Hx16.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "In2ition",
+    "ApprovalDate": "2019-09-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/In2ition.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "In2ition Solid",
+    "ApprovalDate": "2019-12-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/In2itionSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Inertia",
+    "ApprovalDate": "2006-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "K.O Champ",
+    "ApprovalDate": "1999-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "K.O Punch",
+    "ApprovalDate": "1998-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "K.O. Punch Pro Edition",
+    "ApprovalDate": "1999-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Killer Project",
+    "ApprovalDate": "2012-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KillerProject.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic",
+    "ApprovalDate": "2007-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic (EX)",
+    "ApprovalDate": "2021-11-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Kinetic(EX).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Kinetic(EX).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Amethyst",
+    "ApprovalDate": "2018-06-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticAmethyst.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Art",
+    "ApprovalDate": "2007-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Black",
+    "ApprovalDate": "2009-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Black Ice",
+    "ApprovalDate": "2022-03-29T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticBlackIce.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Cobalt",
+    "ApprovalDate": "2023-03-21T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/6187810b-b11f-4be7-a2ba-cfe01670477b/Track-Kinetic-Cobalt.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Emerald",
+    "ApprovalDate": "2016-12-15T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticEmerald.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Energy",
+    "ApprovalDate": "2007-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Gold",
+    "ApprovalDate": "2014-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticGold.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Obsidian",
+    "ApprovalDate": "2019-10-15T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticObsidian.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Pearl",
+    "ApprovalDate": "2008-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Platinum",
+    "ApprovalDate": "2021-02-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticPlatinum.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Power",
+    "ApprovalDate": "2009-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Ruby",
+    "ApprovalDate": "2017-06-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticRuby.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Ruby Polished",
+    "ApprovalDate": "2017-06-06T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticRubyPolished.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Kinetic Sapphire",
+    "ApprovalDate": "2017-12-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/KineticSapphire.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Latitude",
+    "ApprovalDate": "2020-02-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Lattitude.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Latitude Pearl",
+    "ApprovalDate": "2020-10-06T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LatitudePearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion",
+    "ApprovalDate": "2006-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Cherry Silver",
+    "ApprovalDate": "2007-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Cherry/Silver/Black",
+    "ApprovalDate": "2006-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Pearl",
+    "ApprovalDate": "2021-06-15T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LegionPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Purple/Teal/Red",
+    "ApprovalDate": "2007-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Red/Black/Yellow",
+    "ApprovalDate": "2015-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LegionRed_Black_Yellow.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Solid",
+    "ApprovalDate": "2015-10-22T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LegionSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Legion Solid Purple",
+    "ApprovalDate": "2022-09-20T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/534fcb71-d928-422f-b6c7-fcba49a4b236/Track-Legion-Solid-Purple_1.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Logix",
+    "ApprovalDate": "2017-08-08T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Logix.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Lx05",
+    "ApprovalDate": "2014-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LX05.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Lx10",
+    "ApprovalDate": "2014-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Lx10.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Lx16",
+    "ApprovalDate": "2013-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/LX16.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Machine",
+    "ApprovalDate": "2006-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mako",
+    "ApprovalDate": "2016-12-15T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Mako.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mako Attack",
+    "ApprovalDate": "2017-07-25T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MakoAttack.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mako Critical",
+    "ApprovalDate": "2018-01-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MakoCritical.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mako Pearl (Bite)",
+    "ApprovalDate": "2017-03-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MakoPearl(Bite).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MakoPearl(Bite).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mako Strike",
+    "ApprovalDate": "2017-11-14T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MakoStrike.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mean Machine",
+    "ApprovalDate": "2006-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mo Jo",
+    "ApprovalDate": "2002-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Money",
+    "ApprovalDate": "2001-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mutant",
+    "ApprovalDate": "2002-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mutant Joker",
+    "ApprovalDate": "2004-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mutant Mania",
+    "ApprovalDate": "2004-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mx05",
+    "ApprovalDate": "2014-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Mx05.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mx10",
+    "ApprovalDate": "2013-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MX10.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Mx16",
+    "ApprovalDate": "2014-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MX16.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "MxPRO",
+    "ApprovalDate": "2014-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/MxPRO.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "N. R. G.(Burnt Orng.)",
+    "ApprovalDate": "1995-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Nuke",
+    "ApprovalDate": "1993-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox",
+    "ApprovalDate": "2015-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Paradox.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Black",
+    "ApprovalDate": "2017-10-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxBlack.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Black Pearl",
+    "ApprovalDate": "2016-03-01T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxBlackPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Extreme",
+    "ApprovalDate": "2017-04-11T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxExtreme.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Pearl",
+    "ApprovalDate": "2015-12-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Pearl (Sanded)",
+    "ApprovalDate": "2015-12-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxPearl(Sanded).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxPearl(Sanded).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Red",
+    "ApprovalDate": "2019-08-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Red Pearl",
+    "ApprovalDate": "2016-02-09T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxRedPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Return",
+    "ApprovalDate": "2018-04-24T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxReturn.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox RV2",
+    "ApprovalDate": "2016-05-03T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxRV2.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox RV3",
+    "ApprovalDate": "2016-12-20T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxRV3.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox RV4",
+    "ApprovalDate": "2017-03-07T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxRV4.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Secret",
+    "ApprovalDate": "2017-07-25T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxSecret.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox Trilogy",
+    "ApprovalDate": "2016-08-25T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxTrilogy.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox TX2",
+    "ApprovalDate": "2016-06-14T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxTX2.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox TX3",
+    "ApprovalDate": "2016-09-20T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxTX3.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox TX4",
+    "ApprovalDate": "2017-02-14T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxTX4.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paradox V",
+    "ApprovalDate": "2018-09-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParadoxV.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon",
+    "ApprovalDate": "2021-12-14T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Paragon.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon (Battle)",
+    "ApprovalDate": "2024-08-27T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/b4516853-5a23-4273-b4f2-f86876dd86be/Track-Paragon-(Battle).JPG",
+      "RawPath": "/getmedia/b4516853-5a23-4273-b4f2-f86876dd86be/Track-Paragon-(Battle).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon (SE)",
+    "ApprovalDate": "2023-05-16T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/2e32a552-6552-41c0-ac19-db417fff1cea/Track-Paragon-(SE).JPG",
+      "RawPath": "/getmedia/2e32a552-6552-41c0-ac19-db417fff1cea/Track-Paragon-(SE).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon (Weapon)",
+    "ApprovalDate": "2023-10-10T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/8bcc01f3-4b90-4025-84a3-fdc89b56df30/Track-Paragon-(Weapon).JPG",
+      "RawPath": "/getmedia/8bcc01f3-4b90-4025-84a3-fdc89b56df30/Track-Paragon-(Weapon).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon Black Pearl",
+    "ApprovalDate": "2025-02-11T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/406cc290-a01b-480b-ad21-0e60cb0ca71f/Track-Paragon-Black-Pearl.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon Hybrid",
+    "ApprovalDate": "2022-06-21T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParagonHybrid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon Pearl",
+    "ApprovalDate": "2023-06-27T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/8dacfa5b-feae-4260-9e7f-c98061cec4f4/Track-Paragon-Pearl-1.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon Red",
+    "ApprovalDate": "2022-06-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ParagonRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Paragon Solid",
+    "ApprovalDate": "2022-09-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/9c216337-0938-4b55-ae95-1e57e7fa5542/Track-Paragon-Solid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "PBA Tour Racing",
+    "ApprovalDate": "1998-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phenom",
+    "ApprovalDate": "2003-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phenom Unleashed",
+    "ApprovalDate": "2003-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phenom Unleashed 3.0",
+    "ApprovalDate": "2005-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phenom Unleashed II",
+    "ApprovalDate": "2004-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix",
+    "ApprovalDate": "2006-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix - Fire Eagle",
+    "ApprovalDate": "2008-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Black/Orange/Yellow (AC)",
+    "ApprovalDate": "2015-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixBlack_Orange_Yellow(AC).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixBlack_Orange_Yellow(AC).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Blue/Silver/Red",
+    "ApprovalDate": "2012-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixBlue_Silver_Red.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Forever",
+    "ApprovalDate": "2009-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Newbrid",
+    "ApprovalDate": "2007-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Newbrid Alpha",
+    "ApprovalDate": "2007-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Newbrid Beta",
+    "ApprovalDate": "2008-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Red/Black/Yellow",
+    "ApprovalDate": "2013-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixRed_Black_Yellow.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Phoenix Silver/Yellow/Red (SF)",
+    "ApprovalDate": "2015-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixSilver_Yellow_Red(SF).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PhoenixSilver_Yellow_Red(SF).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Power Machine",
+    "ApprovalDate": "2006-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Power Machine Black/Red/Blue",
+    "ApprovalDate": "2015-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PowerMachineBlack_Red_Blue.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Precision",
+    "ApprovalDate": "2018-07-17T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Precision.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Precision Black/Violet/Purple",
+    "ApprovalDate": "2019-10-22T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PrecisionBlack_Violet_Purple.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Precision Red",
+    "ApprovalDate": "2019-04-23T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PrecisionRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Precision Solid",
+    "ApprovalDate": "2018-12-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/PrecisionSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Project",
+    "ApprovalDate": "2009-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackProject.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Project Turquoise Navy Silver",
+    "ApprovalDate": "2011-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackProjectTurquoiseNavySilver.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Proof",
+    "ApprovalDate": "2020-02-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Proof.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Proof Hybrid",
+    "ApprovalDate": "2020-12-15T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ProofHybrid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Proof Pearl",
+    "ApprovalDate": "2020-08-04T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/ProofPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Race T 800",
+    "ApprovalDate": "2018-11-06T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/RaceT800.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Revmaster",
+    "ApprovalDate": "2002-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Revmaster Magic",
+    "ApprovalDate": "2003-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising Again",
+    "ApprovalDate": "2008-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising HE",
+    "ApprovalDate": "2012-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/RisingHE.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising II",
+    "ApprovalDate": "2010-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackRisingII.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising Particle",
+    "ApprovalDate": "2008-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising Reboot",
+    "ApprovalDate": "2018-05-08T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/RisingReboot.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising SE",
+    "ApprovalDate": "2008-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising Star",
+    "ApprovalDate": "2009-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rising Sun",
+    "ApprovalDate": "2008-02-29T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Robo Rule",
+    "ApprovalDate": "2005-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rule",
+    "ApprovalDate": "2004-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rule Blue/Gold",
+    "ApprovalDate": "2009-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackRuleBlue-Gold.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rule Delta 1",
+    "ApprovalDate": "2005-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Rule GP2",
+    "ApprovalDate": "2004-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor",
+    "ApprovalDate": "1994-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor 2",
+    "ApprovalDate": "1995-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor 2 Plus",
+    "ApprovalDate": "1995-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor Pearl",
+    "ApprovalDate": "2022-10-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/d7aafdc9-72d5-4826-a136-cb84117a5fed/Track-Sensor-Pearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor Solid",
+    "ApprovalDate": "2023-09-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/9f67d049-ab4c-4b5b-8bea-ce8831321969/Track-Sensor-Solid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor X - Cell",
+    "ApprovalDate": "1996-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sensor/C",
+    "ApprovalDate": "1996-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Shark",
+    "ApprovalDate": "1991-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Shark Urethane (15-lb. Only)",
+    "ApprovalDate": "2017-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/SharkUrethane(15-lb.Only).JPG",
+      "RawPath": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/SharkUrethane(15-lb.Only).JPG",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Sheer Havoc",
+    "ApprovalDate": "2004-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Silencer",
+    "ApprovalDate": "2000-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Slash Blue",
+    "ApprovalDate": "2004-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Slash red",
+    "ApprovalDate": "2004-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Solution Power Plus",
+    "ApprovalDate": "2005-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Solution Power Plus EX",
+    "ApprovalDate": "2005-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Spare +",
+    "ApprovalDate": "2014-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Spare+.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Spare + Purple/Blue/Black",
+    "ApprovalDate": "2017-05-09T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Spare+Purple_Blue_Black.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Spell",
+    "ApprovalDate": "2002-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth",
+    "ApprovalDate": "2022-05-24T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Stealth.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Blue",
+    "ApprovalDate": "2022-09-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/99e7d0dd-80aa-46e9-bd28-b3a89f06d504/Track-Stealth-Blue.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Hybrid",
+    "ApprovalDate": "2024-06-25T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/e99a3040-95af-4fe6-af3a-908b91f991de/Track-Stealth-Hybrid-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Mode",
+    "ApprovalDate": "2025-02-04T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/0b7a366f-e738-4df0-93b0-e204f1bd55c7/Track-Stealth-Mode-NEW.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Pearl",
+    "ApprovalDate": "2023-05-23T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/d0eae843-77c3-4bb6-acda-4b0e4ac69694/Track-Stealth-Pearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Red",
+    "ApprovalDate": "2023-08-01T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/48c548b5-a64f-4613-9fe4-8f753c23722a/Track-Stealth-Red.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stealth Scarlet",
+    "ApprovalDate": "2024-06-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/37b6b982-d5b2-491d-9235-bfb2e4be94e3/Track-Stealth-Scarlet.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stomp",
+    "ApprovalDate": "1999-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stomp Black",
+    "ApprovalDate": "2000-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Stomp Pearl",
+    "ApprovalDate": "1999-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Strata",
+    "ApprovalDate": "2020-10-06T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Strata.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Strata Black Pearl",
+    "ApprovalDate": "2021-11-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/StrataBlackPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Strata Hybrid",
+    "ApprovalDate": "2021-05-04T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/StrataHybrid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Strike Machine",
+    "ApprovalDate": "2006-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Super Freak",
+    "ApprovalDate": "2002-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Super Freak Black/Red",
+    "ApprovalDate": "2011-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackSuperFreakBlackRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Super Freak Blue/Purple",
+    "ApprovalDate": "2003-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Super Freak Purple/Orange",
+    "ApprovalDate": "2003-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Super Rising",
+    "ApprovalDate": "2010-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy ( Dark Green )",
+    "ApprovalDate": "1996-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy (Green)",
+    "ApprovalDate": "1995-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy E.T.S.",
+    "ApprovalDate": "1996-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy ETS Burgundy/Emerald/Blue",
+    "ApprovalDate": "2004-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy ETS Teal/Blue/Red",
+    "ApprovalDate": "2004-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Synergy LF",
+    "ApprovalDate": "2003-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tactix",
+    "ApprovalDate": "2018-08-14T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Tactix.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tactix Black",
+    "ApprovalDate": "2019-04-23T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TactixBlack.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tactix Green",
+    "ApprovalDate": "2019-10-08T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TactixGreen.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tactix Hybrid",
+    "ApprovalDate": "2019-07-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TactixHybrid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tactix Red",
+    "ApprovalDate": "2019-03-19T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TactixRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tantrum",
+    "ApprovalDate": "2008-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Temper",
+    "ApprovalDate": "2007-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tempo",
+    "ApprovalDate": "2020-07-07T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Tempo.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "The Kinetic",
+    "ApprovalDate": "2012-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TheKinetic.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "The Kinetic Hybrid",
+    "ApprovalDate": "2013-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TheKineticHybrid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "The Kinetic Pearl",
+    "ApprovalDate": "2013-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TheKineticPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "The Rising",
+    "ApprovalDate": "2007-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem",
+    "ApprovalDate": "2023-11-07T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/142e7280-e4ef-4b73-8609-be34a6ee31e4/Track-THeorem.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem Black Urethane",
+    "ApprovalDate": "2024-12-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/bd0f655b-17a5-479e-ac5e-92229562cd15/Track-Theorem-Black-Urethane.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem Black/Smoke",
+    "ApprovalDate": "2024-04-23T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/c401f9b1-ffd2-407e-aaa8-cd6165832216/Track-Theorem-Black-Smoke.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem Pearl",
+    "ApprovalDate": "2024-11-05T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/a36b52fc-8052-49b6-bafd-b3c9ca6a2f83/Track-Theorem-Pearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem Purple-Black",
+    "ApprovalDate": "2024-08-06T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/7dcb3a85-d759-463f-b357-803235f11081/Track-Theorem-Purple-Black.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Theorem Red Pearl",
+    "ApprovalDate": "2025-01-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/2ff056f6-ae6c-4ee7-8a9a-5543813ed932/Track-Theorem-Red-Pearl.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Thrash",
+    "ApprovalDate": "2003-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Threat",
+    "ApprovalDate": "2002-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "TKO Contender",
+    "ApprovalDate": "1999-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tour SiC",
+    "ApprovalDate": "2014-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TourSiC.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tour X",
+    "ApprovalDate": "2014-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TourX.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tour X Solid",
+    "ApprovalDate": "2015-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TourXSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Track Magic",
+    "ApprovalDate": "2001-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Track Magic \"The Hex\"",
+    "ApprovalDate": "2001-08-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Track Spare",
+    "ApprovalDate": "2008-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triple Threat",
+    "ApprovalDate": "2003-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton",
+    "ApprovalDate": "1996-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Elite",
+    "ApprovalDate": "1997-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Elite Pearl",
+    "ApprovalDate": "1998-02-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Elite Purple Sparkle",
+    "ApprovalDate": "2019-02-12T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TritonElitePurpleSparkle.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Heat",
+    "ApprovalDate": "1997-07-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Heat 2",
+    "ApprovalDate": "2000-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton Hot Coral",
+    "ApprovalDate": "1997-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Triton TKO",
+    "ApprovalDate": "1998-06-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark",
+    "ApprovalDate": "1992-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Black",
+    "ApprovalDate": "2022-12-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/3426bc66-3bcf-453c-8cd6-8037631054b0/Track-T-Shark-Black.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Black/Purple/Mint",
+    "ApprovalDate": "2023-05-16T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/b97ad8e7-6619-4bea-8903-1352af95e112/Track-T-Shark-Black-Purple-Mint.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Black/Red/Orange",
+    "ApprovalDate": "2021-04-13T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/T-SharkBlack_Red_Orange.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Pearl",
+    "ApprovalDate": "2019-08-27T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TSharkPearl.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Purple/Black",
+    "ApprovalDate": "2019-02-12T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TSharkPurple_Black.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "T-Shark Red",
+    "ApprovalDate": "2022-04-12T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/T-SharkRed.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tundra",
+    "ApprovalDate": "2016-09-22T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Tundra.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tundra Blue Fire",
+    "ApprovalDate": "2024-05-28T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/6611ee18-6a55-4dff-b5ef-5944065d375c/Track-Tundra-Blue-Fire.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tundra Fire",
+    "ApprovalDate": "2023-03-21T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "bowl.com",
+      "Path": "/getmedia/eec2ce8d-380d-4f99-80de-37ab5f95f1c1/Track-Tundra-Fire.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Tundra Solid",
+    "ApprovalDate": "2018-09-18T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TundraSolid.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Ultra Heat",
+    "ApprovalDate": "2018-01-02T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/UltraHeat.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Uprising",
+    "ApprovalDate": "2008-05-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Uprising Red/Gold/Blue",
+    "ApprovalDate": "2010-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/TrackUpRisingRed-Gold-Blue.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Volcano",
+    "ApprovalDate": "1992-09-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Volcano R",
+    "ApprovalDate": "1994-01-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Voo Doo",
+    "ApprovalDate": "2001-12-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Wizard LF",
+    "ApprovalDate": "2001-11-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Xception",
+    "ApprovalDate": "2004-10-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Xception 5.0",
+    "ApprovalDate": "2005-04-30T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/noimage.jpg",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  },
+  {
+    "ID": 0,
+    "Brand": "Track Inc.",
+    "Name": "Xception 6.0",
+    "ApprovalDate": "2015-03-31T00:00:00Z",
+    "ImageURL": {
+      "Scheme": "https",
+      "Opaque": "",
+      "User": null,
+      "Host": "images.bowl.com",
+      "Path": "/bowl/media/legacy/internap/bowl/equipandspecs/images/approvedballs/Xception6.0.JPG",
+      "RawPath": "",
+      "OmitHost": false,
+      "ForceQuery": false,
+      "RawQuery": "",
+      "Fragment": "",
+      "RawFragment": ""
+    }
+  }
+]

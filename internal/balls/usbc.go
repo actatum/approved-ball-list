@@ -136,6 +136,10 @@ func (s *HTTPUSBCService) ListBalls(ctx context.Context, brand Brand) ([]Ball, e
 		})
 	}
 
+	if err = s.writeToJSONFile(result); err != nil {
+		return nil, err
+	}
+
 	return result, nil
 }
 

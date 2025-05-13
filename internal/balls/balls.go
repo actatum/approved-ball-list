@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"log/slog"
 	"net/url"
-	"slices"
+	"strings"
 	"time"
 )
 
@@ -173,18 +173,21 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 			continue
 		}
 
-		if len(balls) <= len(brandBalls) {
-			results <- jobResult{
-				Balls: nil,
-			}
-			continue
-		}
-
 		approved := make([]Ball, 0)
-		for _, ballToRemove := range brandBalls {
-			approved = slices.DeleteFunc[[]Ball, Ball](balls, func(ball Ball) bool {
-				return BallsEqual(ballToRemove, ball)
-			})
+		for _, usbcBall := range balls {
+			if strings.Contains(strings.ToLower(usbcBall.Name), "mania") {
+				fmt.Printf("%+v\n", usbcBall)
+			}
+			found := false
+			for _, storedBall := range brandBalls {
+				if BallsEqual(usbcBall, storedBall) {
+					found = true
+					break
+				}
+			}
+			if !found {
+				approved = append(approved, usbcBall)
+			}
 		}
 
 		if err = s.store.AddBalls(ctx, approved); err != nil {
