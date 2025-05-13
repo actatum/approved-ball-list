@@ -186,6 +186,13 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 			}
 		}
 
+		if len(approved) == 0 {
+			results <- jobResult{
+				Balls: approved,
+			}
+			return
+		}
+
 		if err = s.store.AddBalls(ctx, approved); err != nil {
 			results <- jobResult{
 				Err: fmt.Errorf("adding balls to store: %w", err),
