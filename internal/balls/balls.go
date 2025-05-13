@@ -190,7 +190,7 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 			results <- jobResult{
 				Balls: approved,
 			}
-			return
+			continue
 		}
 
 		if err = s.store.AddBalls(ctx, approved); err != nil {
