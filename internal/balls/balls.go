@@ -190,15 +190,15 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 			results <- jobResult{
 				Balls: approved,
 			}
-			return
-		}
-
-		if err = s.store.AddBalls(ctx, approved); err != nil {
-			results <- jobResult{
-				Err: fmt.Errorf("adding balls to store: %w", err),
-			}
 			continue
 		}
+
+		// if err = s.store.AddBalls(ctx, approved); err != nil {
+		// 	results <- jobResult{
+		// 		Err: fmt.Errorf("adding balls to store: %w", err),
+		// 	}
+		// 	continue
+		// }
 
 		results <- jobResult{
 			Balls: approved,
