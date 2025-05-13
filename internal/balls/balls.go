@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log/slog"
 	"net/url"
-	"strings"
 	"time"
 )
 
@@ -175,9 +174,6 @@ func (s service) checkForNewlyApprovedBalls(ctx context.Context, jobs <-chan Bra
 
 		approved := make([]Ball, 0)
 		for _, usbcBall := range balls {
-			if strings.Contains(strings.ToLower(usbcBall.Name), "mania") {
-				fmt.Printf("%+v\n", usbcBall)
-			}
 			found := false
 			for _, storedBall := range brandBalls {
 				if BallsEqual(usbcBall, storedBall) {
